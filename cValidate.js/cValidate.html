@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: cValidate</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: cValidate</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>cValidate</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    <h4 class="name" id="cValidate"><span class="type-signature"></span>new cValidate<span class="signature">(contraints, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>contraints</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">constraints described in <a href="http://validatejs.org" target="_blank">validate.js</a></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objOpt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Options:	 <BR/>
+									  - szDateFmt  default is "YYYY-MM-DD" <BR/>
+									  - szDateTimeFmt {String} default is "YYYY-MM-DD hh:mm:ss" <BR/>
+									  - bInstantFieldValidation {Boolean} [false]   if true each field is validated on Validate Event <BR/>
+									-------- Possible Option for validation Error case:				 <BR/>
+									  - bOnErrShowLabel {Boolean}: [true] show a label with error on the rigth of item  <BR/>
+									  -	bOnErrShowPopup {Boolean}: [false] show a Popup with all the Errors <BR/>
+									  -	bOnErrShowSect {Boolean}: [true] show a section on the Top og Page with all the Errors <BR/>
+									  -	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item <BR/>
+									--------  <BR/>
+  									  - bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item <BR/>
+									  -	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body <BR/>
+									  -	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  <BR/></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cValidate.js.html">cValidate.js</a>, <a href="cValidate.js.html#line74">line 74</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>cValidateObj1 = new cValidate ({ 
+		email: { // Mandatory email  
+		  presence: true,	  email: true  
+		},
+		duration: { // Mandatory Integer in range [1..10] with a tip explaining it
+			presence: true, tip: TIP_DURATION, 
+	    numericality: {
+	      onlyInteger: true,
+	      greaterThanOrEqualTo: 1,
+	      lessThanOrEqualTo: 10
+	    }
+		},
+		birthdate: { // Optional Birthaday in date default format (YYYY-MM-DD)
+			date: {}
+		}},
+		// OPTION: Id of div to use in case of bOnErrShowSect:true
+		{szErrSectId: "errSect1"}
+	);
+	// Now the item Validation is automatically managed by this class: 
+	//  for example Validate Errors, if present, are automatically displayed at validate Event of single Items
+	// ...
+	// To validate all the items, for example in the onclick event of button &lt;b>Validate&lt;/b>
+	cValidateObj1.validateApply() </code></pre>
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="getOption"><span class="type-signature"></span>getOption<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Get current validateOption
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cValidate.js.html">cValidate.js</a>, <a href="cValidate.js.html#line283">line 283</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    validateOpt
+</div>
+
+
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="setOption"><span class="type-signature"></span>setOption<span class="signature">(objOpt)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Set Validate Option (that can also be set  in class constructor)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>objOpt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Options:	 <BR/>
+									  - szDateFmt  default is "YYYY-MM-DD" <BR/>
+									  - szDateTimeFmt {String} default is "YYYY-MM-DD hh:mm:ss" <BR/>
+									  - bInstantFieldValidation {Boolean} [false]   if true each field is validated on Validate Event <BR/>
+									-------- Possible Option for validation Error case:				 <BR/>
+									  - bOnErrShowLabel {Boolean}: [true] show a label with error on the rigth of item  <BR/>
+									  -	bOnErrShowPopup {Boolean}: [false] show a Popup with all the Errors <BR/>
+									  -	bOnErrShowSect {Boolean}: [true] show a section on the Top og Page with all the Errors <BR/>
+									  -	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item <BR/>
+									--------  <BR/>
+  									  - bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item <BR/>
+									  -	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body <BR/>
+									  -	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  <BR/></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cValidate.js.html">cValidate.js</a>, <a href="cValidate.js.html#line237">line 237</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="validateApply"><span class="type-signature"></span>validateApply<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Apply the Validate constraints. For example call this method in the onclick of "Validate" Button
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="cValidate.js.html">cValidate.js</a>, <a href="cValidate.js.html#line292">line 292</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    VALIDATE_RETCODE.OK  or VALIDATE_RETCODE.ERR
+</div>
+
+
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="cValidate.html">cValidate</a></li></ul><h3>Global</h3><ul><li><a href="global.html#VALIDATE_DEF_OPT">VALIDATE_DEF_OPT</a></li><li><a href="global.html#VALIDATE_RETCODE">VALIDATE_RETCODE</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Jul 19 2016 11:27:30 GMT+0200 (ora legale Europa occidentale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
