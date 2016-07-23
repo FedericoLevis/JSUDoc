@@ -43,26 +43,7 @@
 
 
     <section>
-        <article><table>
-<thead>
-<tr>
-<th><img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png" alt="about"></th>
-<th>By <a href="https://www.linkedin.com/in/federicolevis">Federico Levis</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Try JSU Tip Sample:</strong> <a href="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html">Tip sample</a></p>
-<h1>JSU Tip API core/tooltip.js</h1><p>JS API for Tooltip (Tip):</p>
-<ul>
-<li><strong>CORE FEATURES</strong>: HTML/Text <strong>Floating Tip</strong> and <strong>Fixed Tip</strong> with Optional Close button</li>
-<li><strong>OPTIONAL FEATURES</strong>: <strong>Fixed JS Highlighted Tip</strong> showing JS code hightlighted with <a href="https://craig.is/making/rainbows">rainbow</a> format</li>
-</ul>
-<h3>Required</h3><p><style type="text/css">
+        <article><style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
@@ -70,8 +51,67 @@
 .tg .tg-odnr{font-weight:bold;color:#009901;vertical-align:top}
 .tg .tg-7cve{font-weight:bold;background-color:#e0e0e0;vertical-align:top}
 .tg .tg-yw4l{vertical-align:top}
-</style></p>
-<p><table class="tg">
+
+table.tip {    text-align: center;    font-family: Verdana;    font-weight: normal;    font-size: 11px;    color: black;     background-color: #fafafa;    /* White Gray: default backgound, used for Td */    border: 3px solid #858585; /* Dark Gray */    border-spacing: 0px;  border-collapse: separate;  border-spacing: 0px;     }
+table.tipNoBorder {    text-align: center;    font-family: Verdana;    font-weight: normal;    font-size: 11px;    color: black; /* Black */    background-color: #fafafa;    /* White Gray: default backgound, used for Td */    border: 0px; /* Dark Gray */  border-collapse: separate;  border-spacing: 1px;     }
+tr.tiptitle,th.tiptitle, tr.tiptitleBig,th.tiptitleBig {  background-color: #0033FF; /* Blue */  color: #FFFFFF; /* White */  text-align: center;  border: 0px;  font-family: Verdana;  font-weight: bold;}
+tr.tiptitle,th.tiptitle{  font-size: 9pt;  padding: 2px;}
+tr.tiptitleBig,th.tiptitleBig{  font-size: 13pt;}
+label.tiptitle {  font-family: Verdana;  font-weight: bold;        font-size: 10pt;}
+label.tiptitleBig {  font-family: Verdana;  font-weight: bold;        font-size: 16pt;}
+tr.tiptitle2,th.tiptitle2, tr.tiptitleBig2,th.tiptitleBig2 {  background-color: #66B2FF;   color: black;   text-align: center;  padding: 2px;  border: 1px solid black;  font-family: Verdana;  font-weight: bold;  font-size: 9pt;}
+td.tipr, td.tipl, td.tipc, td.tipcBold, td.tiprBold,   td.tipalr, td.tipok, , td.tipGood, , td.tipErr{    padding-right: 5px;    border: 1px solid #404040; /* Black */}
+td.tipc,td.tipcBold {  text-align: center!important;}
+td.tipcBold,td.tiprBold {  font-weight: bold!important;}
+td.tipr,td.tiprBold {    text-align: right !important;}
+td.tipl {    text-align: left !important;}
+
+</style>
+
+<!-- JSU HEADER -->
+<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="850px">
+    <tr>
+      <td width="250px" align="center"> <img width="290px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
+      <td ><table class="tipNoBorder" width="100%">
+        <tr><td ><table class="tipNoBorder" width="100%">
+          <tr>
+            <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html" target="_blank">Try JSU Samples</a> </td>
+          <tr/>
+          <tr>
+            <td class="tipl"><label class="tiptitle">JSU Doc: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/README.md.html" target="_blank">https://rawgit.com/FedericoLevis/JSU/master/README.md.html</a> </td>
+          <tr/>
+          <tr>
+            <td class="tipl" width="180px"><label class="tiptitle">JSU GitHub: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://github.com/FedericoLevis/JSU" target="_blank">https://github.com/FedericoLevis/JSU</a> </td>
+          <tr/>
+          <tr>
+            <td  class="tipl"><label class="tiptitle">Author: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> </td>
+          <tr/>
+          <tr>
+            <td class="tipl"><label class="tiptitle">Email:</label></td>
+            <td class="tipl"><a class="tipLink" href="mailto:federico.levis@virgilio.it" target="_blank">federico.levis@virgilio.it</a> </td>
+          <tr/>
+        </table></td></tr>
+      </table></td> 
+    </tr>
+</table> 
+
+
+<p><BR/></p>
+<p><h1>JSU Tip API core/tooltip.js</h1>
+JS API for Tooltip (Tip):<ul>
+  <li> <b>CORE FEATURES:</b> HTML/Text Floating Tip and Fixed Tip with Optional Close button</li>
+  <li> <b>OPTIONAL FEATURES:</b> Fixed JS Highlighted Tip showing JS code hightlighted with <a class="tipLink" href="https://craig.is/making/rainbows" target="_blank">rainbow</a> format</li>
+</ul></p>
+<p><BR/></p>
+<p><h2> JSU Tip Sample</h2>
+<a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html" target="_blank">Try JSU Tip Sample</a></p>
+<p><BR/> <BR/>  </p>
+<p><h2> Required </h2></p>
+<table class="tg">
   <tr>
     <th class="tg-i71b">JSU Tip Feature</th>
     <th class="tg-i71b">DESCRIPTION</th>
@@ -85,36 +125,57 @@
   <tr>
     <td class="tg-7cve">OPTIONAL FEATURES</td>
     <td class="tg-yw4l">Fixed JS Highlighted Tip</td>
-    <td class="tg-yw4l"><a href="https://craig.is/making/rainbows">rainbow</a> (the required Rainbow plugin is provided by JSU)</td>
+    <td class="tg-yw4l"><a class="tipLink" href="https://craig.is/making/rainbows" target="_blank">rainbow</a> (the required Rainbow plugin is provided by JSU)</td>
   </tr>
-</table></p>
-<BR/>
+</table>
 
-
-<h3>Installation</h3><p>You can choose between 2 options:</p>
-<ul>
-<li><a href="https://github.com/FedericoLevis/JSU/archive/master.zip">Download JSU Obscured ZIP</a> JSU code <em>Obscured</em>, Sample code Clear with comment</li>
-<li><strong><em>[Download Complete JSU ZIP]</em></strong> JSU Code and Sample: <strong>All Clear with comment</strong>   <strong>[UNDER WORK, CURRENTLY NOT AVAILABLE]</strong></li>
-</ul>
-<h3>JSU Files</h3><ul>
-<li><strong>CORE FEATURES</strong> (Floating Tip, Fixed Tip): jsu/core/tooltip.js jsu/core/core.css</li>
-<li><strong>OPTIONAL FEATURES</strong>: (Fixed JS Highlighted Tip)  jsu/core/rainbow/*</li>
-</ul>
-<h3>Version</h3><p>3.3</p>
-<h3>License</h3><p>MIT</p>
-<table>
-<thead>
-<tr>
-<th><img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/JSUDancing.gif" alt="JSUDancing"></th>
-<th>Try All JSU samples: <a href="https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html">All Samples</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-</tr>
-</tbody>
-</table></article>
+<p><BR/> </p>
+<p><h2>Installation</h2>
+See Installation Section in <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/README.md.html" target="_blank">JSU Documentation</a></p>
+<p><BR/><BR/> </p>
+<p><h2> JSU Files</h2>
+This Features requires following JSU files <ul>
+  <li> <b>CORE FEATURES (Floating Tip, Fixed Tip):</b> jsu/core/tooltip.js jsu/core/core.css </li>
+  <li> <b>OPTIONAL FEATURES (Fixed JS Highlighted Tip):</b>  jsu/core/rainbow/* </li>
+</ul></p>
+<p><BR/> </p>
+<p><h2>JSU Version</h2>
+JSU v. 3.3 - July 2016</p>
+<p><BR/><BR/> </p>
+<p><h2>License</h2>
+MIT</p>
+<p><BR/><BR/><BR/> 
+<!-- JSU FOOTER --></p>
+<p><table class="tip" BORDER="1" cellspacing="0" cellpadding="0" width="900px">
+    <tr>
+      <td width="250px" align="center"> <img width="210px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/JSUDancing.gif"/></td> 
+      <td ><table class="tipNoBorder" width="100%">
+        <tr><td ><table class="tipNoBorder" width="100%">
+          <tr>
+            <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html" target="_blank">Try JSU Samples</a> </td>
+          <tr/>
+          <tr>
+            <td class="tipl"><label class="tiptitle">JSU Doc: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/README.md.html" target="_blank">https://rawgit.com/FedericoLevis/JSU/master/README.md.html</a> </td>
+          <tr/>
+          <tr>
+            <td class="tipl" width="180px"><label class="tiptitle">JSU GitHub: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://github.com/FedericoLevis/JSU" target="_blank">https://github.com/FedericoLevis/JSU</a> </td>
+          <tr/>
+          <tr>
+            <td  class="tipl"><label class="tiptitle">Author: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> </td>
+          <tr/>
+          <tr>
+            <td class="tipl"><label class="tiptitle">Email:</label></td>
+            <td class="tipl"><a class="tipLink" href="mailto:federico.levis@virgilio.it" target="_blank">federico.levis@virgilio.it</a> </td>
+          <tr/>
+        </table></td></tr>
+      </table></td> 
+    </tr>
+</table> </p>
+<p><BR/><BR/> </p></article>
     </section>
 
 
@@ -155,7 +216,7 @@ Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" tar
 This file may be freely distributed under the MIT license.   <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>
 <b>JSDoc NOTES</b>  <BR/>
-In "JSU Obscured Version"  JS Code is not visible with JSDoc Source Link  <BR/> 
+In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/> 
 ========================================================================================= <BR/></div>
         
 
@@ -240,7 +301,7 @@ In "JSU Obscured Version"  JS Code is not visible with JSDoc Source Link  <BR/>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sat Jul 23 2016 01:19:15 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sat Jul 23 2016 13:37:55 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
