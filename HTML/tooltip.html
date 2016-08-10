@@ -11,9 +11,12 @@
 	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.js" ></script>
 	<!--  JSU Tooltip API-->
 	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/locale/EN/locale-core.js" ></script>
-	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/core.css" type="text/css">
+	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/core-path-fix.css" type="text/css">
 	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/core/tooltip.js" ></script>
 
+	<script  data-main="../../plugin/jsu.js" src="../../core/require.js"></script>
+    
+    
 </head>
 
 
@@ -23,7 +26,7 @@ var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbou
 
 
 <!-- JSU HEADER -->
-<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="850px">
+<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="100%">
     <tr>
       <td width="250px" align="center"> <img width="290px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
       <td ><table class="tipNoBorder" width="100%">
@@ -53,6 +56,13 @@ var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbou
     </tr>
 </table> 
 <hr>
+
+<table class="tip" BORDER="5" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tiptitleVeryBig">
+      <th class="tiptitleBig">JSU Tooltip</th>
+    </tr>
+</table>
+
 
 <!--  ========================================   INDEX  -->
 
@@ -262,7 +272,7 @@ See <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/README.
 <BR/><BR/><BR/> 
 <hr>
 <!-- JSU FOOTER -->
-<table class="tip" BORDER="1" cellspacing="0" cellpadding="0" width="900px">
+<table class="tip" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="180px" align="center"> <img width="180px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/JSUDancing.gif"/></td> 
       <td ><table class="tipNoBorder" width="100%">
