@@ -2,35 +2,35 @@
 
 <html>
 
+<script>
+  // Required for DOC of FREE Features
+  var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master";
+</script>
+
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
   <title>JSU Tooltip Documentation</title>
-    <!-- Tip -->
+    <!-- Tooltip sample -->
 	<link rel="stylesheet" type="text/css" href="https://rawgit.com/FedericoLevis/JSU/master/samples/Sample.css">
-	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/core/util.js" ></script>
 	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.js" ></script>
-	<!--  JSU Tooltip API-->
-	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/locale/EN/locale-core.js" ></script>
+	<!--  JSU   -->
+    
 	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/core-path-fix.css" type="text/css">
-	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/core/tooltip.js" ></script>
-
-	<script  data-main="../../plugin/jsu.js" src="../../core/require.js"></script>
-    
-    
+	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/Popup/Popup.css" type="text/css">
+	<script data-main="https://rawgit.com/FedericoLevis/JSU/master/plugin/jsu.js" src="https://rawgit.com/FedericoLevis/JSU/master/core/require.js"></script>
+    <!-- About -->
+    <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/about/about.css" type="text/css">
+    <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/core/about/about.js" ></script>
 </head>
 
+<body>
 
-<script>
-var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/";
-</script>
-
-
-<!-- JSU HEADER -->
-<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="100%">
+<!-- JSU HEADER COMMON FOR ALL DOC  -->
+<table class="jsuHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="250px" align="center"> <img width="290px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
-      <td ><table class="tipNoBorder" width="100%">
-        <tr><td ><table class="tipNoBorder" width="100%">
+      <td ><table class="jsuHeaderNoBorder" width="100%">
+        <tr><td ><table class="jsuHeaderNoBorder" width="100%">
           <tr>
             <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
             <td class="tipl"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html" target="_blank">Try JSU Samples</a> </td>
@@ -57,12 +57,33 @@ var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbou
 </table> 
 <hr>
 
-<table class="tip" BORDER="5" cellspacing="0" cellpadding="2" width="100%">
-    <tr class="tiptitleVeryBig">
-      <th class="tiptitleBig">JSU Tooltip</th>
+
+<!--  Table to download JSU.ZIP (common for all the sample)  COMMON -->
+<table  width="100%">
+  <tr>
+  <td class="tipr">
+  <b>Download Options:</b> 
+  <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
+  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
+  <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
+  </td></tr>
+</table>   
+<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tiptitleBig">
+      <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipJSU(event);" />
+        <label class="aboutAuthor">by Federico Levis</label>
+            <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+      </th>
     </tr>
 </table>
 
+
+<!-- -------------  END COMMON PART ------------------------------------------>
+<table class="table.jsuHeaderNoBorder" cellspacing="0" cellpadding="2" width="100%">
+    <tr >
+      <th class="tiptitleVeryBig">JSU Tooltip - DOCUMENTATION</th>
+    </tr>
+</table>
 
 <!--  ========================================   INDEX  -->
 
@@ -144,7 +165,7 @@ To add to an HTML Item the <b>Floating Tip</b> you have to call the <b>JSU Tip A
     </tr>
    </table>
    
-
+<BR/> 
 <h2>
 <a id="par1.2" class="anchor" href="#par1.2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2) Fixed Tip</h2>
                To implement a <b>FixedTip</b> Tooltip:  
@@ -192,7 +213,7 @@ To add to an HTML Item the <b>Floating Tip</b> you have to call the <b>JSU Tip A
 
 
 
-
+<BR/> 
 <h2>
 <a id="par1.3" class="anchor" href="#par1.3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.3) Fixed Tip showing JS Code in a TextBox</h2>
                To show a <b>FixedTip</b> with <b>JS Code</b> in a TextBox:  
@@ -271,12 +292,12 @@ See <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/README.
 
 <BR/><BR/><BR/> 
 <hr>
-<!-- JSU FOOTER -->
-<table class="tip" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
+<!-- JSU FOOTER  COMMON-->
+<table class="jsuFooter" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="180px" align="center"> <img width="180px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/JSUDancing.gif"/></td> 
-      <td ><table class="tipNoBorder" width="100%">
-        <tr><td ><table class="tipNoBorder" width="100%">
+      <td ><table class="jsuFooterNoBorder" width="100%">
+        <tr><td ><table class="jsuFooterNoBorder" width="100%">
           <tr>
             <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
             <td class="tipl"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html" target="_blank">Try JSU Samples</a> </td>
@@ -302,3 +323,6 @@ See <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/README.
     </tr>
 </table> 
 
+
+</body>
+</html>

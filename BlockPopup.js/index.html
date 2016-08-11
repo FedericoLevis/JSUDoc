@@ -43,29 +43,34 @@
 
 
     <section>
-        <article><style type="text/css">
-table.tip {    text-align: center;    font-family: Verdana;    font-weight: normal;    font-size: 11px;    color: black;     background-color: #fafafa;    /* White Gray: default backgound, used for Td */    border: 3px solid #858585; /* Dark Gray */    border-spacing: 1px;  border-collapse: separate;  border-spacing: 0px;     }
-table.tipNoBorder {    text-align: center;    font-family: Verdana;    font-weight: normal;    font-size: 11px;    color: black; /* Black */    background-color: #fafafa;    /* White Gray: default backgound, used for Td */    border: 0px; /* Dark Gray */  border-collapse: separate;  border-spacing: 1px;     }
-tr.tiptitle,th.tiptitle, tr.tiptitleBig,th.tiptitleBig {  background-color: #0033FF; /* Blue */  color: #FFFFFF; /* White */  text-align: center;  border: 0px;  font-family: Verdana;  font-weight: bold;}
-tr.tiptitle,th.tiptitle{  font-size: 9pt;  padding: 2px;}
-tr.tiptitleBig,th.tiptitleBig{  font-size: 13pt;}
-label.tiptitle {  font-family: Verdana;  font-weight: bold;        font-size: 10pt;}
-label.tiptitleBig {  font-family: Verdana;  font-weight: bold;        font-size: 16pt;}
-tr.tiptitle2,th.tiptitle2, tr.tiptitleBig2,th.tiptitleBig2 {  background-color: #66B2FF;   color: black;   text-align: center;  padding: 2px;  border: 1px solid black;  font-family: Verdana;  font-weight: bold;  font-size: 9pt;}
-td.tipr, td.tipl, td.tipc, td.tipcBold, td.tiprBold,   td.tipalr, td.tipok, , td.tipGood, , td.tipErr{    padding-right: 5px;    border: 1px solid #404040; /* Black */}
-td.tipc,td.tipcBold {  text-align: center!important;}
-td.tipcBold,td.tiprBold {  font-weight: bold!important;}
-td.tipr,td.tiprBold {    text-align: right !important;}
-td.tipl {    text-align: left !important;}
+        <article><html>
 
-</style>
+<script>
+  // Required for DOC of JS Code
+  var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master";
+</script>
 
-<!-- JSU HEADER -->
-<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="850px">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
+  <title>JSU Tooltip Documentation</title>
+    <!-- sample -->
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/FedericoLevis/JSU/master/samples/Sample.css">
+    <!--  JSU   -->
+    <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/core.css" type="text/css">
+    <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/Popup/Popup.css" type="text/css">
+    <script data-main="https://rawgit.com/FedericoLevis/JSU/master/plugin/jsu.js" src="https://rawgit.com/FedericoLevis/JSU/master/core/require.js"></script>
+    <!-- About -->
+    <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/about/about.css" type="text/css">
+    <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/core/about/about.js" ></script>
+</head>
+
+
+<!-- JSU HEADER COMMON FOR ALL DOC  -->
+<table class="jsuHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="250px" align="center"> <img width="290px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
-      <td ><table class="tipNoBorder" width="100%">
-        <tr><td ><table class="tipNoBorder" width="100%">
+      <td ><table class="jsuHeaderNoBorder" width="100%">
+        <tr><td ><table class="jsuHeaderNoBorder" width="100%">
           <tr>
             <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
             <td class="tipl"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html" target="_blank">Try JSU Samples</a> </td>
@@ -90,9 +95,32 @@ td.tipl {    text-align: left !important;}
       </table></td> 
     </tr>
 </table> 
+<hr>
 
 
-<BR/></article>
+<!--  Table to download JSU.ZIP (common for all the sample)  COMMON -->
+<table  width="100%">
+  <tr>
+  <td class="tipr">
+  <b>Download Options:</b> 
+  <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
+  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
+  <input type="button" class="downloadFree" onclick="downloadFree();"    onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
+  </td></tr>
+</table><br><table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tiptitleBig">
+      <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipJSU(event);" />
+        <label class="aboutAuthor">by Federico Levis</label>
+            <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+      </th>
+    </tr>
+</table>
+
+<table class="table.jsuHeaderNoBorder" cellspacing="0" cellpadding="2" width="100%">
+    <tr >
+      <th class="tiptitleVeryBig">JSU API DOCUMENTATION</th>
+    </tr>
+</table></article>
     </section>
 
 
@@ -220,7 +248,7 @@ In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Aug 10 2016 14:31:57 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Aug 11 2016 13:43:06 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

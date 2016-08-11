@@ -2,28 +2,39 @@
 
 <html>
 
+<script>
+  // Only for Local DEV
+  // var JSU_PATH_BASE="../../../Cognos/jsu";
+</script>
+
+
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
   <title>JSU LoadingDiv Documentation</title>
-    <!-- Tip -->
+    <!-- This FEATURE -->
 	<link rel="stylesheet" type="text/css" href="https://rawgit.com/FedericoLevis/JSU/master/samples/Sample.css">
-	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/WORK/master/1/samples/Loading/Loading.js" ></script>
-	<!--  JSU DAFARE provare con jq DAFARE path-fix -->
-	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/core.css" type="text/css">
+	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/WORK/master/1/samples/Loading/LoadingSample.js" ></script>
 	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/Popup/Popup.css" type="text/css">
+
+	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/core-path-fix.css" type="text/css">
 	<script data-main="https://rawgit.com/FedericoLevis/WORK/master/1/plugin/jsu.js" src="https://rawgit.com/FedericoLevis/WORK/master/3/core/require.js"></script>
+    <!-- 
+	<link rel="stylesheet" href="../../../Cognos/jsu/core/core-path-fix.css" type="text/css">
+	<script data-main="../../../Cognos/jsu/plugin/jsu.js" src="../../../Cognos/jsu/core/require.js"></script>
+    -->
     <!-- About -->
     <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/WORK/master/1/core/about/about.css" type="text/css">
     <script type="text/javascript" src="https://rawgit.com/FedericoLevis/WORK/master/1/core/about/about.js" ></script>
 </head>
 
+<body>
 
-<!-- JSU HEADER -->
-<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="100%">
+<!-- JSU HEADER COMMON FOR ALL DOC  -->
+<table class="jsuHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="250px" align="center"> <img width="290px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
-      <td ><table class="tipNoBorder" width="100%">
-        <tr><td ><table class="tipNoBorder" width="100%">
+      <td ><table class="jsuHeaderNoBorder" width="100%">
+        <tr><td ><table class="jsuHeaderNoBorder" width="100%">
           <tr>
             <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
             <td class="tipl"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html" target="_blank">Try JSU Samples</a> </td>
@@ -50,11 +61,34 @@
 </table> 
 <hr>
 
-<table class="tip" BORDER="5" cellspacing="0" cellpadding="2" width="100%">
-    <tr class="tiptitleVeryBig">
-      <th class="tiptitleBig">JSU Loading Div</th>
+
+<!--  Table to download JSU.ZIP (common for all the sample)  COMMON -->
+<table  width="100%">
+  <tr>
+  <td class="tipr">
+  <b>Download Options:</b> 
+  <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
+  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
+  <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
+  </td></tr>
+</table>   
+<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tiptitleBig">
+      <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipJSU(event);" />
+        <label class="aboutAuthor">by Federico Levis</label>
+            <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+      </th>
     </tr>
 </table>
+
+
+<!-- -------------  END COMMON PART ------------------------------------------>
+<table class="table.jsuHeaderNoBorder" cellspacing="0" cellpadding="2" width="100%">
+    <tr >
+      <th class="tiptitleVeryBig">JSU Loading Div - DOCUMENTATION</th>
+    </tr>
+</table>
+
 
 <!--  ========================================   INDEX  -->
 
@@ -81,8 +115,8 @@
 <h1>
 <a id="par1" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) JSU LoadingDiv</h1>
 <hr>
-JSU API to display a LoadingDiv during Long Operation; many Options provided: Loading Gif, Title, Message, ElapsedSec,... </BR>
-Very simple API Interface with only 2 JSU API calls required:
+JSU API to display a LoadingDiv during Long Operation. Many Options are available to choose Loading Gif, Title, Message, show/hide ElapsedSec,... </BR>
+This features has a very simple API Interface with only 2 JSU API calls required:
 <table style="margin-left:20px">
   <tr>
     <td width="200px">  
@@ -106,104 +140,192 @@ We will show following cases:
 <ul>
   <li> <a href="#par1.1">Default LoadingDiv</a> without using the Optional parameter objOpt </li>
   <li> <a href="#par1.1">LoadingDiv Options</a> using the Optional parameter objOpt to change Gif and to add Title, Cancel Button, ElapsedSec,...</li>
-  <li> <a href="#par1.3">Advanced LoadingDiv</a>: For advanced LoadingDiv see SAMPLE_3 in 
-      <a class="tipLink" href="javascript:showSampleLoading();" target="_blank">LoadingDiv Sample</a>
+  <li> <a href="#par1.3">Advanced LoadingDiv</a>: For advanced LoadingDiv see SAMPLE_3 in  <a class="tipLink" href="javascript:showSampleLoading();" target="_blank">LoadingDiv Sample</a>
   </li>
 </ul>
 
+<BR/> 
 <h2>
-
-
 <a id="par1.1" class="anchor" href="#par1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1) Default LoadingDiv</h2>
-To add to an HTML Item the <b>Floating Tip</b> you have to call the <b>JSU Tip API</b> <label class="jsuAPI">Tip UnTip</label> in the following events:
+To use the default LoadingDiv </b> you have to:  
    <ul> 
-      <li><b>onmouseover=</b>"<label class="jsuAPI">Tip</label>(<b><i>tipHTML</i></b>);" </li>   
-      <li><b>onmouseout=</b>"<label class="jsuAPI">UnTip</label>(event);"  </li>
+      <li>Call the <b>JSU Tip API</b> <label class="jsuAPI">loadingDivShow()</label> with <b>NO parameter</b>, </li>   
+      <li>Call the <b>JSU Tip API</b> <label class="jsuAPI">loadingDivHide()</label> to hide the loadingDiv when the <i>Long operation</i> has finished</li>   
    </ul>
 
     <!--   SAMPLE and DESC HEADER-->
    <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="800px">
     <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="2">Floating Tip SAMPLE </th>
+      <th class="tiptitleBig" colspan="2">DEFAULT LoadingDiv (par objOpt not present)</th>
     </tr>
     <tr class="tiptitleBig2">
-      <td width="50%" class="tipc" >SAMPLES</td>
+      <td width="50%" class="tipc" >SAMPLE</td>
       <td width="50%" class="tipc" >DESCRIPTION</td>
     </tr>
     <!--   SAMPLE and DESC-->
-    <tr>
-       <td> 
-          <table align="center">
-          <tr>
-            <td align="center" width="150px">
-                      <input type="text" value="HTML Tip" style="width:60px;"
-                        onmouseover="Tip(JSU_TIP_HTML);" onmouseout="UnTip(event)" /> 
-            </td>
-    
-            <td align="center" width="150px"> 
-                    <img type="image" src="https://rawgit.com/FedericoLevis/JSU/master/images/Readme.jpg" align="bottom"
-                        onmouseover="Tip(JSU_TIP_README)"    onmouseout="UnTip(event)"/> 
-            </td>
-          </tr>
-         </table>
-       </td>  
-       <!------ DESC -->    
-       <td>
-               <b>JS Code of the Two Samples:</b>
-               <table class="sampleNoBorder" width="100%">
-               <tr>
-                 <td style="padding-left:15px"><b>HTML Tip </b> Sample: <input type="button" class="tipJSFixed" id="tipJSHTMLTip" onclick="TipJSFixedClicked (JS_CODE_HTML_TIP,event,{iJSColNum:130});" /></td>
-                 <td style="padding-left:15px"> <b>Readme Tip </b> Sample: <input type="button" class="tipJSFixed" id="tipJSReadmeTip" onclick="TipJSFixedClicked (JS_CODE_README_TIP,event);" /></td>
-               </tr>               
-               </table>  
+    <tr id="tr_sample_1">
+      <td class="sample"  id="col_1_1" valign="top" >
+        <label class="sampleTitle">SAMPLE_1 - DEFAULT loadingDiv API </label>
+        <!--   ==================================     DIV with the SAMPLE_1  -->
+        <div>
+	         <table class="sampleNoBorder">
+              <tr> 
+                <td align="left">Loading Duration: </td>
+                <td align="left"> <select id="selectDur1" style="marging-left:5px"></select>  </td> 
+                <td align="left"> <input type="button" style="marging-left:10px" onclick="onclickLoading1();" value="Start LoadingDiv"/>  </td> 
+                <td id="loadedSample1" align="left" class="tipGood" style="display:none;padding-left:10px;">Loaded</td> 
+              </tr>
+            </table>
+        </div>
       </td>
       
+      <td class="sampleDesc"  id="col_1_2" valign="top">
+         <b>JS Code of the sample:</b>
+         <table >
+           <tr valign="top"><td>
+               <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_1: 
+               <input type="button" class="tipJSFixed" id="tipJSLoading1" 
+               onclick="TipJSFixedClicked (JS_LOADING1,event,{szTitle:'JS Source Code of SAMPLE_1: DEFAULT loadingDiv API'});" /><BR/><BR/>
+           </td></tr>
+         </table>
+      </td>      
     </tr>
    </table>
 
-
+<BR/> 
 <h2>
 <a id="par1.2" class="anchor" href="#par1.2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2) LoadingDiv Options</h2>
-You can use the Optional parameter <b>objOpt</b> to change Gif and to add Title, Cancel Button, ElapsedSec,...
+You can use the Optional parameter <b>objOpt</b> to <i>change Gif</i> and to add Title, Show/Hide <i>Cancel Button</i>, <i>ElapsedSec</i> : 
+   <ul> 
+      <li>To show the loadingDiv before starting a <i>Long operation</i>: Call the <b>JSU Tip API</b> <label class="jsuAPI">loadingDivShow(objOpt)</label> Setting  the <b>Desired objOpt</b> 
+               <input type="button" class="tipArrowFixed" id="tipJSLoadingOpt" style="color:Blue;" value="ObjOpt PARAMETER" onclick="TipJSFixedClicked (JS_LOADING_OPT,event,{iJSColNum:140,szTitle:'loadingDiv API OPTIONS'});");" /> <BR/><BR/>
+      </li>   
+      <li>Call the <b>JSU Tip API</b> <label class="jsuAPI">loadingDivHide()</label> to hide the loadingDiv when the <i>Long operation</i> has finished</li>   
+   </ul>
+
+ In the Following Sample you can try some of the various LoadingDiv Options, setting the <b>objOpt</b> parameter with an UserFriendly Table: 
+ <BR/><BR/>
 
     <!--   SAMPLE and DESC HEADER-->
-   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="800px">
+   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="2">Fixed Tip SAMPLE</th>
+      <th class="tiptitleBig" colspan="2">LoadingDiv OPTIONS (using par objOpt)</th>
     </tr>
     <tr class="tiptitleBig2">
-      <td width="50%" class="tipc" >SAMPLES</td>
-      <td width="50%" class="tipc" >DESCRIPTION</td>
+      <td width="75%" class="tipc" >SAMPLE</td>
+      <td width="25%" class="tipc" >DESCRIPTION</td>
     </tr>
-    <!--   SAMPLE and DESC-->
-    <tr>
-       <td> 
-          <table align="center">
-          <tr>
-            <td align="center" >
-              <b>Example of </b> input type="button" class="<label class="jsuAPI">tipFixed</label>":  
-               <input type="button"  class="tipFixed" id="tipFixedSample_a"  onclick="sample2Fixed(event,1000,true)" />
-               
-            </td>
-          </tr>
-         </table>
-       </td>  
-       <!------ DESC -->    
-       <td>
-               <b>JS Code of the Sample:</b>
-               <table class="sampleNoBorder" width="100%">
-               <tr>
-                 <td style="padding-left:15px">
-			          </b> input.tipFixed</b> Sample: <input type="button" class="tipJSFixed" id="imgTipFixed" onclick="TipJSFixedClicked (JS_CODE_IMG_TIP_FIXED,event);" /> 
-                 </td>
-               </tr>               
-               </table>  
+    <!--   SAMPLE and DESC LIKE sample with the difference of DESC  -->
+    <!--   ===================================== SAMPLE_2 ==============================================  -->
+    <tr id="tr_sample_2">
+
+      <td class="sample"  id="col_2_1" >
+         <label class="sampleTitle">SAMPLE_2 - loadingDiv API OPTIONS </label>
+        <!--   ==================================     DIV with the SAMPLE_2  -->
+        <div>
+           <table class="sampleNoBorder">
+              <tr>
+                <td colspan="2">
+		              <div id="optLoading" >
+		                <table class="tip" BORDER="2" width="100%" cellspacing="0" cellpadding="3">
+		                   <tr class="tiptitle">
+		                    <td colspan="4">Main LoadingDiv OPTIONS</td>
+		                  </tr>
+		                   <tr class="tiptitle2">
+		                    <td>OPTION</td>
+		                    <td>Default</td>
+		                    <td>Value</td>
+		                    <td>Description</td>
+		                  </tr>
+                      <tr>
+                        <td class="tipcBold">szTitleHtml</td>
+                        <td class="tipr"></td>
+                        <td class="tipcBold">
+                          <input id="szTitleHtml" style="width:300px;" />
+                        </td>
+                        <td class="tipl">Set an <b>HTML Title</b> different from default that is Title Empty (that means Title absent)</td>
+                      </tr>
+                      <tr>
+                        <td class="tipcBold">szDiffUrlGif</td>
+                        <td class="tipc"></td>
+                        <td class="tipcBold">
+                          <select id="szDiffUrlGif" style="font-weight:bold;width:100px;margin-left:10px" >  
+                         </select>                
+                        </td>
+                        <td class="tipl">if Set it is the <b>Url Path of a Different GIF</b> to use instead of CSS Default</td>
+                      </tr>
+                      <tr>
+                        <td class="tipcBold">szDiffMsgHtml</td>
+                        <td class="tipr"></td>
+                        <td class="tipcBold">
+                          <input id="szDiffMsgHtml" style="width:300px;"/>
+                        </td>
+                        <td class="tipl">Set an <b>HTML Msg</b> different from default (<i>"Working. Please Wait"</i>) that is used when szDiffMsgHtml=""</td>
+                      </tr>
+                      <tr>
+                        <td class="tipcBold">iDivWidth</td>
+                        <td class="tipc">300</td>
+                        <td class="tipcBold">
+                          <select id="iDivWidth" style="font-weight:bold;width:60px;margin-left:10px" >  
+                              <option value="300" >300</option> 
+                              <option value="400" selected >400</option>
+                              <option value="600">600</option>
+                         </select>                
+                        </td>
+                        <td class="tipl"><b>Width (px)</b> of loadingDiv</td>
+                      </tr>
+                      <tr>
+                        <td class="tipcBold">bShowCancel</td>
+                        <td class="tipc">false</td>
+                        <td class="tipcBold">
+                          <select id="bShowCancel" style="font-weight:bold;width:60px;margin-left:10px" >  
+                              <option value="FALSE" >false</option> 
+                              <option value="TRUE" selected >true</option>
+                         </select>                
+                        </td>
+                        <td class="tipl"><b>true:</b> show a Cancel Button to stop Loading - fnCancelCallback is called if click Cancel</td>
+                      </tr>
+		                  <tr>
+		                    <td class="tipcBold">bShowElapsedSec</td>
+		                    <td class="tipc">false</td>
+		                    <td class="tipcBold">
+		                      <select id="bShowElapsedSec" style="font-weight:bold;width:60px;margin-left:10px">  
+		                          <option value="FALSE" >false</option> 
+		                          <option value="TRUE" selected >true</option>
+		                     </select>                
+		                    </td>
+		                    <td class="tipl"><b>true:</b> there is also a Footer with Elapsed Sec</td>
+		                  </tr>
+		                </table>
+		              </div> 
+                </td>
+              </tr>
+              <tr> 
+                <td style="padding-top:15px;" align="left">Loading Duration:&nbsp;  
+                 <select id="selectDur2"> </select>
+                 <input type="button" style="margin-left:10px;" onclick="onclickLoading2();" value="Start LoadingDiv"/>
+                 <label id="loadedSample2" align="left" class="tipGood" style="display:none;padding-left:10px;">Loaded</label> 
+                </td>    
+              </tr>
+            </table>
+            <BR/>
+        </div>
       </td>
-      
+   
+      <td class="sampleDesc"  id="col_2_2" valign="top">
+         <table >
+           <tr valign="top"><td>
+               <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_2: 
+               <input type="button" class="tipJSFixed" id="tipJSLoading2" onclick="TipJSFixedClicked (JS_LOADING2,event,{iJSColNum:140,szTitle:'JS Source Code of SAMPLE_2: loadingDiv API with OPTIONS'});" /><BR/><BR/>
+           </td></tr>
+         </table>
+      </td>
     </tr>
-   </table>
+    
+ </table>
 
 
+<BR/><BR/>
   
 <h2>
 <a id="par1.3" class="anchor" href="#par1.3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.3) Advanced LoadingDiv</h2>
@@ -211,13 +333,13 @@ You can use the Optional parameter <b>objOpt</b> to change Gif and to add Title,
  
 <!-- ======================================================================================================================================== END SPECIFIC API-->
 
-<BR/>
+<BR/><BR/>
 <h1>
 <a id="par2" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) API Documentation</h1>
 <hr>
-<a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html" target="_blank">Tip API Documentation</a> <BR/>
+<a href="https://rawgit.com/FedericoLevis/JSUDoc/master/LoadingDiv.js/index.html" target="_blank">LoadingDiv API Documentation</a> <BR/>
 
-<BR/>
+<BR/><BR/>
 <h1>
 <a id="par3" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3) Samples</h1>
 <hr>
@@ -228,12 +350,13 @@ You can use the Optional parameter <b>objOpt</b> to change Gif and to add Title,
 <a href="https://youtu.be/wpo2oM_L3ds" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>
 
 
-<BR/> 
+<BR/><BR/>
 <h1>
 <a id="par4" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4) Required</h1>
 <hr>
 NO External Plugin is required: <b><i>Pure JS Code</i></b>
 
+<BR/><BR/>
 <h1>
 <a id="par5" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5) Installation, Configuration, Version, Licence</h1>
 <hr>
@@ -243,12 +366,12 @@ See <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/README.
 
 <BR/><BR/><BR/> 
 <hr>
-<!-- JSU FOOTER -->
-<table class="tip" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
+<!-- JSU FOOTER  COMMON-->
+<table class="jsuFooter" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="180px" align="center"> <img width="180px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/JSUDancing.gif"/></td> 
-      <td ><table class="tipNoBorder" width="100%">
-        <tr><td ><table class="tipNoBorder" width="100%">
+      <td ><table class="jsuFooterNoBorder" width="100%">
+        <tr><td ><table class="jsuFooterNoBorder" width="100%">
           <tr>
             <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
             <td class="tipl"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/AllSamples.html" target="_blank">Try JSU Samples</a> </td>
@@ -274,3 +397,6 @@ See <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/README.
     </tr>
 </table> 
 
+
+</body>
+</html>
