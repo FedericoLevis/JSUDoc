@@ -11,27 +11,25 @@
 <b>DISCLAIMER</b>  <BR/>
 Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
 This file may be freely distributed under the MIT license.   <BR/>
-<b> NOTE:</b> You can choose between 2 version of this file: <ul>
-  <li> core.css: with relative path (so you can modify the images locally)- e.g background:url('../images/alarming.gif')  </li>
-  <li> core_path_fix.css: with absolute path - e.g background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif')  </li>
-</ul>
+<b> NOTE:</b> The url path point to "https://raw.github.com/FedericoLevis/JSU/master/images/.. <BR/>
+If you want to the local jsu/images directory (e.g. to modify images) you have to replace: <BR/>
+    https://raw.github.com/FedericoLevis/JSU/master/images/     <BR/>
+with          <BR/>
+    ../images         <BR/>
 ========================================================================================= <BR/> 
 */
 
 /*---
 .jsuAlarmingEl alarm for el   
 ---
-<b>CSS:</b> ``input.jsuAlarmingEl``   see API see alarmShowIn1El
+<b>CSS:</b> ``input.jsuAlarmingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#alarmShowIn1El">util.js alarmShowIn1El()</a> 
 <BR/><b>Examples:</b>
-```javascript
-<input class="jsuAlarmingEl" width="100px" value="Example of value" />
-```
 ```html
-<input class="jsuAlarmingEl" style="background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat right center;background-size: contain;" width="100px" value="Example of value" />
+<input class="jsuAlarmingEl" width="100px" value="Example of value" />
 ```
 */
 .jsuAlarmingEl {
-  background:url('../images/alarming.gif') no-repeat right center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat right center;
   background-size: contain;
   z-index: 1000;
 }
@@ -41,15 +39,12 @@ This file may be freely distributed under the MIT license.   <BR/>
 ---
 <b>CSS:</b> ``img.jsuAlarmingImg``  used for select (added on the right and show/hide) 
 <BR/><b>Examples:</b>
-```javascript
-<img class="jsuAlarmingImg"/>
-```
 ```html
-<img class="jsuAlarmingImg" style="background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat;background-size: contain; height: 26px;"/>
+<img class="jsuAlarmingImg"/>
 ```
 */
 img.jsuAlarmingImg {
-  background:url('../images/alarming.gif') no-repeat;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/alarming.gif') no-repeat;
   background-size: contain;
   height: 26px;
   vertical-align: text-top;
@@ -69,7 +64,7 @@ img.jsuAlarmingImg {
 ```
 */
 .jsuLoadingEl {
-  background:url('../images/FillingRing.gif') no-repeat right center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat right center;
   background-size: contain;
   z-index: 1000;
 }
@@ -87,7 +82,7 @@ div.jsuLoadingEl Div with Loading Gif
 ```
 */
 div.jsuLoading {
-  background:url('../images/FillingRing.gif') no-repeat center center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat center center;
   /* background-size: contain; */
    height: 80px;  /*  
   progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
@@ -155,8 +150,8 @@ loadingDivXXX API
 
 div.loadingDivContainer { /* The Main DivContainer */
   progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
-  height: 100%; 
-  width: 100%; 
+  height: 110%;  /* DEFAULT */
+  width: 110%; 
   z-index: 100; 
   background-color: white; 
   position: absolute; 
@@ -171,6 +166,7 @@ div.loadingDiv{ /* The loadingDiv in The Middle of the Page, with the Border  */
   border-style:groove;
   border-width:5px;
   background-color: #EBEBEB; 
+  display: none;
 }
 
 table.loadingDiv{ /* The Main loadingDiv Table  */
@@ -220,7 +216,7 @@ td.loadingDivFooter { /* Footer with Elapsed sec */
 div.loadingDivGif{ /* The Loading Gif on the Left in the Box */
   width: 110px;
 	height: 110px;
-	background: url('../images/Disk.gif') no-repeat center center;
+	background: url('https://raw.github.com/FedericoLevis/JSU/master/images/Disk.gif') no-repeat center center;
 	z-index: 110;  
 }
 
@@ -241,7 +237,7 @@ input.jsuInfo Tip img with 'i'
 ```
 */
 img.jsuInfo, input.jsuInfo{ /* Info img  */
-  background:url('../images/info.png') no-repeat center center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
   background-color: #19E4DD;
   height: 14px;
   width: 5px;
@@ -269,7 +265,7 @@ input.jsuTipTip img with QuestionMark
 
 */
 img.jsuTip, input.jsuTip{
-  background:url('../images/tip.png') no-repeat center center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tip.png') no-repeat center center;
   height: 20x;
   width: 20x;
   marging-left: 5px;
@@ -314,7 +310,7 @@ label.validateErr{ /* item in error State  */
 }	
 
 input.validateInfo{ /* Info img  */
-  background:url('../images/info.png') no-repeat center center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
   background-color: #19E4DD;
   height: 14px;
   width: 5px;
@@ -373,7 +369,7 @@ Tip API and JSU Button
 ```
 */
 img.tipJSFixed{ /* tip JS Fixed img with Button Down */
-  background:url('../images/tipJSFixed.png') center top;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixed.png') center top;
   /* background-size: contain; */
   height: 23px;
   width: 16px;
@@ -381,7 +377,7 @@ img.tipJSFixed{ /* tip JS Fixed img with Button Down */
 }
 
 img.tipJSFixedUp{ /* tip JS Fixed img with Button Up */
-  background:url('../images/tipJSFixedUp.png') center top;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixedUp.png') center top;
   /* background-size: contain; */ 
   height: 24px;
   width: 17px;
@@ -389,14 +385,14 @@ img.tipJSFixedUp{ /* tip JS Fixed img with Button Up */
 }
 
 img.tipArrowFixed{ /* tip Arrow Fixed img with Button Down */
-  background:url('../images/tipArrowFixed.png') center bottom;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixed.png') center bottom;
   height: 17px;
   width: 18px;
   margin-left: 5px;
 }
 
 img.tipArrowFixedUp{ /* tip JS Fixed img with Button Up */
-  background:url('../images/tipArrowFixedUp.png') center bottom;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixedUp.png') center bottom;
   height: 17px;
   width: 18px;
   margin-left: 5px;
@@ -420,11 +416,11 @@ input.tipJSFixed, input.tipJSFixedUp{
 }
 
 input.tipJSFixed{
-    background: #E0E0E0 url(../images/tipJSFixed.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixed.png) no-repeat center center;
 }
 
 input.tipJSFixedUp{
-    background: #E0E0E0 url(../images/tipJSFixedUp.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipJSFixedUp.png) no-repeat center center;
 }
 
 input.tipFixed, input.tipFixedUp{
@@ -438,19 +434,38 @@ input.tipFixed, input.tipFixedUp{
 
 
 input.tipFixed{
-    background: #E0E0E0 url(../images/tipFixed.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixed.png) no-repeat center center;
 }
 
 input.tipFixedUp{
-    background: #E0E0E0 url(../images/tipFixedUp.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedUp.png) no-repeat center center;
 }
 
 input.tipArrowFixed {
-    background: #E0E0E0 url(../images/tipArrowFixed.png) no-repeat right center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixed.png) no-repeat right center;
 }
 input.tipArrowFixedUp {
-    background: #E0E0E0 url(../images/tipArrowFixedUp.png) no-repeat right center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipArrowFixedUp.png) no-repeat right center;
 }
+
+
+
+input.tipGoogleAnal, input.tipGoogleAnalUp {  /* Button for Google Analytics */
+    height: 20px;
+    width: 155px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+input.tipGoogleAnal {
+    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnal.png) no-repeat center center;
+}
+input.tipGoogleAnalUp {
+    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/tipGoogleAnalUp.png) no-repeat center center;
+}
+
+
+
 
 input.jsuHelp{	/* Help Button */  
     height: 18px;
@@ -458,37 +473,14 @@ input.jsuHelp{	/* Help Button */
     border: 1px solid #000;
     cursor: pointer;
     margin-left: 4px; 
-    background: #E0E0E0 url(../images/help.png) no-repeat center center;
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/help.png) no-repeat center center;
     
-}
-
-
-input.downloadFree, input.downloadPay {
-  margin-left:20px;
-  border: 1px solid #000;
-  font-weight: bold;
-  cursor: pointer;
-  margin-right: 0px; 	
-  align:left;
-}
-
-
-input.downloadFree {
-    height: 27px;
-    width: 210px;
-    background: Yellow url(../images/downloadFree.png) no-repeat center center;
-}
-
-input.downloadPay {
-    height: 27px;
-    width: 165px;
-    background: cyan url(../images/downloadPay.png) no-repeat right center;
 }
 
 
 
 img.tipFixedUp{ /* Fixed, Both after click: img with Button Up */
-  background:url('../images/tipFixedUp.jpg') center top;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedUp.jpg') center top;
   background-size: contain;
   height: 20px;
   width: 15px;
@@ -496,7 +488,7 @@ img.tipFixedUp{ /* Fixed, Both after click: img with Button Up */
 }
 
 img.tipFixedBig{ /* Big */
-  background:url('../images/tipFixedBig.jpg') no-repeat center bottom;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedBig.jpg') no-repeat center bottom;
   height: 30px;
   width: 20px;
   margin-left: 5px;
@@ -504,7 +496,7 @@ img.tipFixedBig{ /* Big */
 
 
 img.tipFixedBigUp{ /*  after click : img with Button Up */
-  background:url('../images/tipFixedBigUp.jpg') no-repeat center bottom;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tipFixedBigUp.jpg') no-repeat center bottom;
   height: 30px;
   width: 20px;
   margin-left: 5px;
@@ -512,20 +504,20 @@ img.tipFixedBigUp{ /*  after click : img with Button Up */
 
 
 img.jsuSample{ /* Sample img  */
-  background:url('../images/sample.jpg') no-repeat center bottom;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/sample.jpg') no-repeat center bottom;
   align: bottom;
   width: 100px;  
   height: 20px;  
 }
 
 
-table.tip {
+table.tip, table.jsuHeader, table.jsuFooter {
 	text-align: center;
 	font-family: Verdana;
 	font-weight: normal;
 	font-size: 11px;
 	color: black; 
-	background-color: #fafafa;
+	background-color: #ffffff;
 	/* White Gray: default backgound, used for Td */
 	border: 3px solid #858585; /* Dark Gray */
 	border-spacing: 0px;
@@ -533,18 +525,23 @@ table.tip {
   border-spacing: 2px; 	
 }
 
-table.tipNoBorder {
-	text-align: center;
-	font-family: Verdana;
-	font-weight: normal;
-	font-size: 11px;
-	color: black; /* Black */
-	background-color: #fafafa;
-	/* White Gray: default backgound, used for Td */
-	border: 0px; /* Dark Gray */
+table.tipNoBorder,table.jsuHeaderNoBorder,table.jsuFooterNoBorder {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; /* Black */
+  background-color: #ffffff;
+  /* White Gray: default backgound, used for Td */
+  border: 0px; /*  */
   border-collapse: separate;
-  border-spacing: 5px; 	
+  border-spacing: 5px;  
 }
+
+
+table.jsuHeaderNoBorder,table.jsuFooterNoBorder { /* used for Header and Footer in Documentation*/ 
+    border-spacing: 1px;  
+  }
 
 
 tr.tiptitle,th.tiptitle, tr.tiptitleBig,th.tiptitleBig {
@@ -563,6 +560,12 @@ tr.tiptitle,th.tiptitle{
 tr.tiptitleBig,th.tiptitleBig{
   font-size: 13pt;
 }
+
+.tiptitleVeryBig{
+  font-size: 30pt;
+  font-weight: bold;  
+}
+
 
 
 label.tiptitle {
@@ -609,7 +612,7 @@ th.tip,td.tip {
 	padding: .5em;
 	color: #00;
 	border: 1px solid #404040; /* Black */
-	background-color: #fcfcfc;
+	background-color: #ffffff;
 }
 
 
