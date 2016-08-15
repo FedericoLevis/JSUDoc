@@ -16,8 +16,8 @@
 	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/Popup/Popup.css" type="text/css">
 	<script data-main="https://rawgit.com/FedericoLevis/JSU/master/plugin/jsu.js" src="https://rawgit.com/FedericoLevis/JSU/master/core/require.js"></script>
     <!-- About -->
-    <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/samples/aboutt/about.css" type="text/css">
-    <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/aboutt/about.js" ></script>
+    <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.css" type="text/css">
+    <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.js" ></script>
 </head>
 
 
@@ -54,9 +54,12 @@
 <hr>
 
 
-<!--  Table to download JSU.ZIP (common for all the sample)  COMMON -->
+<!--  Header Table: GoogleAnalytics and download -  common for all the JSU HTML -->
 <table  width="100%">
   <tr>
+  <td class=tipl"">
+     <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)"  onmouseover="jsuGoogleAnalTip(event);" onmouseout="UnTip(event)"/> 
+  </td>
   <td class="tipr">
   <b>Download Options:</b> 
   <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
@@ -64,6 +67,8 @@
   <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
   </td></tr>
 </table>   
+
+
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tiptitleBig">
       <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipJSU(event);" />

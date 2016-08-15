@@ -841,7 +841,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line599">line 599</a>
+        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line647">line 647</a>
     </li></ul></dd>
     
 
@@ -1017,7 +1017,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line574">line 574</a>
+        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line622">line 622</a>
     </li></ul></dd>
     
 
@@ -1121,7 +1121,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line587">line 587</a>
+        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line635">line 635</a>
     </li></ul></dd>
     
 
@@ -1523,7 +1523,7 @@
 
             
 
-            <td class="description last">Optional Options: <ul>    												<li> .iColNum  TextArea ColNum to use instead of JSLOG_DEF_DOM_EL_COL_NUM </li>   												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_DOM_EL_ROW_NUM) </li>   												<li> .log_style  to log also style: JSLOG_OPT.NONE (default)  JSLOG_OPT.ONLY_MEANINGFUL JSLOG_OPT.ALL </li>  											</ul></td>
+            <td class="description last">Optional Options: <ul>    												<li> .iColNum  TextArea ColNum to use instead of JSLOG_DEF_DOM_EL_COL_NUM </li>   												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_TEXT_BOX_ROW_NUM) </li>   												<li> .log_style  to log also style: JSLOG_OPT.NONE (default)  JSLOG_OPT.ONLY_MEANINGFUL JSLOG_OPT.ALL </li>  											</ul></td>
         </tr>
 
     
@@ -1564,7 +1564,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line372">line 372</a>
+        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line423">line 423</a>
     </li></ul></dd>
     
 
@@ -1791,7 +1791,7 @@
 
             
 
-            <td class="description last">Optional Options: <ul>    												<li> .iColNum  TextArea ColNum to use instead of JSLOG_DEF_DOM_EL_COL_NUM </li>   												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_DOM_EL_ROW_NUM) </li>   												<li> .log_style  to log also style: JSLOG_OPT.NONE (default)  JSLOG_OPT.ONLY_MEANINGFUL JSLOG_OPT.ALL </li>  											</ul></td>
+            <td class="description last">Optional Options: <ul>    												<li> .iColNum  TextArea ColNum to use instead of JSLOG_DEF_DOM_EL_COL_NUM </li>   												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_TEXT_BOX_ROW_NUM) </li>   												<li> .log_style  to log also style: JSLOG_OPT.NONE (default)  JSLOG_OPT.ONLY_MEANINGFUL JSLOG_OPT.ALL </li>  											</ul></td>
         </tr>
 
     
@@ -1832,7 +1832,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line478">line 478</a>
+        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line526">line 526</a>
     </li></ul></dd>
     
 
@@ -2036,7 +2036,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line542">line 542</a>
+        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line590">line 590</a>
     </li></ul></dd>
     
 
@@ -2287,6 +2287,267 @@ jslogVar in
 
     
 
+    <h4 class="name" id="jslogHtml"><span class="type-signature"></span>jslogHtml<span class="signature">(iLogLev, szMsg, szHtml, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    LOG HTML: log a Text contanint HTML. We log it into a TextBox <BR/>If jslog CONSOLE is Present, Log main szHtml into a TextArea of the jslog CONSOLE if Level is enable <BR/>If jslog was initialized with Level=0 or if iLogLev is not enabled, this function does not log
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>iLogLev</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">JSLOG_INFO, ..</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>szMsg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Initial Message</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>szHtml</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Message To log that can contain HTML TAGs</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objOpt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Optional Options: <ul>    												<li> .iColNum  TextArea ColNum to use instead of JSLOG_DEF_DOM_EL_COL_NUM </li>   												<li> .iRowNum  TextArea RowNum to use instead of the rows automatically calculated (MAX is JSLOG_MAX_TEXT_BOX_ROW_NUM) </li>  											</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line362">line 362</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    0
+</div>
+
+
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>jslogHTML (JSLOG_TEST,'selectTest',getElementById('selectTest').innerHTML);  
+
+  LOGGED:
+
+selectTest:  
+&lt;select class="detFilter" id="googleAnalType" title="Initial Analytics TYPE displayed. Then it can be changed form Google Analitycs page"  style="width:100%;"  onchange="tt_onchangeGoogleAnalType();" >
+&lt;option class="detFilter" value="all" selected >All Time&lt;/option> 
+&lt;option class="detFilter" value="month"  >Last Month&lt;/option> 
+&lt;option class="detFilter" value="week"  >Last Week&lt;/option> 
+&lt;option class="detFilter" value="day"  >Last Day&lt;/option> 
+&lt;option class="detFilter" value="two_hours"  >Last 2 Hours&lt;/option> </code></pre>
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="jslogJson"><span class="type-signature"></span>jslogJson<span class="signature">(iLogLev, szMsg, json)</span><span class="type-signature"></span></h4>
 
     
@@ -2433,7 +2694,7 @@ jslogVar in
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line525">line 525</a>
+        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line573">line 573</a>
     </li></ul></dd>
     
 
@@ -3050,7 +3311,7 @@ json      i    Json obj
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line491">line 491</a>
+        <a href="jslog.js.html">jslog.js</a>, <a href="jslog.js.html#line539">line 539</a>
     </li></ul></dd>
     
 
@@ -3102,13 +3363,13 @@ json      i    Json obj
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#isLogLevEnable">isLogLevEnable</a></li><li><a href="global.html#jslog">jslog</a></li><li><a href="global.html#JSLOG_DEBUG">JSLOG_DEBUG</a></li><li><a href="global.html#jslog_end">jslog_end</a></li><li><a href="global.html#JSLOG_ERR">JSLOG_ERR</a></li><li><a href="global.html#JSLOG_INFO">JSLOG_INFO</a></li><li><a href="global.html#jslog_init">jslog_init</a></li><li><a href="global.html#JSLOG_JSU">JSLOG_JSU</a></li><li><a href="global.html#JSLOG_LEV_URL">JSLOG_LEV_URL</a></li><li><a href="global.html#JSLOG_LEV_URL_PAR">JSLOG_LEV_URL_PAR</a></li><li><a href="global.html#JSLOG_OPT">JSLOG_OPT</a></li><li><a href="global.html#JSLOG_SIZE">JSLOG_SIZE</a></li><li><a href="global.html#JSLOG_TEST">JSLOG_TEST</a></li><li><a href="global.html#JSLOG_TRACE">JSLOG_TRACE</a></li><li><a href="global.html#jslogDomEl">jslogDomEl</a></li><li><a href="global.html#jslogDomElById">jslogDomElById</a></li><li><a href="global.html#jslogElapsedTime">jslogElapsedTime</a></li><li><a href="global.html#jslogGetLogLev">jslogGetLogLev</a></li><li><a href="global.html#jslogGetOpt">jslogGetOpt</a></li><li><a href="global.html#jslogJson">jslogJson</a></li><li><a href="global.html#jslogLevSet">jslogLevSet</a></li><li><a href="global.html#jslogObj">jslogObj</a></li><li><a href="global.html#jslogSetSize">jslogSetSize</a></li><li><a href="global.html#json2jslogStr">json2jslogStr</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#isLogLevEnable">isLogLevEnable</a></li><li><a href="global.html#jslog">jslog</a></li><li><a href="global.html#JSLOG_DEBUG">JSLOG_DEBUG</a></li><li><a href="global.html#jslog_end">jslog_end</a></li><li><a href="global.html#JSLOG_ERR">JSLOG_ERR</a></li><li><a href="global.html#JSLOG_INFO">JSLOG_INFO</a></li><li><a href="global.html#jslog_init">jslog_init</a></li><li><a href="global.html#JSLOG_JSU">JSLOG_JSU</a></li><li><a href="global.html#JSLOG_LEV_URL">JSLOG_LEV_URL</a></li><li><a href="global.html#JSLOG_LEV_URL_PAR">JSLOG_LEV_URL_PAR</a></li><li><a href="global.html#JSLOG_OPT">JSLOG_OPT</a></li><li><a href="global.html#JSLOG_SIZE">JSLOG_SIZE</a></li><li><a href="global.html#JSLOG_TEST">JSLOG_TEST</a></li><li><a href="global.html#JSLOG_TRACE">JSLOG_TRACE</a></li><li><a href="global.html#jslogDomEl">jslogDomEl</a></li><li><a href="global.html#jslogDomElById">jslogDomElById</a></li><li><a href="global.html#jslogElapsedTime">jslogElapsedTime</a></li><li><a href="global.html#jslogGetLogLev">jslogGetLogLev</a></li><li><a href="global.html#jslogGetOpt">jslogGetOpt</a></li><li><a href="global.html#jslogHtml">jslogHtml</a></li><li><a href="global.html#jslogJson">jslogJson</a></li><li><a href="global.html#jslogLevSet">jslogLevSet</a></li><li><a href="global.html#jslogObj">jslogObj</a></li><li><a href="global.html#jslogSetSize">jslogSetSize</a></li><li><a href="global.html#json2jslogStr">json2jslogStr</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Aug 11 2016 13:43:00 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Aug 15 2016 11:52:38 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

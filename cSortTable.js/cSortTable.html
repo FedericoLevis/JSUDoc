@@ -95,7 +95,7 @@
 
             
 
-            <td class="description last">in  Id of TABLE if HTML - If bCognos: spanId including TABLE</td>
+            <td class="description last">Id of the HTML TABLE to sort - If bCognos=true szElId=spanId that enclose the Cognos List to Sort</td>
         </tr>
 
     
@@ -118,7 +118,7 @@
 
             
 
-            <td class="description last">in  Array with the SortCol (See EXample later)</td>
+            <td class="description last">Array with the SortCol (See Example below)</td>
         </tr>
 
     
@@ -142,22 +142,27 @@
             
 
             <td class="description last">Options: <BR/>
-					- iRowSortHeader {Number}  Default =1   index [1,2,..] of the Row Header, where we will put the SortIcons <BR/>
+					- iRowHeader {Number}  Default =1   Number [1,2,..] of Row Header <BR/>
+					- iRowSortHeader {Number}  Default =1   Number [1,2,..] of the Row where we have to put the Sort Icon. e.g 2 if we have 2 row header and we want to put icon in the second row<BR/>
+					   NOTE: you can also define only one of previous. if you set only iRowHeader=2 also iRowSortHeader will be 2 <BR/>
+					   you can define both for particular cases (e.g iRowHeader=2 iRowSortHeader=1 for Filter presence) <BR/> 
 					- szSortCol	{String}		Current Sort Col to be set.	 <BR/>
 																Default. Par is absent and First Col is Set, without applying the Sort (we suppose Table already Sorted) <BR/>
+																To init without any SortCol, pass szSortCol = ""
 																	a) bCognos=false: First Col is Set  <BR/>
 																	b) bCognos=true: Current Col is taken by selectSortCol <BR/>
 					- szSortDir	{String}		Current SortDir: SORT_DIR.ASC, SORT_DIR.DESC, SORT_DIR.NONE . <BR/>
 																Default: par is absent and we use: <BR/>
 																	a) bCognos=false: SORT_DIR.ASC <BR/>
 																	b) bCognos=true: Current Dir is taken by selectSortDir <BR/>
-					- bSortApply {Boolean}	Def=false if true apply the current SortCol/ SortDir 											 <BR/>
-	  			- szPathImg {String}   	BaseSortPath (e.g	"../../../images") to be used instead  of the one confifured in conf.js <BR/>
+					- bSortApply {Boolean}	Default=false If true apply the current SortCol/ SortDir 											 <BR/>
+	  			- szFmtDatetime (String}  Fmt to be used for Datetime if the Info is passed for the DATETIME Columns into szSortCol .fmt parameter	 <BR/>
+	  			- szPathImg {String}   	BaseSortPath (e.g	"../../../images") to be used instead  of the default image Path <BR/>
 	  			- iTblRowPerPage {Number}   If present is the limit of Rows displayed in the Table. For Cognos is the Setting of the List properties RowPerPage <BR/>
 	  																When not present (default), we consider all the Table always displayed <BR/>
-	  			- szFmtDatetime (String}  Fmt to be used for Datetime if Info is not defined								 <BR/>
 	  			- szClassFooter {String}    class that identity the TR and/OR TD Footer rows					 <BR/>
-					- bCognos				{Boolean}     default=false Cognos Sort: szElId identify the span in front of the Table <BR/>
+	  			- bNoStartupSortIco {Boolean} [false] true to avoid setting a default ico sort at startup (in the First col)
+					- bCognos				{Boolean}     default=false . true for Cognos  Sort: in this case szElId identifies the span in front of the Table <BR/>
 					- bCognosGlobalSort {Boolean} Default=false. Only for bCognos=true <BR/>
 																			When The Table is displayed and More than one Page is present we cannot make Local Sort: <BR/>
 																			  a) bCognosGlobalSort=false  LocalSort is Disable (Gray icons) <BR/>
@@ -229,8 +234,9 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>var arSortCol = [  {col: 'Country'},   
-					{col: 'Last Name'}, 
+    <pre class="prettyprint"><code>// First 3 colums have default type: SORT_TYPE.STRING that is set when .type is not present 
+	var arSortCol = [  {col: 'Country'},   
+					{col: 'Last Name'},        
 					{col: 'Email'}, 
 	        {col:'Payment', type: SORT_TYPE.DATETIME, fmt: 'yyyy/MM/dd HH:mm'}, 
 	        {col: 'Amount', type: SORT_TYPE.NUMBER, groupSep:',', decimalSep:'.'}] 
@@ -238,8 +244,8 @@
 	var LIST_ROWS_PER_PAGE=1000; // RowPerPage properties: till 1000 Rec we can make FastSort 
  
 	// Cognos Table with 1000 RowsPerPage. Enable GlobalSort if the Table has More than 1000 Rec 
-	var cSortTbl1 = new cSortTable("tblSort",arSortTest,{bCognos=true,bCognosGlobalSort=true,iTblRowPerPage=LIST_ROWS_PER_PAGE); </code></pre>
-    </code></pre>
+	var cSortTbl1 = new cSortTable("tblSort",arSortCol,{bCognos=true,bCognosGlobalSort=true,iTblRowPerPage=LIST_ROWS_PER_PAGE); </code></pre>
+
 
 
     
@@ -312,7 +318,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cSortTable.js.html">cSortTable.js</a>, <a href="cSortTable.js.html#line531">line 531</a>
+        <a href="cSortTable.js.html">cSortTable.js</a>, <a href="cSortTable.js.html#line556">line 556</a>
     </li></ul></dd>
     
 
@@ -400,7 +406,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cSortTable.js.html">cSortTable.js</a>, <a href="cSortTable.js.html#line539">line 539</a>
+        <a href="cSortTable.js.html">cSortTable.js</a>, <a href="cSortTable.js.html#line564">line 564</a>
     </li></ul></dd>
     
 
@@ -488,7 +494,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cSortTable.js.html">cSortTable.js</a>, <a href="cSortTable.js.html#line547">line 547</a>
+        <a href="cSortTable.js.html">cSortTable.js</a>, <a href="cSortTable.js.html#line572">line 572</a>
     </li></ul></dd>
     
 
@@ -628,7 +634,7 @@ this.arSortCol</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cSortTable.js.html">cSortTable.js</a>, <a href="cSortTable.js.html#line472">line 472</a>
+        <a href="cSortTable.js.html">cSortTable.js</a>, <a href="cSortTable.js.html#line497">line 497</a>
     </li></ul></dd>
     
 
@@ -676,7 +682,7 @@ this.arSortCol</td>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Aug 11 2016 13:42:56 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Aug 15 2016 11:52:34 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
