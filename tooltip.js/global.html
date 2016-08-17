@@ -140,7 +140,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line85">line 85</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line89">line 89</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line67">line 67</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line71">line 71</a>
     </li></ul></dd>
     
 
@@ -226,7 +226,7 @@
 
 
 <div class="description">
-    Optional TipFixedPos
+    Optional TipFixPos
 </div>
 
 
@@ -486,7 +486,7 @@ NOTE: it is also used internally with other tipType
             
 
             <td class="description last">Option: <BR/>
-                        - bMsgHtml [true]  if false is not converted to HTML
+                        - bNL2BR [true]  if true convert NewLine to <BR/>
 
 		GLOBAL
 Set tip_type = tipType</td>
@@ -530,7 +530,7 @@ Set tip_type = tipType</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line260">line 260</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line255">line 255</a>
     </li></ul></dd>
     
 
@@ -561,7 +561,7 @@ Set tip_type = tipType</td>
 
     
 
-    <h4 class="name" id="TipFixedClicked"><span class="type-signature"></span>TipFixedClicked<span class="signature">(tipMsgHtml, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="TipFix"><span class="type-signature"></span>TipFix<span class="signature">(tipMsgHtml, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
@@ -685,13 +685,14 @@ Set tip_type = tipType</td>
 
             
 
-            <td class="description last">Option: <BR/>
-                           - szTitle{String}  default: ''   <BR/>
-                           - bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  <BR/>
-														- iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
-													  - iWidth {Number}:  TipWidth - Default = DEF_TIP_WIDTH = 800 <BR/>
-														- tipFixedPos:  TIP_FIXED_POS.CENTER,... n (e.g -100)   default=TIP_FIXED_POS.CENTER  <BR/>
-													  - bMsgHtml= [true]  if false it is not converted to HTML 
+            <td class="description last">Option: <ul>
+                           <li> szTitle{String}  default: ''   </li> 
+                           <li> bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  </li> 
+														<li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+													  <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+														<li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...) n (e.g -100)   default=TIP_FIXED_POS.CENTER  </li> 
+													  <li> bNL2BR= [true]  if true /n are converted to </li> 
+                          </ul> 
 		GLOBAL
 Set tip_type = tipType</td>
         </tr>
@@ -734,7 +735,7 @@ Set tip_type = tipType</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line304">line 304</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line300">line 300</a>
     </li></ul></dd>
     
 
@@ -765,7 +766,427 @@ Set tip_type = tipType</td>
 
     
 
-    <h4 class="name" id="TipFixedGoogleAnal"><span class="type-signature"></span>TipFixedGoogleAnal<span class="signature">(arObjGoogleAnal, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="TipFixCode"><span class="type-signature"></span>TipFixCode<span class="signature">(szCode, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Display a Fixed Tip with Code Hightlighted with JSU core/prettify/prettify-jsu.js <BR/>
+Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b? <BR/>
+See prettify-jsu.js for the detail of supported languages <BR/>
+  
+  NOTE:  <ul>
+  <li> a) if core/prettify/prettify-jsu.js is Enabled (Loaded and FULL Version), the code is higlighted  </li> 
+  <li> b) if core/prettify/prettify-jsu.js is NOT Enabled, the code is displayed as Plain Text in TextArea </li> 
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>szCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">jsCode to display, with \n for newline. <BR/>
+                         <label class="tipWarn">szCode with HTML is not supported by this function. To show HTML Code you can use TipFixMultiCode or TipFixTextArea</label></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objOpt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Option: <ul>    
+                          <li> szTitle{String}  default:  TIP_DEF_CODE_TITLE   </li> 
+													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL </li>  
+                          <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
+													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li> 
+													</ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line474">line 474</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="TipFixGoogle"><span class="type-signature"></span>TipFixGoogle<span class="signature">(event, videoEmbedUrl, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    TipFix with a Video
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>videoEmbedUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">e.g:</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objOpt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Option: <ul>    
+                          <li> szTitle{String}  default: 'Text'  </li> 
+													 <li> iTipWidth {Number}: [800] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+                          <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
+													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li>
+                         </ul></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line678">line 678</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="TipFixGoogleAnal"><span class="type-signature"></span>TipFixGoogleAnal<span class="signature">(arObjGoogleAnal, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
@@ -900,9 +1321,9 @@ Set tip_type = tipType</td>
                           <li> szHeaderTxt {String}: [DEF_TIP_GOOGLE_HEADER] Message to put before the Table of Link to Analytics 
                           <li> szFooterTxt {String}: [DEF_TIP_GOOGLE_FOOTER] Message to put after the Table of Link to Analytics 
                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
-													 <li> iWidth {Number}:  TipWidth <li> Default = DEF_TIP_WIDTH = 800 </li> 
-													 <li> iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  </li>  
-													 <li> tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   </li>
+													 <li> iTipWidth {Number}: [undefined] TipWidth  - default TIP_DEF_WIDTH (800) </li> 
+													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li>
                         </ul></td>
         </tr>
 
@@ -944,7 +1365,7 @@ Set tip_type = tipType</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line600">line 600</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line732">line 732</a>
     </li></ul></dd>
     
 
@@ -983,9 +1404,9 @@ Set tip_type = tipType</td>
 	       {shortUrl: JSU_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:"FREE JSU", desc:'SortTable Sample'},
 	       {shortUrl: JSU_URL_SAMPLE_BLOCKPOPUP, longUrl: JSU_LONG_URL_SAMPLE_BLOCKPOPUP, cat:"FREE JSU",desc:'Blocking Popup'}
 	     ];
-	  TipFixedGoogleAnal(arObjGoogleAnal,event,{
+	  TipFixGoogleAnal(arObjGoogleAnal,event,{
 	  	szTitle:'JSU Google Analitycs',
-	  	iWidth: 1200
+	  	iTipWidth: 1200
 	  });
 	}	
  //--------------------------------------------------------- HTML   
@@ -998,16 +1419,20 @@ Set tip_type = tipType</td>
 
     
 
-    <h4 class="name" id="TipFixedJS"><span class="type-signature"></span>TipFixedJS<span class="signature">(jsCode, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="TipFixMultiCode"><span class="type-signature"></span>TipFixMultiCode<span class="signature">(arObjCode, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    Display a Fixed Tip with JS Code. <ul>
-  <li> a) if prettify/prettify-jsu.js is loaded, the code is higlighted  </li> 
-  <li> b) if prettify/prettify-jsu.js is NOT loaded, the code is displayed as Plain Text in a TextBox with TipFixedTextBox</li> 
+    Display a Fixed Tip with Code Hightlighted with JSU core/prettify/prettify-jsu.js <BR/>
+Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b? <BR/>
+See prettify-jsu.js for the detail of supported languages <BR/>
+  
+  NOTE:  <ul>
+  <li> a) if core/prettify/prettify-jsu.js is Enabled (Loaded and FULL Version), the code is higlighted  </li> 
+  <li> b) if core/prettify/prettify-jsu.js is NOT Enabled, the code is displayed as Plain Text in TextArea </li> 
 </ul>
 </div>
 
@@ -1046,13 +1471,13 @@ Set tip_type = tipType</td>
 
         <tr>
             
-                <td class="name"><code>jsCode</code></td>
+                <td class="name"><code>arObjCode</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">Array</span>
 
 
             
@@ -1070,7 +1495,13 @@ Set tip_type = tipType</td>
 
             
 
-            <td class="description last">jsCode to display, with \n for newline</td>
+            <td class="description last">Array of Obj with the info of the code display. ESech Obj of the Array can have follwoing fields: <ul>
+														 <li> szTitle {String} e.g "JS" - Title of the Section</li>
+														 <li> szCode {String} The Code to diaply in section</li>
+														 <li> bPrettify  {Boolean} [true]  true if szCode must be prettified. If szCode contains HTML Tags you have to set bPrettify=false if you wnat to see the Text with HTMLTags into a TextArea, witout prettify it</li>
+														 <li> iRowNum {Number} [undefined] Only for Obj.bPrettify=false. If it is not present (default), the Rows of TextArea are automatically calculated basing on /n. If passed  iRowNum is used</li>
+			                      </ul> 
+                           See example below <BR/></td>
         </tr>
 
     
@@ -1129,12 +1560,14 @@ Set tip_type = tipType</td>
 
             
 
-            <td class="description last">Option: <BR/>   
-                          - szTitle{String}  default: 'JS Source Code'  <BR/>
-													 - iWidth {Number}:  Width of the Tip - Default: TIP_DEF_WIDTH (800)  <BR/>
-													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL <BR/> 
-                          - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
-													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/></td>
+            <td class="description last">Option: <ul>   
+                          <li> szTitle{String}  default: 'Source Code'  <li/>
+													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+													 <li> iTipMaxHeight {Number}:  Max Height (px) of the Tip . Default =0 NO SCROLL <li/> 
+                          <li> iColNum  {Number}  default: 80 Can be used to change the colnum of all the TextArea of the Tip  <li/>
+                          <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <li/>
+													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)     default=TIP_FIXED_POS.CENTER   <li/>
+													</ul></td>
         </tr>
 
     
@@ -1175,7 +1608,7 @@ Set tip_type = tipType</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line488">line 488</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line528">line 528</a>
     </li></ul></dd>
     
 
@@ -1200,149 +1633,9 @@ Set tip_type = tipType</td>
 
 
 
-
-        
-            
-
+    <h5>Example</h5>
     
-
-    <h4 class="name" id="TipFixedMouseOver"><span class="type-signature"></span>TipFixedMouseOver<span class="signature">(tipMsgHtml, event)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>tipMsgHtml</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line422">line 422</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <pre class="prettyprint"><code>DAFARE</code></pre>
 
 
 
@@ -1351,14 +1644,14 @@ Set tip_type = tipType</td>
 
     
 
-    <h4 class="name" id="TipFixedTextBox"><span class="type-signature"></span>TipFixedTextBox<span class="signature">(szTxt, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="TipFixTextArea"><span class="type-signature"></span>TipFixTextArea<span class="signature">(szTxt, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    Display whatever Text (also HTML TAGs) in a TextBox of a FixedTip. For Example this function is used to display mixed JS and HTML code
+    Display whatever Text (also HTML TAGs) in a TextArea of a FixedTip. For Example this function is used to display mixed JS and HTML code
 </div>
 
 
@@ -1479,14 +1772,16 @@ Set tip_type = tipType</td>
 
             
 
-            <td class="description last">Option: <BR/>   
-                          - szTitle{String}  default: 'Text'  <BR/>
-                          - iColNum{Number}  default=100 Number of Column for TextBox <BR/>
-                          - iRowNum{Number}  default=20 Number of Rows for TextBox (if more rows are present, scrollbar will be created) <BR/>
-                          - bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <BR/>
-													 - iWidth {Number}:  TipWidth - Default = DEF_TIP_WIDTH = 800 <BR/>
-													 - iMaxHeight {Number}:  Max Height (px) of the div that contain the JS   (with autoscroll). Default =0 NO SCROLL  <BR/> 
-													 - tipFixedPos:  TIP_FIXED_POS.CENTER,...  n   default=TIP_FIXED_POS.CENTER   <BR/></td>
+            <td class="description last">Option: <ul>    
+                          <li> szTitle{String}  default: 'Text'  </li> 
+                          <li> iColNum{Number}  default=100 Number of Column for TextArea </li> 
+                          <li> iRowNum{Number}  default=20 Number of Rows for TextArea (if more rows are present, scrollbar will be created).  
+                               Usually do not pass iRowNum, so it is automatically calculatd</li>
+                          <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
+													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li>
+                         </ul></td>
         </tr>
 
     
@@ -1527,7 +1822,7 @@ Set tip_type = tipType</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line544">line 544</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line638">line 638</a>
     </li></ul></dd>
     
 
@@ -1555,7 +1850,7 @@ Set tip_type = tipType</td>
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>//This is an example of MIXED Code: JS and also HTML.  
-		//	HTML TAGs cannot be displayed with TipJSFixedClick(), but you should use TipTextBoxFixedClick()   
+		//	HTML TAGs cannot be displayed with TipJSFixedClick(), but you should use TipTextAreaFixedClick()   
 		
 		//--------------------------------------------------------- JS   
 		var JS_CODE_SORT_SAMPLE=...;  
@@ -1564,11 +1859,11 @@ Set tip_type = tipType</td>
 		//  - value=Text to display in the button 	
 		//  - set whatever unique id   
 		//  - onclick="TipJSFixedClicked(msg,event,objOpt)" 	
-		//  - objOpt = {iMaxHeight:300} for Optional MaxHeight (Vertical Scrollbar) 
+		//  - objOpt = {iTipMaxHeight:300} for Optional MaxHeight (Vertical Scrollbar) 
 		
 		//--------------------------------------------------------- HTML   
 		 &lt;input type="button" class="tipFixed" style="color:blue;" value="JS Source Code" id="tipBtnJSFixedSample"  
-		    onclick="TipJSFixedClicked(JS_CODE_SORT_SAMPLE,event,{iMaxHeight:300});" /> ; </code></pre>
+		    onclick="TipJSFixedClicked(JS_CODE_SORT_SAMPLE,event,{iTipMaxHeight:300});" /> ; </code></pre>
 
 
 
@@ -1585,7 +1880,7 @@ Set tip_type = tipType</td>
 
 <div class="description">
     Call this function to Hide the Tip after Tip() Call <BR/>
-If currently a TipFixed is displayed, it is not closed (to manage both TipFixed at Click and Tip/Untip
+If currently a TipFix is displayed, it is not closed (to manage both TipFix at Click and Tip/Untip
  
 GLOBAL 
 tip_type Set it to TIP_TYPE.NONE
@@ -1632,7 +1927,7 @@ tip_type Set it to TIP_TYPE.NONE
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line450">line 450</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line431">line 431</a>
     </li></ul></dd>
     
 
@@ -1674,13 +1969,13 @@ tip_type Set it to TIP_TYPE.NONE
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Tip">Tip</a></li><li><a href="global.html#TIP_CFG_FIXED">TIP_CFG_FIXED</a></li><li><a href="global.html#TIP_CFG_FLOATING">TIP_CFG_FLOATING</a></li><li><a href="global.html#TIP_FIXED_POS">TIP_FIXED_POS</a></li><li><a href="global.html#TIP_TYPE">TIP_TYPE</a></li><li><a href="global.html#TipFixedClicked">TipFixedClicked</a></li><li><a href="global.html#TipFixedGoogleAnal">TipFixedGoogleAnal</a></li><li><a href="global.html#TipFixedJS">TipFixedJS</a></li><li><a href="global.html#TipFixedMouseOver">TipFixedMouseOver</a></li><li><a href="global.html#TipFixedTextBox">TipFixedTextBox</a></li><li><a href="global.html#UnTip">UnTip</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Tip">Tip</a></li><li><a href="global.html#TIP_CFG_FIXED">TIP_CFG_FIXED</a></li><li><a href="global.html#TIP_CFG_FLOATING">TIP_CFG_FLOATING</a></li><li><a href="global.html#TIP_FIXED_POS">TIP_FIXED_POS</a></li><li><a href="global.html#TIP_TYPE">TIP_TYPE</a></li><li><a href="global.html#TipFix">TipFix</a></li><li><a href="global.html#TipFixCode">TipFixCode</a></li><li><a href="global.html#TipFixGoogle">TipFixGoogle</a></li><li><a href="global.html#TipFixGoogleAnal">TipFixGoogleAnal</a></li><li><a href="global.html#TipFixMultiCode">TipFixMultiCode</a></li><li><a href="global.html#TipFixTextArea">TipFixTextArea</a></li><li><a href="global.html#UnTip">UnTip</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Aug 15 2016 11:52:41 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Aug 17 2016 03:19:00 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
