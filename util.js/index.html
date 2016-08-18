@@ -43,95 +43,81 @@
 
 
     <section>
-        <article><html>
-
-<script>
+        <article><script>
   // Required for DOC of JS Code
   var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master";
 </script>
 
-<head>
+<p><head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
-  <title>JSU Tooltip Documentation</title>
-    <!-- sample -->
+  <title>JS Utility | JSU API Documentation | Federico Levis</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="JSU utility (JSU) - Validate Items with many constraints/options | Show Validate Errors in Red Items or Section, Popup, Gif | Add tooltip near items" />
+  <meta name="keywords" content="js, utility, JSU, API, documentation, doc, tooltip, popup, validate, sort, loading, log, federico, levis" />
+    <!-- Tooltip sample -->
     <link rel="stylesheet" type="text/css" href="https://rawgit.com/FedericoLevis/JSU/master/samples/Sample.css">
+    <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.js" ></script>
     <!--  JSU   -->
     <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/core.css" type="text/css">
     <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/Popup.css" type="text/css">
     <script data-main="https://rawgit.com/FedericoLevis/JSU/master/plugin/jsu.js" src="https://rawgit.com/FedericoLevis/JSU/master/core/require.js"></script>
     <!-- About -->
     <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.css" type="text/css">
-    <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.js" ></script>
-</head>
-
-
-<!-- JSU HEADER COMMON FOR ALL DOC  -->
+    <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.js" ></script></p>
+   <!-- ONLY FOR Prettify (used to color JS Code in Tip)  -->
+<p>  <link rel="stylesheet" href="../../core/prettify/prettify-jsu.css" type="text/css">
+  <script type="text/javascript" src="../../core/prettify/prettify-jsu.js" ></script></p>
+<p> </head></p>
+<p><body>
+<!-- JSU HEADER COMMON FOR ALL API DOC   --></p>
 <table class="jsuHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="250px" align="center"> <img width="290px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
-      <td >
-      <table class="jsuHeaderNoBorder" width="100%">
-        <tr>
-        <td >
-        <table class="jsuHeaderNoBorder" width="100%">
+      <td ><table class="jsuHeaderNoBorder" width="100%">
+        <tr><td ><table class="jsuHeaderNoBorder" width="100%">
+          <tr>
+            <td class="tipl" width="150px"><label class="tiptitle">JSU Help: </label></td>
+            <td class="tiplBold">Features<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" /></td>
+          <tr/>
+          <tr>
+            <td  class="tipl"><label class="tiptitle">Author:</label></td>
+            <td class="tiplBold">Federico Levis <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" /></td>
+          <tr/>
           <tr>
             <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
             <td class="tipl"><a class="tipLink" href="https://goo.gl/MoY5nK" target="_blank">Try JSU Samples</a> </td>
           <tr/>
-          <tr>
-            <td class="tipl"><label class="tiptitle">JSU Doc: </label></td>
-            <td class="tipl"><a class="tipLink" href="https://goo.gl/JzIXW0" target="_blank">https://rawgit.com/FedericoLevis/JSU/master/README.html</a> </td>
-          <tr/>
-          <tr>
-            <td class="tipl" width="180px"><label class="tiptitle">JSU GitHub: </label></td>
-            <td class="tipl"><a class="tipLink" href="https://goo.gl/LYDepH" target="_blank">https://github.com/FedericoLevis/JSU</a> </td>
-          <tr/>
-          <tr>
-            <td  class="tipl"><label class="tiptitle">Author: </label></td>
-            <td class="tipl"><a class="tipLink" href="https://goo.gl/J9mJfh" target="_blank">Federico Levis</a> </td>
-          <tr/>
-          <tr>
-            <td class="tipl"><label class="tiptitle">Email:</label></td>
-            <td class="tipl"><a class="tipLink" href="mailto:federico.levis@virgilio.it" target="_blank">federico.levis@virgilio.it</a> </td>
-          <tr/>
-        </table>
-        </td>
-        </tr>
+
+        </table></td></tr>
       </table></td> 
     </tr>
 </table> 
-<hr>
 
 
-<!--  Header Table: GoogleAnalytics and download -  common for all the JSU HTML -->
-<table  width="100%">
-  <tr>
-  <td class=tipl"">
-     <input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)"  onmouseover="jsuGoogleAnalTip(event);" onmouseout="UnTip(event)"/> 
-  </td>
-  <td class="tipr">
-  <b>Download Options:</b> 
-  <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
-  <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
-  <input type="button" class="downloadFree" onclick="downloadFree();"    onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
-  </td></tr>
+<!--  Header Table: GoogleAnalytics and download -  common for all the JSU API Doc - NB: No Download Option because there is less space -->
+<table class="sampleHea" width="100%" >
+  <tr >
+    <td class="tipl" width="30%">
+        <input type="button"  class="tipGoogleAnalList" id="tipGoogleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
+    </td>
+    <td class="tipr" width="70%">
+     <table valign="bottom" align="right">
+        <tr>
+            <td valign="bottom"> <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalPay"  onclick="jsuGoogleAnalPay();"  onmouseover="jsuGoogleAnalPayTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button" class="downloadFree" onclick="downloadFree();" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
+        </tr>
+      </table><br>    </td>
+  </tr>
 </table>   
 
 
-<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
-    <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipJSU(event);" />
-        <label class="aboutAuthor">by Federico Levis</label>
-            <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
-      </th>
-    </tr>
-</table>
+<p><hr class="jsuDoc"></p>
+<h1 class="jsuDoc">JSU - JS Utility Plugin  - JS API Documentation</h1>
 
-<table class="table.jsuHeaderNoBorder" cellspacing="0" cellpadding="2" width="100%">
-    <tr >
-      <th class="tiptitleVeryBig">JSU API DOCUMENTATION</th>
-    </tr>
-</table></article>
+<!--  USED by jsuGoToURL()  -->
+<p>&lt;a id=&quot;href_hidden&quot; target=&quot;_blank&quot; href=&quot;&quot; style=&quot;display:none&quot;&quot;&gt;HIDDEN</a></p></article>
     </section>
 
 
@@ -258,7 +244,7 @@ In "JSU Obfuscated Version"  JS Code is not visible with JSDoc Source Link  <BR/
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Aug 17 2016 03:19:01 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Aug 18 2016 14:16:41 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

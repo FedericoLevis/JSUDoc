@@ -140,7 +140,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line89">line 89</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line71">line 71</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line73">line 73</a>
     </li></ul></dd>
     
 
@@ -694,7 +694,10 @@ Set tip_type = tipType</td>
 													  <li> bNL2BR= [true]  if true /n are converted to </li> 
                           </ul> 
 		GLOBAL
-Set tip_type = tipType</td>
+Set tip_type = tipType
+
+Implementation NOTES:
+- all the other tiFixXXX call this funzion</td>
         </tr>
 
     
@@ -735,7 +738,7 @@ Set tip_type = tipType</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line300">line 300</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line303">line 303</a>
     </li></ul></dd>
     
 
@@ -949,7 +952,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line474">line 474</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line479">line 479</a>
     </li></ul></dd>
     
 
@@ -980,213 +983,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 
     
 
-    <h4 class="name" id="TipFixGoogle"><span class="type-signature"></span>TipFixGoogle<span class="signature">(event, videoEmbedUrl, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-
-    
-
-
-
-<div class="description">
-    TipFix with a Video
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>videoEmbedUrl</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">e.g:</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>objOpt</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">Option: <ul>    
-                          <li> szTitle{String}  default: 'Text'  </li> 
-													 <li> iTipWidth {Number}: [800] TipWidth  - do not pass it to automatically set it basing on content. </li> 
-													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
-                          <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
-													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li>
-                         </ul></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line678">line 678</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="TipFixGoogleAnal"><span class="type-signature"></span>TipFixGoogleAnal<span class="signature">(arObjGoogleAnal, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="TipFixGoogleAnalList"><span class="type-signature"></span>TipFixGoogleAnalList<span class="signature">(arObjGoogleAnalList, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
@@ -1231,7 +1028,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 
         <tr>
             
-                <td class="name"><code>arObjGoogleAnal</code></td>
+                <td class="name"><code>arObjGoogleAnalList</code></td>
             
 
             <td class="type">
@@ -1318,8 +1115,8 @@ See prettify-jsu.js for the detail of supported languages <BR/>
                           <li> szTitle{String}  default: 'Google Analytics'  </li> 
                           <li> bShortUrl {Boolean} [true] Show the colum with ShortUrl
                           <li> bLongUrl {Boolean} [true] Show the colum with LongUrl
-                          <li> szHeaderTxt {String}: [DEF_TIP_GOOGLE_HEADER] Message to put before the Table of Link to Analytics 
-                          <li> szFooterTxt {String}: [DEF_TIP_GOOGLE_FOOTER] Message to put after the Table of Link to Analytics 
+                          <li> szHeaderTxt {String}: [DEF_TIP_GOOGLE.HEADER] Message to put before the Table of Link to Analytics 
+                          <li> szFooterTxt {String}: [DEF_TIP_GOOGLE.FOOTER] Message to put after the Table of Link to Analytics 
                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
 													 <li> iTipWidth {Number}: [undefined] TipWidth  - default TIP_DEF_WIDTH (800) </li> 
 													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
@@ -1365,7 +1162,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line732">line 732</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line735">line 735</a>
     </li></ul></dd>
     
 
@@ -1394,9 +1191,9 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <pre class="prettyprint"><code>//--------------------------------------------------------- JS
 	function jsuGoogleAnalTip(event){   
-	  // Prepare arObjGoogleAnal: Only shortUrl is mandatory (if other fieleds are not present, they are not displayed). 
+	  // Prepare arObjGoogleAnalList: Only shortUrl is mandatory (if other fieleds are not present, they are not displayed). 
 	  // In this case we populate all fields
-	  var arObjGoogleAnal = [
+	  var arObjGoogleAnalList = [
 	       {shortUrl: JSU_URL_DOWNLOAD_PAGE_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE ,
 	      	              cat:"FREE JSU",desc:'N&amp;ordm; Download &lt;b>JSU.ZIP FREE&lt;/b> Obfuscated'},
 	       {shortUrl: JSU_URL_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL,cat:"FREE JSU", desc:'Main JSU Sample'},
@@ -1404,7 +1201,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 	       {shortUrl: JSU_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:"FREE JSU", desc:'SortTable Sample'},
 	       {shortUrl: JSU_URL_SAMPLE_BLOCKPOPUP, longUrl: JSU_LONG_URL_SAMPLE_BLOCKPOPUP, cat:"FREE JSU",desc:'Blocking Popup'}
 	     ];
-	  TipFixGoogleAnal(arObjGoogleAnal,event,{
+	  TipFixGoogleAnal(arObjGoogleAnalList,event,{
 	  	szTitle:'JSU Google Analitycs',
 	  	iTipWidth: 1200
 	  });
@@ -1500,6 +1297,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 														 <li> szCode {String} The Code to diaply in section</li>
 														 <li> bPrettify  {Boolean} [true]  true if szCode must be prettified. If szCode contains HTML Tags you have to set bPrettify=false if you wnat to see the Text with HTMLTags into a TextArea, witout prettify it</li>
 														 <li> iRowNum {Number} [undefined] Only for Obj.bPrettify=false. If it is not present (default), the Rows of TextArea are automatically calculated basing on /n. If passed  iRowNum is used</li>
+													   <li> iMaxHeight {Number}:  Only for Obj.bPrettify=true Max Height (px) of the Div - If Undefined there is no max <li/> 
 			                      </ul> 
                            See example below <BR/></td>
         </tr>
@@ -1608,7 +1406,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line528">line 528</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line534">line 534</a>
     </li></ul></dd>
     
 
@@ -1822,7 +1620,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line638">line 638</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line671">line 671</a>
     </li></ul></dd>
     
 
@@ -1927,7 +1725,7 @@ tip_type Set it to TIP_TYPE.NONE
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line431">line 431</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line436">line 436</a>
     </li></ul></dd>
     
 
@@ -1969,13 +1767,13 @@ tip_type Set it to TIP_TYPE.NONE
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Tip">Tip</a></li><li><a href="global.html#TIP_CFG_FIXED">TIP_CFG_FIXED</a></li><li><a href="global.html#TIP_CFG_FLOATING">TIP_CFG_FLOATING</a></li><li><a href="global.html#TIP_FIXED_POS">TIP_FIXED_POS</a></li><li><a href="global.html#TIP_TYPE">TIP_TYPE</a></li><li><a href="global.html#TipFix">TipFix</a></li><li><a href="global.html#TipFixCode">TipFixCode</a></li><li><a href="global.html#TipFixGoogle">TipFixGoogle</a></li><li><a href="global.html#TipFixGoogleAnal">TipFixGoogleAnal</a></li><li><a href="global.html#TipFixMultiCode">TipFixMultiCode</a></li><li><a href="global.html#TipFixTextArea">TipFixTextArea</a></li><li><a href="global.html#UnTip">UnTip</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Tip">Tip</a></li><li><a href="global.html#TIP_CFG_FIXED">TIP_CFG_FIXED</a></li><li><a href="global.html#TIP_CFG_FLOATING">TIP_CFG_FLOATING</a></li><li><a href="global.html#TIP_FIXED_POS">TIP_FIXED_POS</a></li><li><a href="global.html#TIP_TYPE">TIP_TYPE</a></li><li><a href="global.html#TipFix">TipFix</a></li><li><a href="global.html#TipFixCode">TipFixCode</a></li><li><a href="global.html#TipFixGoogleAnalList">TipFixGoogleAnalList</a></li><li><a href="global.html#TipFixMultiCode">TipFixMultiCode</a></li><li><a href="global.html#TipFixTextArea">TipFixTextArea</a></li><li><a href="global.html#UnTip">UnTip</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Aug 17 2016 03:19:00 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Aug 18 2016 14:16:39 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
