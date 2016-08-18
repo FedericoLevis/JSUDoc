@@ -20,6 +20,8 @@
     <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.js" ></script>
 </head>
 
+    <link rel="stylesheet" href="./about.css" type="text/css">
+
 
 <!-- JSU HEADER COMMON FOR ALL DOC  -->
 <table class="jsuHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
@@ -36,22 +38,14 @@
             <td class="tipl"><a class="tipLink" href="https://goo.gl/JzIXW0" target="_blank">https://rawgit.com/FedericoLevis/JSU/master/README.html</a> </td>
           <tr/>
           <tr>
-            <td class="tipl" width="180px"><label class="tiptitle">JSU GitHub: </label></td>
-            <td class="tipl"><a class="tipLink" href="https://goo.gl/LYDepH" target="_blank">https://github.com/FedericoLevis/JSU</a> </td>
-          <tr/>
-          <tr>
-            <td  class="tipl"><label class="tiptitle">Author: </label></td>
-            <td class="tipl"><a class="tipLink" href="https://goo.gl/J9mJfh" target="_blank">Federico Levis</a> </td>
-          <tr/>
-          <tr>
-            <td class="tipl"><label class="tiptitle">Email:</label></td>
-            <td class="tipl"><a class="tipLink" href="mailto:federico.levis@virgilio.it" target="_blank">federico.levis@virgilio.it</a> </td>
+            <td  class="tipl"><label class="tiptitle">Author:</label></td>
+            <td class="tiplBold">Federico Levis <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" /></td>
           <tr/>
         </table></td></tr>
       </table></td> 
     </tr>
 </table> 
-<hr>
+
 
 
 <!--  Header Table: GoogleAnalytics and download -  common for all the JSU HTML -->
@@ -62,7 +56,7 @@
   </td>
   <td class="tipr">
   <b>Download Options:</b> 
-  <input type="button"  class="tipFixed" id="tipFixedSample"  onclick="downloadTip(event)" /> 
+  <input type="button"  class="tipFix" id="tipFixSample"  onclick="downloadTip(event)" /> 
   <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/>
   <input type="button" class="downloadFree" onclick="downloadFree();"	onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  />
   </td></tr>
@@ -70,16 +64,20 @@
 
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFixed" id="tipJSUTitle" onclick="aboutTipJSU(event);" />
+      <th class="tiptitleBig" colspan="4">JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipJSU(event);" />
         <label class="aboutAuthor">by Federico Levis</label>
-            <input type="button" class="tipFixed" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+            <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
       </th>
     </tr>
 </table>
 
+<table class="docSep" width = "100%">
+</table>
+
+
 <table class="table.jsuHeaderNoBorder" cellspacing="0" cellpadding="2" width="100%">
     <tr >
-      <th class="tiptitleVeryBig">JSU DOCUMENTATION</th>
+      <th class="tiptitleVeryBig"><h1>JSU DOCUMENTATION</h1></th>
     </tr>
 </table>
 
