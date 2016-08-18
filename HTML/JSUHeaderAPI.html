@@ -20,20 +20,19 @@
     <!-- About -->
     <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.css" type="text/css">
     <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.js" ></script>
-
-   <!-- ONLY FOR Prettify (used to color JS Code in Tip)  -->
-  <link rel="stylesheet" href="../../core/prettify/prettify-jsu.css" type="text/css">
-  <script type="text/javascript" src="../../core/prettify/prettify-jsu.js" ></script>
+    <!-- 
+    <script type="text/javascript" src="../../../Cognos/jsu/samples/about/about.js" ></script>
+     -->
      
    
  </head>
 <body>
 <!-- JSU HEADER COMMON FOR ALL API DOC   -->
-<table class="jsuHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
+<table class="jsuDocHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="250px" align="center"> <img width="290px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
-      <td ><table class="jsuHeaderNoBorder" width="100%">
-        <tr><td ><table class="jsuHeaderNoBorder" width="100%">
+      <td ><table class="jsuDocHeaderNoBorder" width="100%">
+        <tr><td ><table class="jsuDocHeaderNoBorder" width="100%">
           <tr>
             <td class="tipl" width="150px"><label class="tiptitle">JSU Help: </label></td>
             <td class="tiplBold">Features<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" /></td>
@@ -54,7 +53,7 @@
 
 
 <!--  Header Table: GoogleAnalytics and download -  common for all the JSU API Doc - NB: No Download Option because there is less space -->
-<table class="sampleHea" width="100%" >
+<table class="sampleToolbar" width="100%" >
   <tr >
     <td class="tipl" width="30%">
         <input type="button"  class="tipGoogleAnalList" id="tipGoogleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
@@ -72,12 +71,14 @@
   </tr>
 </table>   
 
+<!--  USED by jsuGoToURL()  -->
+
+<a id="href_hidden" target="_blank" href="javascript:null" style="display:none">HIDDEN</a>
+
 
 <hr class="jsuDoc">
 <h1 class="jsuDoc">JSU - JS Utility Plugin  - JS API Documentation</h1>
 
-<!--  USED by jsuGoToURL()  -->
-<a id="href_hidden" target="_blank" href="" style="display:none"">HIDDEN</a>
 
 
 

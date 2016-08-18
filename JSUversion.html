@@ -21,23 +21,20 @@
     <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.css" type="text/css">
     <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.js" ></script>
 
-   <!-- ONLY FOR Prettify (used to color JS Code in Tip)  -->
-  <link rel="stylesheet" href="../../core/prettify/prettify-jsu.css" type="text/css">
-  <script type="text/javascript" src="../../core/prettify/prettify-jsu.js" ></script>
   
-   <!-- for developers -->
+   <!-- for developers 
    <link rel="stylesheet" href="../../Cognos/jsu/samples/about/about.css" type="text/css">  
-   
+   -->
    
  </head>
 <body>
  
 <!-- JSU HEADER COMMON FOR ALL DOC  -->
-<table class="jsuHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
+<table class="jsuDocHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="250px" align="center"> <img width="290px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
-      <td ><table class="jsuHeaderNoBorder" width="100%">
-        <tr><td ><table class="jsuHeaderNoBorder" width="100%">
+      <td ><table class="jsuDocHeaderNoBorder" width="100%">
+        <tr><td ><table class="jsuDocHeaderNoBorder" width="100%">
           <tr>
             <td class="tipl" width="150px"><label class="tiptitle">JSU Help: </label></td>
             <td class="tiplBold">Features<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" /></td>
@@ -58,7 +55,7 @@
 
 
 <!--  Header Table: GoogleAnalytics and download -  common for all the JSU HTML -->
-<table class="sampleHea" width="100%" >
+<table class="sampleToolbar" width="100%" >
   <tr >
     <td class="tipl" width="30%">
         <input type="button"  class="tipGoogleAnalList" id="tipGoogleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
@@ -85,10 +82,28 @@
 <a id="href_hidden" target="_blank" href="" style="display:none"">HIDDEN</a>
 
 
-<h1 class="jsuDoc">JSU - JS Utility Plugin  - Possible JSU version to Download </h1>
+<h1 class="jsuDoc">JSU - JS Utility Plugin<BR/>Possible JSU version to Download </h1>
 Differences between the possible JSU version to download:
 
-<h2 class="jsuDoc">OPTION a) JSU FREE Version - JSU DEMO Version</h2>
+
+<hr class="h2Sep">
+<h2 class="jsuDoc">
+   <a id="full" class="anchor" href="full" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+   OPTION a) JSU FULL Version
+</h2>
+<li>ALL Features are available </li>
+<li>ALL JS Sources are available in clear with comments. JS are provided both with comment and also in the minified version </li>
+<li>JS API documentation has links to JS line reference </li>
+<li>License: MIT</li>
+</ul>
+
+
+<hr class="h2Sep">
+<h2 class="jsuDoc">
+   <a id="free" class="anchor" href="free" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+   OPTION 2) JSU FREE Version - JSU DEMO Version
+</h2>
+
 
 <b>General:</b>
 <ul>
@@ -98,7 +113,7 @@ Differences between the possible JSU version to download:
 <li><label>License: MIT</label></li>
 </ul>
 
-<label class="tipGood tipBold">Available Features: </label>
+<label class="tipGoodBold">Available Features: </label>
 <ul>
 <li><a href="javascript:jsuDocSort();">SortTable</a>:  <strong>Sort HTML Table</strong> by clicking column header </li>
 <li><a href="javascript:jsuDocBlockPopup();">Blocking Popup</a>: <strong>HTML Modal Blocking Popup</strong> designed specially for <strong>IE</strong> : based on <em>ShowModalDialog API</em> that is fully supported only by IE. For Browser not supporting <em>ShowModalDialog</em> Popup will simply display an Alert instead of an HTML Popup  </li>
@@ -111,7 +126,7 @@ Differences between the possible JSU version to download:
   <b>Example of TipFix Limitation in JSU FREE Version:</b><input type="button"  class="tipFixCode" id="tipFixSample1"  onclick="tipFixLimitInJSUFree();" /> 
 </li>
 </ul>
-<label class="tipErr tipBold">Features NOT Available: </label>
+<label class="tipErrBold">Features NOT Available: </label>
 <ul>
 <li><a href="javascript:jsuDocLoading();">LoadingDiv</a>:  <strong>Loading Div</strong> to be displayed during Long Operation. Many Options provided: Loading Gif, Title, Message, ElapsedSec… </li>
 <li><a href="javascript:jsuDocValidate();">Validate</a>: <strong>Validate Items</strong> with many constraints/options. Show Validate Errors in Red Items or Section, Popup …  </li>
@@ -121,24 +136,37 @@ Differences between the possible JSU version to download:
 
 
 
-<BR/>
-<h2 class="jsuDoc">OPTION b) JSU FULL Version</h2>
-<label class="tipGood tipBold">General: </label>
-<ul>
-<li>ALL Features are available </li>
-<li>ALL JS Sources are available in clear with comments. JS are provided both with comment and also in the minified version </li>
-<li>JS API documentation has links to JS line reference </li>
-<li>License: MIT</li>
-</ul>
 
-<BR/> 
-<hr>
+
+
+<hr class="h2Sep">
+<h2 class="jsuDoc">
+   <a id="sampleNotFree" class="anchor" href="sampleNotFree" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+   NOTES: Samples of Features NOT FREE (LoadingDiv, Validate, JSLog, JQPopup)
+</h2>
+<table width="100%" class="tipNoBorder">
+  <tr>
+    <td width="30px" class="tipc">
+       <img width="30px" src="https://rawgit.com/FedericoLevis/JSU/master/images/PopupAlarm.gif"/>
+    </td>
+    <td class="tipl"> From <a class="tipLink" href="https://goo.gl/MoY5nK" target="_blank">Main JSU Samples</a>  is possible to access to samples also about the Features that are NOT available in JSU FREE Version: LoadingDiv, Validate, JSLog, JQPopup<BR/>
+        <label class="tipWarn">These samples use a <b><u>Very limited version of these features, with most of the original code absent/modifed</u></b></label> 
+        <label class="tipWarnBold">Therefore the SW used in these samples can be used only for this limited DEMO purpose</label>
+    </td>
+  </tr>
+<table>
+
+
+<BR/> <BR/> 
+
+<hr class="jsuDoc">
+
 <!-- JSU FOOTER  COMMON-->
-<table class="jsuFooter" BORDER="1" cellspacing="5" cellpadding="2" width="100%">
+<table class="jsuFooter" BORDER="1" cellspacing="5" cellpadding="5" width="100%">
     <tr>
       <td width="180px" align="center"> <img width="180px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/JSUDancing.gif"/></td> 
-      <td ><table class="jsuFooterNoBorder" width="100%">
-        <tr><td ><table class="jsuFooterNoBorder" width="100%">
+      <td ><table class="jsuDocFooterNoBorder" width="100%">
+        <tr><td ><table class="jsuDocFooterNoBorder"  width="100%">
           <tr>
             <td class="tipl" width="150px"><label class="tiptitle">JSU Samples: </label></td>
             <td class="tipl"><a class="tipLink" href="https://goo.gl/MoY5nK" target="_blank">Try JSU Samples</a> </td>
