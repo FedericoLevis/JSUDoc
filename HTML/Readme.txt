@@ -1,1 +1,2 @@
-- JSUHeader.html:  Common Header added to all the API JSDoc
+- JSUHeaderAPI.html:  Common Header automatically added to all the API JSDoc
+- JSUHeaderAPI.html:  Common Header manually to all the JSDoc and edited for <h1> and title

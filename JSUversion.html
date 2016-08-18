@@ -5,10 +5,10 @@
 </script>
 
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
-  <title>JS Utility | JSU API Documentation | Federico Levis</title>
+  <title>JS Utility | JSU Download Type | Federico Levis</title>
   <meta charset="utf-8"/>
   <meta name="description" content="JSU utility (JSU) - Validate Items with many constraints/options | Show Validate Errors in Red Items or Section, Popup, Gif | Add tooltip near items" />
-  <meta name="keywords" content="js, utility, JSU, documentation, doc, API, CSS, tooltip, popup, validate, sort, loading, log, federico, levis" />
+  <meta name="keywords" content="js, utility, JSU, documentation, doc, tooltip, popup, validate, sort, loading, log, federico, levis" />
     <!-- Tooltip sample -->
 	<link rel="stylesheet" type="text/css" href="https://rawgit.com/FedericoLevis/JSU/master/samples/Sample.css">
 	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.js" ></script>
@@ -85,31 +85,56 @@
 <a id="href_hidden" target="_blank" href="" style="display:none"">HIDDEN</a>
 
 
-<h1 class="jsuDoc">JSU - JS Utility Plugin  - API Documentation</h1>
+<h1 class="jsuDoc">JSU - JS Utility Plugin  - Download Type </h1>
+Differences between the possible JSU version to download:
 
-<h2 class="jsuDoc">JS Documentation</h2>
+<h2 class="jsuDoc">OPTION a) JSU FREE Version - JSU DEMO Version</h2>
 
+<b>General:</b>
 <ul>
-<li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">Tooltip</a>: Many <strong>HTML Tooltips</strong> options: Floating/Fixed Tips with HTML, GIF, Video, JS Code, …</li>
-<li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/index.html">LoadingDiv</a>:  <strong>Loading Div</strong> to be displayed during Long Operation. Many Options provided: Loading Gif, Title, Message, ElapsedSec… </li>
-<li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/index.html">Validate</a>: <strong>Validate Items</strong> with many constraints/options. Show Validate Errors in Red Items or Section, Popup …  </li>
-<li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/cSortTable.js/index.html">SortTable</a>:  <strong>Sort HTML Table</strong> by clicking column header </li>
-<li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/jslog.js/index.html">JSLog</a>: <strong>Log</strong> from JS Code into an optional Window: log Text, Object, JSON, Time Elapsed … </li>
-<li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/BlockPopup.js/index.html">Blocking Popup</a>: <strong>HTML Modal Blocking Popup</strong> designed specially for <strong>IE</strong> : based on <em>ShowModalDialog API</em> that is fully supported only by IE. For Browser not supporting <em>ShowModalDialog</em> Popup will simply display an Alert instead of an HTML Popup  </li>
-<li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSPopup.js/index.html">JQ Popup</a>: <strong>HTML Modal Popup API working in all Browser</strong>. It can be used instead of JSU Blocking Popup</a></li>
-<li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/index.html">util.js</a>: <strong>Common DOM Utility API</strong>: select management, show/hide element, ..</a></li>
+<li><label class="tipErr">ALL JS Sources are obfuscated. They can be used but practically it is impossible to modify them </li>
+<li><label class="tipErr">Only some Features are available</label> </li>
+<li><label>Documentation and samples covering the features are provided</label></li>
+<li><label>License: MIT</label></li>
 </ul>
+
+<label class="tipGood tipBold">Available Features: </label>
+<ul>
+<li><a href="javascript:jsuDocSort();">SortTable</a>:  <strong>Sort HTML Table</strong> by clicking column header </li>
+<li><a href="javascript:jsuDocBlockPopup();">Blocking Popup</a>: <strong>HTML Modal Blocking Popup</strong> designed specially for <strong>IE</strong> : based on <em>ShowModalDialog API</em> that is fully supported only by IE. For Browser not supporting <em>ShowModalDialog</em> Popup will simply display an Alert instead of an HTML Popup  </li>
+<li><a href="javascript:jsuDocTip();">Tooltip</a>: Many <strong>HTML Tooltips</strong> options: Floating/Fixed Tips with HTML, GIF, Video, Code Highlight (JS, CSS, Java, C++, …)<BR/>
+  <label class="tipErr">TipFix is available with following limitation: </label>
+  <ul>
+     <li><b>Code Highlight is not present</b>. However the API can be used, but Code is simply displayed not hightlighted in TextArea</li>
+     <li><b>A Link <a href="javascript:null" >JSU Demo Version </a></b> to this document is displayed in the TipFix Title</li>
+  </ul>   
+  <b>Example of TipFix Limitation in JSU FREE Version:</b><input type="button"  class="tipFixCode" id="tipFixSample1"  onclick="tipFixLimitInJSUFree();" /> 
+</li>
+</ul>
+<label class="tipErr tipBold">Features NOT Available: </label>
+<ul>
+<li><a href="javascript:jsuDocLoading();">LoadingDiv</a>:  <strong>Loading Div</strong> to be displayed during Long Operation. Many Options provided: Loading Gif, Title, Message, ElapsedSec… </li>
+<li><a href="javascript:jsuDocValidate();">Validate</a>: <strong>Validate Items</strong> with many constraints/options. Show Validate Errors in Red Items or Section, Popup …  </li>
+<li><a href="javascript:jsuDocJSLog();">JSLog</a>: <strong>Log</strong> from JS Code into an optional Window: log Text, Object, JSON, Time Elapsed … </li>
+<li><a href="javascript:jsuDocJSPopup();">JQ Popup</a>: <strong>HTML Modal Popup API working in all Browser</strong>. It can be used instead of JSU Blocking Popup</a></li>
+</ul>
+
+
+
 <BR/>
-<h2 class="jsuDoc">CSS Documentation</h2>
+<h2 class="jsuDoc">OPTION b) JSU FULL Version</h2>
+<label class="tipGood tipBold">General: </label>
 <ul>
-<li><a href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/index.html">CSS Documentation</a>: <strong>core.css</strong> and <strong>Popup.css</strong> documentation 
+<li>ALL Features are available </li>
+<li>ALL JS Sources are available in clear with comments. JS are provided both with comment and also in the minified version </li>
+<li>JS API documentation has links to JS line reference </li>
+<li>License: MIT</li>
 </ul>
-
 
 <BR/> 
 <hr>
 <!-- JSU FOOTER  COMMON-->
-<table class="jsuFooter" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
+<table class="jsuFooter" BORDER="1" cellspacing="5" cellpadding="2" width="100%">
     <tr>
       <td width="180px" align="center"> <img width="180px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/JSUDancing.gif"/></td> 
       <td ><table class="jsuFooterNoBorder" width="100%">
