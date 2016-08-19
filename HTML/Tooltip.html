@@ -132,13 +132,12 @@ To add to an HTML Item the <b>Floating Tip</b> you have to call the <b>JSU Tip A
       <li><b>onmouseover=</b>"<label class="jsuAPI">Tip</label>(<b><i>tipHTML</i></b>);" </li>   
       <li><b>onmouseout=</b>"<label class="jsuAPI">UnTip</label>(event);"  </li>
    </ul>
-     PROVA
-      <input type="button" value="adjust" onclick= "iframeAdjustHeight('iframe1');" /> <BR/>
-      <iframe id="iframe1" width="100%" height="300px" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html?doc=1" ></iframe>
-      <!-- 
+
+<iframe id="iframe1" width="100%" height="300px" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html?doc=1" ></iframe>
+      <!--  DEV
       <iframe  id="ifr  ame1" width="100%" height="auto" src="file:///C:/Cognos/jsu/samples/Tip/TipSample.html?doc=1" ></iframe>
        -->
- <BR/> 
+ 
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par1.2" class="anchor" href="#par1.2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2) Fixed Tip</h2>
                To implement a <b>FixedTip</b> Tooltip:  
@@ -146,47 +145,9 @@ To add to an HTML Item the <b>Floating Tip</b> you have to call the <b>JSU Tip A
                <li>Set an <b>input</b> with JSU <label class="jsuAPI">core.css</label> class like <label class="jsuAPI">tipFixed, tipArrowFixed</label> </li>
                <li>In the <b>onclick</b> call the <b>JSU Tip API</b>   <label class="jsuAPI">TipFixedClick</label>(<b><i>tipHTML</i></b>,event,objOpt)</li>
                </ul>
-
-    <!--   SAMPLE and DESC HEADER-->
-   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="800px">
-    <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="2">Fixed Tip SAMPLE</th>
-    </tr>
-    <tr class="tiptitleBig2">
-      <td width="50%" class="tipc" >SAMPLES</td>
-      <td width="50%" class="tipc" >DESCRIPTION</td>
-    </tr>
-    <!--   SAMPLE and DESC-->
-    <tr>
-       <td> 
-          <table align="center">
-          <tr>
-            <td align="center" >
-              <b>Example of </b> input type="button" class="<label class="jsuAPI">tipFixed</label>":  
-               <input type="button"  class="tipFixed" id="tipFixedSample_a"  onclick="sample2Fixed(event,1000,true)" />
-               
-            </td>
-          </tr>
-         </table>
-       </td>  
-       <!------ DESC -->    
-       <td>
-               <b>JS Code of the Sample:</b>
-               <table class="sampleNoBorder" width="100%">
-               <tr>
-                 <td style="padding-left:15px">
-			          </b> input.tipFixed</b> Sample: <input type="button" class="tipJSFixed" id="imgTipFixed" onclick="TipJSFixedClicked (JS_CODE_IMG_TIP_FIXED,event);" /> 
-                 </td>
-               </tr>               
-               </table>  
-      </td>
-      
-    </tr>
-   </table>
+<iframe id="iframe2" width="100%" height="300px" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html?doc=2" ></iframe>
 
 
-
-<BR/> 
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par1.3" class="anchor" href="#par1.3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.3) Fixed Tip showing JS Code in a TextBox</h2>
                To show a <b>FixedTip</b> with <b>JS Code</b> in a TextBox:  
@@ -195,52 +156,15 @@ To add to an HTML Item the <b>Floating Tip</b> you have to call the <b>JSU Tip A
 	               <li>In the <b>onclick</b> call the <b>JSU Tip API</b>   <label class="jsuAPI">TipJSFixedClick</label>(<b><i>JScodeMsg</i></b>,event,objOpt)</li>
                </ul>
 
-    <!--   SAMPLE and DESC HEADER-->
-   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="800px">
-    <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="2">Fixed Tip SAMPLE</th>
-    </tr>
-    <tr class="tiptitleBig2">
-      <td width="50%" class="tipc" >SAMPLES</td>
-      <td width="50%" class="tipc" >DESCRIPTION</td>
-    </tr>
-    <!--   SAMPLE and DESC-->
-    <tr>
-       <td> 
-          <table align="center">
-          <tr>
-            <td align="center" >
-               Example of </b> input type="button" class="<label class="jsuAPI">tipJSFixed</label>":   
-                   <input type="button" class="tipJSFixed" id="tipInputJSFixedSample"  onclick="TipJSFixedClicked(TIP_JS_CODE_SAMPLE_1,event);" />
-               
-            </td>
-          </tr>
-         </table>
-       </td>  
-       <!------ DESC -->    
-       <td>
-               <b>JS Code of the Sample:</b>
-               <table class="sampleNoBorder" width="100%">
-               <tr>
-                 <td style="padding-left:15px">
-                    </b>input.tipJSFixed</b> Sample: <input type="button" class="tipJSFixed" id="imgTipJSFixed" onclick="TipJSFixedClicked (JS_CODE_IMG_JS_FIXED,event);" />
-                 </td>
-               </tr>               
-               </table>  
-      </td>
-      
-    </tr>
-   </table>
+<iframe id="iframe3" width="100%" height="300px" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html?doc=1" ></iframe>
 
 <!-- ======================================================================================================================================== END SPECIFIC API-->
 
-<BR/><BR/>
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par2" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) API Documentation</h1>
 <hr>
 <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html" target="_blank">Tip API Documentation</a> <BR/>
 
-<BR/><BR/>
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par3" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3) Samples</h1>
 <hr>
@@ -250,22 +174,17 @@ To add to an HTML Item the <b>Floating Tip</b> you have to call the <b>JSU Tip A
 <a href="https://youtu.be/wpo2oM_L3ds" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>
 
 
-<BR/><BR/>
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par4" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4) Required</h1>
 <hr>
 NO External Plugin is required: <b><i>Pure JS Code</i></b>
 
-<BR/><BR/>
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par5" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5) Installation, Configuration, Version, Licence</h1>
-<hr>
-
 See <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/README.html" target="_blank">JSU Documentation</a>
 
 
-<BR/><BR/><BR/> 
-<hr>
+<hr class="jsuDoc">
 <!-- JSU FOOTER  COMMON-->
 <table class="jsuFooter" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
