@@ -21,33 +21,10 @@ This file may be freely distributed under the MIT license.   <BR/>
 */
 
 
-/*---
-LoadinDiv API: background div 
----
-<b>CSS:</b> ``div.jsuLoadingEl``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShow">util.js loadingShow()</a>
-<BR/><b>Examples:</b>
-```html
-<div class="jsuLoadingEl" height="100px" />
-```
-*/
-div.jsuLoading {
-  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat center center;
-  /* background-size: contain; */
-   height: 80px;  /*  
-  progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
-  height: 100%; 
-  width: 100%; 
-  z-index: 100; 
-  background-color: white; 
-  position: absolute; 
-  top:0px; 
-  left: 0px;
-  */  
-}
 
 
 /*---
-LoadinDiv API: CSS used in loadindDiv 
+LoadinDiv API: CSS used in loadingDiv.js 
 ---
 <b>API: loadingDivStart loadingDivUpdate loadingDivEnd </b>
 <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/index.html">JSU LoadingDiv API Doc</a>
@@ -259,7 +236,7 @@ Tooltip: button for TipFix
      <b>input.tipFixArrowUp</b>  <input type="button" class="tipFixArrowUp" />
  </li><BR/>
  <li> tipFix button to show a Box with a List of Google Analytics URLs: <BR/>   
-     <b>input.tipGoogleAnalList</b>  <input type="button" class="tipGoogleAnalList"/> &nbsp;&nbsp; 
+     <b>input.tipGoogleAnalList</b>  <input type="button" class="tipGoogleAnalList"/> <BR/> 
      <b>input.tipGoogleAnalListUp</b>  <input type="button" class="tipGoogleAnalListUp" />
  </li><BR/>
  <li> button to Go to the Page of Google Analytics:  
@@ -393,6 +370,7 @@ div.ttTitle{  /* default Title */
 /*---
 Tooltip: CSS for tip table 
 ---
+*/
 
 table.tip, table.jsuHeader, table.jsuFooter {
 	text-align: center;
@@ -991,4 +969,29 @@ util.js: .jsuLoadingEl Loading for el
   background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat right center;
   background-size: contain;
   z-index: 1000;
+}
+
+/*---
+util.js Loading Gif with FillingRing 
+---
+<b>CSS:</b> ``div.jsuLoading``   see API <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/util.js/global.html#loadingShow">util.js loadingShow()</a>
+<BR/><b>Examples:</b>
+```html
+<div class="jsuLoading" width="200px" />
+```
+*/
+div.jsuLoading {
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat center center;
+  /* background-size: contain; */
+   height: 80px;  
+   /*  
+  progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
+  height: 100%; 
+  width: 100%; 
+  z-index: 100; 
+  background-color: white; 
+  position: absolute; 
+  top:0px; 
+  left: 0px;
+  */  
 }

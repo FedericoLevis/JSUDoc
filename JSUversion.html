@@ -5,7 +5,7 @@
 </script>
 
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
-  <title>JS Utility | JSU Download Type | Federico Levis</title>
+  <title>JS Utility | JSU Versrion Type to Download | Federico Levis</title>
   <meta charset="utf-8"/>
   <meta name="description" content="JSU utility (JSU) - Validate Items with many constraints/options | Show Validate Errors in Red Items or Section, Popup, Gif | Add tooltip near items" />
   <meta name="keywords" content="js, utility, JSU, documentation, doc, tooltip, popup, validate, sort, loading, log, federico, levis" />
@@ -81,32 +81,56 @@
 <!--  USED by jsuGoToURL()  -->
 <a id="href_hidden" target="_blank" href="" style="display:none"">HIDDEN</a>
 
-
 <h1 class="jsuDoc">JSU - JS Utility Plugin<BR/>Possible JSU version to Download </h1>
-Differences between the possible JSU version to download:
 
+<!--  ========================================   INDEX  -->
 
-<hr class="h2Sep">
-<h2 class="jsuDoc">
-   <a id="full" class="anchor" href="full" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-   OPTION a) JSU FULL Version
-</h2>
-<div class="tipGood">
-<li>ALL Features are available </li>
-<li>ALL JS Sources are available in clear with comments. JS are provided both with comment and also in the minified version </li>
-<li>JS API documentation has links to JS line reference </li>
-<li>License: MIT</li>
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of Contents</h2>
+
+<ul>
+<li> <a href="#par1">1) JSU Version Type</a> 
+    <ul>
+    <li> <a href="#par1.1">1.1) JSU FULL version</a> </li>
+    <li> <a href="#par1.2">1.2) JSU FREE version (<i>JSU DEMO Version</i>)</a> </li>
+        <ul>
+            <li> <a href="#par1.2.1">1.2.1) JSU FREE Version:Available Features</a> </li>
+            <ul>
+               <li> <a href="#par1.2.1.1">1.2.1.1) JSU FREE Version: Tooltip Limitation</a> </li>
+            </ul>   
+            <li> <a href="#par1.2.2">1.2.2) JSU FREE Version: Features NOT Available</a> </li>
+        </ul>
+
+    </ul>
+</li>
+<li> <a href="#par2">2) NOTES about DEMO Samples of NOT FREE Features (LoadingDiv, Validate, JSLog, JQPopup)</a> </li>
 </ul>
-</div>
 
-<hr class="h2Sep">
-<h2 class="jsuDoc">
-   <a id="free" class="anchor" href="free" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-   OPTION 2) JSU FREE Version - JSU DEMO Version
-</h2>
+<BR/> 
+
+<!-- ----------------------------------------------------- par1 ---------------------------------------------------------------------------------- -->
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="par1" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) JSU Version Type</h1>
+You can download 2 different JSU versions:
+<ul>
+  <li> <a href="#par1.1">JSU FULL version</a> All Features are present and JS Source code is available <i>in clear</i> with comments and also minified </li>
+  <li> <a href="#par1.2">JSU FREE version</a>: Only few features are available and JS Code is obfuscated</li>
+</ul>
+
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="par1.1" class="anchor" href="#par1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1) JSU FULL version</h2>
+<div class="tipGood">
+<ul>
+    <li>ALL Features are available </li>
+    <li>ALL JS Sources are available in clear with comments. JS are provided both with comment and also in the minified version </li>
+    <li>JS API documentation has links to JS line reference </li>
+    <li>License: MIT</li>
+</ul>
+    </div>
 
 
-<b>General:</b>
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="par1.2" class="anchor" href="#par1.2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2) JSU FREE Version (<i>JSU DEMO Version</i>)</h2>
 <ul>
 <li><label class="tipErr">ALL JS Sources are obfuscated. They can be used but practically it is impossible to modify them </li>
 <li><label class="tipErr">Only some Features are available</label> </li>
@@ -114,19 +138,36 @@ Differences between the possible JSU version to download:
 <li><label>License: MIT</label></li>
 </ul>
 
+
+<h3 class="jsuDoc">
+<a id="par1.2.1" class="anchor" href="#par1.2.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2.1) JSU FREE Version: Available Features</h2>
+
 <label class="tipGoodBold">Available Features: </label>
 <ul>
 <li><a href="javascript:jsuDocSort();">SortTable</a>:  <strong>Sort HTML Table</strong> by clicking column header </li>
 <li><a href="javascript:jsuDocBlockPopup();">Blocking Popup</a>: <strong>HTML Modal Blocking Popup</strong> designed specially for <strong>IE</strong> : based on <em>ShowModalDialog API</em> that is fully supported only by IE. For Browser not supporting <em>ShowModalDialog</em> Popup will simply display an Alert instead of an HTML Popup  </li>
-<li><a href="javascript:jsuDocTip();">Tooltip</a>: Many <strong>HTML Tooltips</strong> options: Floating/Fixed Tips with HTML, GIF, Video, Code Highlight (JS, CSS, Java, C++, …)<BR/>
-  <label class="tipErr">TipFix is available with following limitation: </label>
-  <ul>
-     <li><b>Code Highlight is not present</b>. However the API can be used, but Code is simply displayed not hightlighted in TextArea</li>
-     <li><b>A Link <a href="javascript:null" >JSU Demo Version </a></b> to this document is displayed in the TipFix Title</li>
-  </ul>   
-  <b>Example of TipFix Limitation in JSU FREE Version:</b><input type="button"  class="tipFixCode" id="tipFixSample1"  onclick="tipFixLimitInJSUFree();" /> 
+<li><a href="javascript:jsuDocTip();">Tooltip</a>: Many <strong>HTML Tooltips</strong> options: Floating/Fixed Tips with HTML, GIF, Video, Code Highlight (JS, CSS, Java, C++, …), Google Analytics<BR/>
+<b>NOTE:</b>  <a href="#par1.2.1.1">FixedTip has some limitation in FREE Version</a>
 </li>
 </ul>
+
+
+<h4 class="jsuDoc">
+<a id="par1.2.1.1" class="anchor" href="#par1.2.1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2.1.1) JSU FREE Version: Tooltip Limitation</h2>
+<label class="tipErrBold">TipFix is available with following limitation: </label>
+  <ul>
+     <li>A Link <a href="javascript:null" >JSU Demo Version </a>to this document is displayed in the TipFix Title.
+      Example of TipFix Limitation in JSU FREE Version:<input type="button"  class="tipFixCode" id="tipFixSample1"  onclick="tipFixLimitInJSUFree();" />  
+     </li>
+    <BR/>     
+      
+     <li><b> TBD GoogleAnal</li>
+     
+  </ul>   
+TBD es 
+
+<h3 class="jsuDoc">
+<a id="par1.2.2" class="anchor" href="#par1.2.2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2.2) JSU FREE Version: Features NOT Available</h2>
 <label class="tipErrBold">Features NOT Available: </label>
 <ul>
 <li><a href="javascript:jsuDocLoading();">LoadingDiv</a>:  <strong>Loading Div</strong> to be displayed during Long Operation. Many Options provided: Loading Gif, Title, Message, ElapsedSec… </li>
@@ -136,15 +177,9 @@ Differences between the possible JSU version to download:
 </ul>
 
 
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="par2" class="anchor" href="#par2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) NOTES about DEMO Samples of NOT FREE Features (LoadingDiv, Validate, JSLog, JQPopup)</h2>
 
-
-
-
-<hr class="h2Sep">
-<h2 class="jsuDoc">
-   <a id="sampleNotFree" class="anchor" href="sampleNotFree" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
-   NOTES: Samples of Features NOT FREE (LoadingDiv, Validate, JSLog, JQPopup)
-</h2>
 <table width="100%" class="tipNoBorder">
   <tr>
     <td width="30px" class="tipc">

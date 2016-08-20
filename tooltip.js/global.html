@@ -140,7 +140,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line91">line 91</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line94">line 94</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line73">line 73</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line76">line 76</a>
     </li></ul></dd>
     
 
@@ -264,7 +264,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line41">line 41</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line44">line 44</a>
     </li></ul></dd>
     
 
@@ -326,7 +326,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line32">line 32</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -530,7 +530,7 @@ Set tip_type = tipType</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line263">line 263</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line282">line 282</a>
     </li></ul></dd>
     
 
@@ -561,7 +561,7 @@ Set tip_type = tipType</td>
 
     
 
-    <h4 class="name" id="TipFix"><span class="type-signature"></span>TipFix<span class="signature">(tipMsgHtml, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="TipFix"><span class="type-signature"></span>TipFix<span class="signature">(tipMsgHtml, event<span class="signature-attributes">opt</span>, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
@@ -638,10 +638,17 @@ Set tip_type = tipType</td>
 
             <td class="type">
             
+                
+<span class="param-type">Object</span>
+
+
+            
             </td>
 
             
                 <td class="attributes">
+                
+                    &lt;optional><br>
                 
 
                 
@@ -652,7 +659,7 @@ Set tip_type = tipType</td>
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Usually pass the event of the onclick. if null you have to pass pass objOpt.szRefElId</td>
         </tr>
 
     
@@ -691,16 +698,18 @@ Set tip_type = tipType</td>
 														<li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
 													  <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
 														<li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...) n (e.g -100)   default=TIP_FIXED_POS.CENTER  </li> 
-													  <li> bNL2BR= [true]  if true /n are converted to </li> 
-                           <li> objClass: {Down: szClassTipFix, Up: szClassTipFixUp}  {Object} Classed that identify The 2 states <BR/>
+													  <li> bNL2BR= [true]  if true /n are converted to </li>
+														<li> -------------------------- FOLLOW FIELDS are for ADVANCED use. Usually they are ever used <li/> 
+                           <li> objClass:  {Object}  {Down: {String}, Up: {String}}  2 Classes that identify The 2 states <BR/>
                            To be used when you have 2 classes not that are not already defined into the TIP_FIX_CLASS_xxx constants of this file <BR/>
-                           e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} 
+                           e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} </li>
+                           <li>szRefElId: Id of the Reference ElementImage. It can be used instead of event, to display the Tip below this szRefEl </li>
                           </ul> 
 		GLOBAL
 Set tip_type = tipType
 
 Implementation NOTES:
-- all the other tiFixXXX call this funzion</td>
+- all the other tiFixXXX call this funcion</td>
         </tr>
 
     
@@ -741,7 +750,7 @@ Implementation NOTES:
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line314">line 314</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line335">line 335</a>
     </li></ul></dd>
     
 
@@ -955,7 +964,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line513">line 513</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line548">line 548</a>
     </li></ul></dd>
     
 
@@ -1165,7 +1174,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line769">line 769</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line805">line 805</a>
     </li></ul></dd>
     
 
@@ -1409,7 +1418,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line568">line 568</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line601">line 601</a>
     </li></ul></dd>
     
 
@@ -1623,7 +1632,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line705">line 705</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line741">line 741</a>
     </li></ul></dd>
     
 
@@ -1728,7 +1737,7 @@ tip_type Set it to TIP_TYPE.NONE
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line470">line 470</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line505">line 505</a>
     </li></ul></dd>
     
 
@@ -1776,7 +1785,7 @@ tip_type Set it to TIP_TYPE.NONE
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Aug 18 2016 22:48:12 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sat Aug 20 2016 21:06:55 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
