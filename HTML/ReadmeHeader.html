@@ -1,38 +1,44 @@
-
+<head>
 <script>
   // Required for DOC of JS Code
   var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master";
 </script>
 
-<head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
-  <title>JS Utility | JSU API Documentation | Federico Levis</title>
+  <title>JS Utility | JSU Documentation | Federico Levis</title>
   <meta charset="utf-8"/>
-  <meta name="description" content="JSU utility (JSU) - Validate Items with many constraints/options | Show Validate Errors in Red Items or Section, Popup, Gif | Add tooltip near items" />
-  <meta name="keywords" content="js, utility, JSU, API, documentation, doc, tooltip, popup, validate, sort, loading, log, federico, levis" />
+  <meta name="description" content="JS Utilty Plugin: Tooltip, Validate, Popup, SortTable, JSLog, Loading, Google Analytics" />
+  <meta name="keywords" content="js, utility, JSU, documentation, doc, tooltip, popup, validate, sort, loading, log, google, analytics, federico, levis" />
     <!-- Tooltip sample -->
 	<link rel="stylesheet" type="text/css" href="https://rawgit.com/FedericoLevis/JSU/master/samples/Sample.css">
 	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.js" ></script>
 	<!--  JSU   -->
+    
 	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/core.css" type="text/css">
 	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/Popup.css" type="text/css">
 	<script data-main="https://rawgit.com/FedericoLevis/JSU/master/plugin/jsu.js" src="https://rawgit.com/FedericoLevis/JSU/master/core/require.js"></script>
     <!-- About -->
     <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.css" type="text/css">
     <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.js" ></script>
-    <!-- 
-    <script type="text/javascript" src="../../../Cognos/jsu/samples/about/about.js" ></script>
-     -->
-     
+
+   <!-- ONLY FOR Prettify (used to color JS Code in Tip)  -->
+  <link rel="stylesheet" href="../../core/prettify/prettify-jsu.css" type="text/css">
+  <script type="text/javascript" src="../../core/prettify/prettify-jsu.js" ></script>
+  
+   <!-- for developers -->
+   <!-- 
+   <link rel="stylesheet" href="../../../Cognos/jsu/samples/about/about.css" type="text/css">  
+   -->
+   
    
  </head>
 <body>
-<!-- JSU HEADER COMMON FOR ALL API DOC   -->
-<table class="jsuDocHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
+<!-- JSU HEADER COMMON FOR ALL DOC  -->
+<table class="jsuHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="250px" align="center"> <img width="290px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
-      <td ><table class="jsuDocHeaderNoBorder" width="100%">
-        <tr><td ><table class="jsuDocHeaderNoBorder" width="100%">
+      <td ><table class="jsuHeaderNoBorder" width="100%">
+        <tr><td ><table class="jsuHeaderNoBorder" width="100%">
           <tr>
             <td class="tipl" width="150px"><label class="tiptitle">JSU Help: </label></td>
             <td class="tiplBold">Features<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" /></td>
@@ -52,7 +58,7 @@
 </table> 
 
 
-<!--  Header Table: GoogleAnalytics and download -  common for all the JSU API Doc - NB: THIS ONE IS WITHOUT The Download Option because there is less space -->
+<!--  TOOLBAR Table: GoogleAnalytics and download -  common for all the JSU HTML -->
 <table class="sampleToolbar" width="100%" >
   <tr >
     <td class="tipl" width="30%">
@@ -61,9 +67,11 @@
     <td class="tipr" width="70%">
      <table valign="bottom" align="right">
         <tr>
-            <td valign="bottom"> <input type="button" class="downloadPay"     onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
+            <td class="tipr" ><b>Download Options:</b> </td>
+            <td><input type="button"  class="tipFix" id="downloadOption"  onclick="downloadTip(event)" /> </td>
+            <td valign="bottom"> <input type="button" class="downloadPay"  id="downloadPay"    onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
             <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalPay"  onclick="jsuGoogleAnalPay();"  onmouseover="jsuGoogleAnalPayTip(event);" onmouseout="UnTip(event)"/> </td>
-            <td valign="bottom"> <input type="button" class="downloadFree" onclick="downloadFree();" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="bottom"> <input type="button" class="downloadFree" id="downloadFree" onclick="downloadFree();" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
             <td valign="bottom"> <input type="button"  class="tipGoogleAnal" id="tipGoogleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
         </tr>
       </table>  
@@ -72,15 +80,11 @@
 </table>   
 
 
+<hr class="jsuDoc">
+<h1 class="jsuDoc">JSU - JS Utility Plugin - Documentation</h1>
 
 <!--  USED by jsuGoToURL()  -->
-
 <a id="href_hidden" target="_blank" href="javascript:null" style="display:none">HIDDEN</a>
-
-
-<hr class="jsuDoc">
-<h1 class="jsuDoc">JSU - JS Utility Plugin  - JS API Documentation</h1>
-
 
 
 

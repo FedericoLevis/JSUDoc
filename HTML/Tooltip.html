@@ -33,6 +33,10 @@
    <!-- 
    <link rel="stylesheet" href="../../../Cognos/jsu/samples/about/about.css" type="text/css">  
    -->
+
+  <!-- ONLY FOR Prettify (used to color JS Code in Tip)  -->
+  <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core//prettify/prettify-jsu.css" type="text/css">
+  <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/core/prettify/prettify-jsu.js" ></script>
    
    
  </head>
@@ -127,37 +131,219 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
 
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par1.1" class="anchor" href="#par1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1) Floating Tip</h2>
-To add to an HTML Item the <b>Floating Tip</b> you have to call the <b>JSU Tip API</b> <label class="jsuAPI">Tip UnTip</label> in the following events:
-   <ul> 
-      <li><b>onmouseover=</b>"<label class="jsuAPI">Tip</label>(<b><i>tipHTML</i></b>);" </li>   
-      <li><b>onmouseout=</b>"<label class="jsuAPI">UnTip</label>(event);"  </li>
-   </ul>
+<b>JSU API items</b> of these samples:  
 
- <!--  N.B: height = +30 comparing (174) to tr height for this line we keep more space because there are the Floating Tip-->  
-<iframe id="iframe1" height="500px" width="100%"  style="display:none;visibility:hidden"  src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html?doc=1&jslog=31" ></iframe>
-<!--  DEV
-    <iframe  id="ifr  ame1" width="100%" height="auto" src="file:///C:/Cognos/jsu/samples/Tip/TipSample.html?doc=1" ></iframe>
--->
+<table class="det" style="margin-top:10px;margin-bottom:15px;" BORDER="1" cellspacing="5" cellpadding="5">
+  <tr class="detTitle">
+    <td width="200px">JSU File</td>
+    <td>Item</td>
+  </tr> 
+  <tr>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html" target="_self">jsu/core/tooltip.js</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/core.html#jsu-tip-button-for-tooltip-api" target="_self">input.jsuInfo</a></td>
+  </tr>
+  <tr>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/core.html" target="_self">jsu/core/core.css</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/core.html#tooltip-tip-with-info-image" target="_self">input.jsuInfo</a></td>
+  </tr>
+</table>
+
+
+
+
+   <!--   SAMPLE and DESC HEADER-->
+   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="1200px">
+    <tr class="tiptitleBig">
+      <th class="tiptitleBig" colspan="2">Floating Tip SAMPLE </th>
+    </tr>
+    <tr class="tiptitleBig2">
+      <td width="50%" class="tipc" >SAMPLES</td>
+      <td width="50%" class="tipc" >DESCRIPTION</td>
+    </tr>
+    <!--   SAMPLE and DESC-->
+
+    <!--   ===================================== SAMPLE_1 ==============================================  -->
+    <tr id="tr_sample_1" valign="top">
+      <td class="sample" id="col_1_1">
+         <label class="sampleTitle">SAMPLE_1 - Floating Tip:</label>
+         <table class="sampleNoBorder">
+              <tr>
+                  <td width="25%">
+                     <input type="button" value="Text Tip"
+                        onmouseover="Tip('Simple Tooltip without HTML tags.\nNewline is working');"
+                         onmouseout="UnTip(event);" />
+                   </td>
+                  <td width="25%">
+                      <input type="text" value="HTML Tip" style="width:60px;"
+                        onmouseover="Tip(JSU_TIP_HTML);" onmouseout="UnTip(event);" /> 
+                  </td>
+                  <td width="25%">       
+                  <img type="image" src="https://rawgit.com/FedericoLevis/images/master/samples/Readme.jpg" align="bottom"
+                        onmouseover="Tip(JSU_TIP_README);"    onmouseout="UnTip(event);"/></td>
+                  <td width="25%"> 
+                  Tip image <b>jsuInfo</b>      
+                  <input type="button" class="jsuInfo"
+                        onmouseover="Tip(JSU_TIP_INFO);"    onmouseout="UnTip(event);"/></td>                        
+              </tr>           
+          </table>
+      </td>
+      <!--   SAMPLE DESCRIPTION -->
+      <td class="sampleDesc" id="col_1_2">
+         <table >
+           <tr valign="top"><td>
+              To add to an HTML Item the <b>Floating Tip</b> you have to call the <b>JSU Tip API</b> <label class="jsuAPI">Tip UnTip</label> in the following events:
+               <ul> 
+               <li><b>onmouseover=</b>"<label class="jsuAPI">Tip</label>(<b><i>tipHTML</i></b>);" </li>   
+               <li><b>onmouseout=</b>"<label class="jsuAPI">UnTip</label>(event);"  </li>
+               </ul>
+               Code of SAMPLE 1 cases:
+               <table class="sampleNoBorder" width="100%">
+               <tr style="font-size: 8pt">
+                 <td > <b>Text Tip </b> Sample: <input type="button" class="tipFixCode" id="tipCode1a" onclick="sampleCode1a(event);" /></td>
+                 <td style="padding-left:15px"><b>HTML Tip </b> Sample: <input type="button" class="tipFixCode" id="tipCode1v" onclick="sampleCode1b(event);" /></td>
+                 <td style="padding-left:15px"> <b>Readme Tip </b> Sample: <input type="button" class="tipFixCode" id="tipCode1c" onclick="sampleCode1c(event);" /></td>
+                 <td style="padding-left:15px"> <b>Info Tip </b> Sample: <input type="button" class="tipFixCode" id="tipCode1d" onclick="sampleCode1d(event);" /></td>
+               </tr>               
+               </table>  
+           </td></tr>
+         </table>
+      </td>
+    </tr>
+    </table>
  
+
+
+<!-- ========================================================================================================================================================== -->   
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par1.2" class="anchor" href="#par1.2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2) Fixed Tip</h2>
-               To implement a <b>FixedTip</b> Tooltip:  
-               <ul> 
-               <li>Set an <b>input</b> with JSU <label class="jsuAPI">core.css</label> class like <label class="jsuAPI">tipFixed, tipArrowFixed</label> </li>
-               <li>In the <b>onclick</b> call the <b>JSU Tip API</b>   <label class="jsuAPI">TipFixedClick</label>(<b><i>tipHTML</i></b>,event,objOpt)</li>
-               </ul>
-<iframe id="iframe2" height="217px" width="100%"  style="display:none;visibility:hidden"  src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html?doc=2" ></iframe>
+<label class="jsuAPI">JSU Main API items</label> of these samples:  
+<ul> 
+  <li><b>core.css</b>:   <label class="jsuAPI">input.tipFixed</label> &nbsp;&nbsp;  <label class="jsuAPI">input.tipFixArrow</label> </li>  &nbsp;&nbsp;  <label class="jsuAPI">input.tipFixGoogleAnalList</label> </li> 
+  <li><b>tooltip.js</b>:  <label class="jsuAPI">TipFix</label>(<i>szHTML,event,objOpt)</i></li>  &nbsp;&nbsp;  <label class="jsuAPI">TipFixGoogleAnalList</label>(<i>arObjGoogleAnalList,event,objOpt)</i></li>
+</ul>
+   <!--   SAMPLE and DESC HEADER-->
+   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="1200px">
+    <tr class="tiptitleBig">
+      <th class="tiptitleBig" colspan="2">Fixed Tip SAMPLE </th>
+    </tr>
+    <tr class="tiptitleBig2">
+      <td width="50%" class="tipc" >SAMPLES</td>
+      <td width="50%" class="tipc" >DESCRIPTION</td>
+    </tr>
+    <!--   SAMPLE and DESC-->
 
+    <!--   ===================================== SAMPLE_2 ==============================================  -->
+    <tr id="tr_sample_2" valign="top">
+      <td class="sample" id="col_2_1" >
+         <label class="sampleTitle">SAMPLE_2 - Fixed Tip with GIF, button, link, VIDEO,..</label>
+         <ul>
+           <li>case a) FixedTip with <b>GIF, Button, Link</b>
+               <input type="button"  class="tipFix" id="tipSample2a"  onclick="sample2a(event);" />
+           </li>    
+           <BR/>
+           <li>case b) FixedTip with inside an <b>Embedded Page</b>  
+                  <input type="button" class="tipFixArrow" value="Tip with Video" id="tipSample2b1"  onclick="sample2b1(event);" />
+                  <input type="button" class="tipFixArrow"  value="Tip with HTML Page" id="tipSample2b2" style="margin-left:30px" onclick="sample2b2(event);" />
+           </li>    
+           <BR/>
+           <li>case c) FixedTip for <b>Google Analytics</b> 
+                  <input type="button"  class="tipGoogleAnalList" id="tipSample2c"  onclick="jsuGoogleAnalList(event);"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
+           </li>    
+         </ul>
+      </td>
+      <!--   SAMPLE2 DESCRIPTION -->
+      <td class="sampleDesc" id="col_2_2">
+         <table >
+           <tr valign="top"><td>
+               To implement a <b>FixedTip</b> Tooltip :  
+               <ul> 
+               <li>Set an <i><b>input button</b></i> with JSU <label class="jsuAPI">core.css</label> class like <label class="jsuAPI">tipFix, tipFixArrow</label> </li>
+               <li>In the <b>onclick event</b> call the <b>JSU Tip API</b>   <label class="jsuAPI">TipFix</label>(<b><i>tipHTML</i></b>,event,<b><i>objOpt</i></b>)</li>
+               </ul>
+               Code of SAMPLE_2 cases:
+			         <ul>
+                        <li>case a) FixedTip with <b>GIF, Button, Link</b>
+			             <input type="button" class="tipFixCode" id="sampleCode2a" onclick="sampleCode2a(event);" /> 
+			           </li>
+                       <li>case b) FixedTip with inside an <b>Embedded Page</b>  
+			             &nbsp;Video: <input type="button" class="tipFixCode" id="sampleCode2b" onclick="sampleCode2b1(event);" style="margin-right:20px" /> 
+                   &nbsp;HTMLPage: <input type="button" class="tipFixCode" id="inputTipFix" onclick="sampleCode2b2(event);" /> 
+			           </li>    
+                        <li>case c) FixedTip for <b>Google Analytics</b> 
+			             <input type="button" class="tipFixCode" id="sampleCode2c" onclick="sampleCode2c(event);" /> 
+			           </li>
+			         </ul>
+           </td></tr>
+         </table>
+      </td>
+    </tr>
+
+  </table>
+ 
+
+
+<!-- ========================================================================================================================================================== -->   
 
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par1.3" class="anchor" href="#par1.3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.3) Fixed Tip showing JS Code in a TextBox</h2>
-               To show a <b>FixedTip</b> with <b>JS Code</b> in a TextBox:  
+<a id="par1.3" class="anchor" href="#par1.3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.3) Fixed Tip with Code Hightlighted</h2>
+<b>JSU API items</b> of these samples:  
+<ul> 
+  <li><b>core.css</b>:   <label class="jsuAPI">input.tipFixedJS</label> &nbsp;&nbsp;  <label class="jsuAPI">input.tipFixCode</label> </li> </li> 
+  <li>https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html  <label class="jsuAPI">TipFixCode</label>(<i>szCode,event,objOpt)</i></li>  &nbsp;&nbsp;  <label class="jsuAPI">TipFixMultiCode</label>(<i>arObjCode,event,objOpt)</i></li>
+</ul>
+   <!--   SAMPLE and DESC HEADER-->
+   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="1200px">
+    <tr class="tiptitleBig">
+      <th class="tiptitleBig" colspan="2">Fixed Tip with Code Hightlighted - SAMPLE </th>
+    </tr>
+    <tr class="tiptitleBig2">
+      <td width="50%" class="tipc" >SAMPLES</td>
+      <td width="50%" class="tipc" >DESCRIPTION</td>
+    </tr>
+    <!--   SAMPLE and DESC-->
+    <!--   ===================================== SAMPLE_3 ==============================================  -->
+    <tr id="tr_sample_3" valign="top">
+      <td class="sample" id="col_3_1" >
+         <label class="sampleTitle">SAMPLE_3 - FixedTip with Code Highlighted</label><BR/>
+         The Tooltip API <label class="jsuAPI">TipFixCode</label> <b>higlights SW Code</b>: js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..
+         <ul>
+           <li>case a) <b>Highlight JS</b> Code:&nbsp;
+              <input type="button" class="tipFixJS" id="sample3a"  onclick="sample3a(event);" />  </li>    
+           <li>case b) <b>Highlight Java</b> Code:&nbsp;  
+              <input type="button" class="tipFixCode" id="sample3b"  onclick="sample3b(event);" />  </li>    
+           <li>case c) <b>Highlight Multi Code Sections</b> Hightlighted (JS and CSS) and Not (HTML):&nbsp;
+                   <input type="button" class="tipFixCode" id="sample3c"  onclick="sample3c(event);" />  </li>             </ul>
+      </td>
+      <!--   SAMPLE DESCRIPTION -->
+      <td class="sampleDesc" id="col_3_2">
+         <table >
+           <tr valign="top"><td>
+               To hightlight one or more Section of  Code (JS, CSS, Java,..):  
                <ul> 
-	               <li>Set an <b>input</b> with JSU <label class="jsuAPI">core.css</label> class like <label class="jsuAPI">tipJSFixed, tipArrowFixed</label> </li>
-	               <li>In the <b>onclick</b> call the <b>JSU Tip API</b>   <label class="jsuAPI">TipJSFixedClick</label>(<b><i>JScodeMsg</i></b>,event,objOpt)</li>
-               </ul>
+	               <li>Set an <b>input</b> with JSU <label class="jsuAPI">core.css</label> class like <label class="jsuAPI">tipFixJS, tipFixCode, ...</label> </li>
+	               <li>In the <b>onclick </b> event, call 
+	                  <label class="jsuAPI">TipFixJSCode</label>(<b><i>szCode</i></b>,event,<b><i>objOpt</i></b>)</label> for one Code section, &nbsp;&nbsp;
+	                   <label class="jsuAPI">TipFixJSMultiCode</label>(<b><i>arObjCode</i></b>,event,<b><i>objOpt</i></b>)</label> </li> for MultiCode Sections
+	               </ul>
+           </ul>
+           JS Code of SAMPLE_3 cases:
+           <ul>
+           <li>case a) and b) <b>Highlight JS</b> Code  
+                   <input type="button" class="tipFixJS" id="sampleCode3a" onclick="sampleCode3a (event);" /> 
+                 </li>
+           <li>case c) <b>Highlight Multi Code Sections</b> Hightlighted (JS and CSS) and Not (HTML)
+                   <input type="button" class="tipFixJS" id="sampleCode3c" onclick="sampleCode3c (event);" /> 
+            </li>    
+           </ul>    
 
-<iframe id="iframe3" height="207px" width="100%"  style="display:none;visibility:hidden"  src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html?doc=3" ></iframe>
+           </td></tr>
+         </table>
+      </td>
+    </tr>
+ </table>
+ 
+
+<!-- ========================================================================================================================================================== -->   
 
 
 <!-- ======================================================================================================================================== END SPECIFIC API-->
@@ -173,8 +359,16 @@ To add to an HTML Item the <b>Floating Tip</b> you have to call the <b>JSU Tip A
 <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html" target="_blank">Try Tip Sample</a>
 <BR/><BR/>
 <!--     VIDEO -->
-<a href="https://youtu.be/wpo2oM_L3ds" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>
-
+<!-- DAFARE -->
+<ul>
+  <li> JSU standard Tooltip:  
+     <a href="https://youtu.be/wpo2oM_L3ds" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>
+  </li>
+  <BR/>
+  <li> JSU GoogleAnalytics Tooltip:  
+     <a href="https://youtu.be/wpo2oM_L3ds" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>
+  </li>
+</ul>
 
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par4" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4) Required</h1>

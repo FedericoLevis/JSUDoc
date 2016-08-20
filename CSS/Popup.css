@@ -1,11 +1,16 @@
 /* 
 ========================================================================================= <BR/> 
-<b>File:</b> 			core/Popup/Popup.css <BR/>
+<b>File:</b> 			core/Popup.css <BR/>
 <b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_blank">Federico Levis</a> <BR/>
 <b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_blank">JSU API Documentation</a> <BR/>
-<b>Description:</b>     CSS for Popup Features (Both Blocking Popup and JS Popup)   <BR/>   
+<b>Description:</b>     CSS for Popup Features (BlockPopup, JQPopup)   <BR/>   
 <b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
 <b>Current Version:</b>   ver 3.3 - Jul 2016  <BR/>
+<b> NOTE:</b> The url path points to https://raw.github.com/FedericoLevis/JSU/master/images/ <BR/>
+If you want to the local jsu/images directory (e.g. to modify images) you have to replace: <BR/>
+    https://raw.github.com/FedericoLevis/JSU/master/images/     <BR/>
+  with          <BR/>
+    ../images         <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>
 <b>DISCLAIMER</b>  <BR/>
 Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_blank">JSU</a> <BR/> 
@@ -22,7 +27,7 @@ td.PopupImgXXX: Popup Image
 ---
 <b>CSS:</b> ``td.PopupImgInfo``, ``td.PopupImgWarning``, ``td.PopupImgError``,...  
 <BR/><b>Examples:</b>
-```javascript
+```html
 <table><tr><td class="PopupImgInfo" width="50px" height="50px" ></td></tr><table>
 <table><tr><td class="PopupImgWarning" width="50px" height="50px" ></td></tr><table>
 <table><tr><td class="PopupImgError" width="50px" height="50px" ></td></tr><table>
@@ -30,35 +35,27 @@ td.PopupImgXXX: Popup Image
 <table><tr><td class="PopupImgQuestion" width="50px" height="50px" ></td></tr><table>
 <table><tr><td class="PopupImgChoice" width="50px" height="50px" ></td></tr><table>
 ```
-```html
-<table><tr><td style="background: url('https://raw.githubusercontent.com/FedericoLevis/JSU/master/images/PopupInfo.png') center center no-repeat;" width="50px" height="50px" ></td></tr><table>
-<table><tr><td style="background: url('https://raw.githubusercontent.com/FedericoLevis/JSU/master/images/PopupWarning.png') center center no-repeat;" width="50px" height="50px" ></td></tr><table>
-<table><tr><td style="background: url('https://raw.githubusercontent.com/FedericoLevis/JSU/master/images/PopupError.png') center center no-repeat;" width="50px" height="50px" ></td></tr><table>
-<table><tr><td style="background: url('https://raw.githubusercontent.com/FedericoLevis/JSU/master/images/PopupConfirm.png') center center no-repeat;" width="50px" height="50px" ></td></tr><table>
-<table><tr><td style="background: url('https://raw.githubusercontent.com/FedericoLevis/JSU/master/images/PopupQuestion.png') center center no-repeat;" width="50px" height="50px" ></td></tr><table>
-<table><tr><td style="background: url('https://raw.githubusercontent.com/FedericoLevis/JSU/master/images/PopupChoice.png') center center no-repeat;" width="50px" height="50px" ></td></tr><table>
-```
 */
 td.PopupImgInfo { 
-  background: url('../../images/PopupInfo.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupInfo.png') center center no-repeat;
 }
 td.PopupImgWarning { 
-  background: url('../../images/PopupWarning.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupWarning.png') center center no-repeat;
 }
 td.PopupImgError { 
-  background: url('../../images/PopupError.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupError.png') center center no-repeat;
 }
 td.PopupImgConfirm { 
-  background: url('../../images/PopupConfirm.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupConfirm.png') center center no-repeat;
 }
 td.PopupImgQuestion, td.PopupImgPrompt { 
-  background: url('../../images/PopupQuestion.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupQuestion.png') center center no-repeat;
 }
 td.PopupImgChoice { 
-  background: url('../../images/PopupChoice.png') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupChoice.png') center center no-repeat;
 }
 td.PopupImgAlarm { 
-  background: url('../../images/PopupAlarm.gif') center center no-repeat;
+  background: url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupAlarm.gif') center center no-repeat;
 }
 
 /*---
@@ -227,16 +224,13 @@ input.PopupPromptError: Prompt Input Error
 ---
 <b>CSS:</b> ``input.PopupPromptError`` used for POPUP_TYPE.PROMPT. When there is a validation Erroror, show an alarm gif on the right of the input
 <BR/><b>Examples:</b>
-```javascript
-<input class="PopupPromptError" width="20px" />
-```
 ```html
-<input class="PopupPromptError" style="background-size: contain; background: url('https://raw.githubusercontent.com/FedericoLevis/JSU/master/images/PopupValidationError.gif') no-repeat right center;background-size: contain;" width="20px" />
+<input class="PopupPromptError" width="20px" />
 ```
 */
 input.PopupPromptError
 {
-  background:url('../../images/PopupValidationError.gif') no-repeat right center;
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/PopupValidationError.gif') no-repeat right center;
   background-size: contain;
   z-index: 1000;
 }
@@ -448,9 +442,5 @@ td.PopupError,label.PopupError{
   font-weight: bold;
   color: red; /* */
 }
-
-
-
-
 
 
