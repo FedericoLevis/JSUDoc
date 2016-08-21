@@ -530,7 +530,7 @@ Set tip_type = tipType</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line286">line 286</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line287">line 287</a>
     </li></ul></dd>
     
 
@@ -692,24 +692,32 @@ Set tip_type = tipType</td>
 
             
 
-            <td class="description last">Option: <ul>
-                           <li> szTitle{String}  default: ''   </li> 
-                           <li> bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  </li> 
-														<li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
-													  <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
-														<li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...) n (e.g -100)   default=TIP_FIXED_POS.CENTER  </li> 
-													  <li> bNL2BR= [true]  if true /n are converted to </li>
-														<li> -------------------------- FOLLOW FIELDS are for ADVANCED use. Usually they are ever used <li/> 
-                           <li> objClass:  {Object}  {Down: {String}, Up: {String}}  2 Classes that identify The 2 states <BR/>
-                           To be used when you have 2 classes not that are not already defined into the TIP_FIX_CLASS_xxx constants of this file <BR/>
-                           e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} </li>
-                           <li>szRefElId: Id of the Reference ElementImage. It can be used instead of event, to display the Tip below this szRefEl </li>
-                          </ul> 
-		GLOBAL
-Set tip_type = tipType
-
-Implementation NOTES:
-- all the other tiFixXXX call this funcion</td>
+            <td class="description last"><table class="jsDoc" border="2" cellpadding="2" cellspacing="2">
+        <tr><td class="jsDocTitle">OPTION</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+           <li> szTitle{String}  default: ''   </li> 
+           <li> bCloseBtn {Boolean}  default: true(if true show a Close Button on the Bottom)  </li> 
+					 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL  </li>  
+				 	 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+					 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...) n (e.g -100)   default=TIP_FIXED_POS.CENTER  </li> 
+					 <li> bNL2BR= [true]  if true /n are converted to </li>
+					 ------ <b>FOLLOW FIELDS are for ADVANCED use. Usually they are ever used </b>  
+           <li> objClass:  {Object}  {Down: {String}, Up: {String}}  2 Classes that identify The 2 states <BR/>
+               To be used when you have 2 classes not that are not already defined into the TIP_FIX_CLASS_xxx constants of this file <BR/>
+               e.g.  objClass: {Down: 'downloadFree', Up: 'downloadFreeUp'} </li>
+           <li>szRefElId: Id of the Reference ElementImage. It can be used instead of event, to display the Tip below this szRefEl </li>
+        </ul> 
+        </td></tr>
+     </table>  
+ 
+  <div class="jsDocNote">
+  <b>Implementation NOTES:</b>
+  <ul>
+    <li>GLOBAL VAR:   tt_tipFix </li>
+    <li>All the other tiFixXXX call this funcion</li>
+  </ul>
+  </div></td>
         </tr>
 
     
@@ -750,7 +758,7 @@ Implementation NOTES:
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line339">line 339</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line350">line 350</a>
     </li></ul></dd>
     
 
@@ -789,7 +797,7 @@ Implementation NOTES:
 
 <div class="description">
     Display a Fixed Tip with Code Hightlighted with JSU core/prettify/prettify-jsu.js <BR/>
-Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b? <BR/>
+Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b> <BR/>
 See prettify-jsu.js for the detail of supported languages <BR/>
   
   NOTE:  <ul>
@@ -964,7 +972,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line552">line 552</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line567">line 567</a>
     </li></ul></dd>
     
 
@@ -1174,7 +1182,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line809">line 809</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line824">line 824</a>
     </li></ul></dd>
     
 
@@ -1236,7 +1244,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 
 <div class="description">
     Display a Fixed Tip with Code Hightlighted with JSU core/prettify/prettify-jsu.js <BR/>
-Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b? <BR/>
+Example of supported language: <b>js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..</b> <BR/>
 See prettify-jsu.js for the detail of supported languages <BR/>
   
   NOTE:  <ul>
@@ -1418,7 +1426,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line605">line 605</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line620">line 620</a>
     </li></ul></dd>
     
 
@@ -1632,7 +1640,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line745">line 745</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line760">line 760</a>
     </li></ul></dd>
     
 
@@ -1737,7 +1745,7 @@ tip_type Set it to TIP_TYPE.NONE
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line509">line 509</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line524">line 524</a>
     </li></ul></dd>
     
 
@@ -1785,7 +1793,7 @@ tip_type Set it to TIP_TYPE.NONE
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Aug 21 2016 15:11:56 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Aug 21 2016 23:13:07 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -28,14 +28,14 @@ html
 {
     overflow: auto;
     background-color: #fff;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 body
 {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
-    color: #4d4e53;
+    color: #000000;
     background-color: white;
 }
 
@@ -143,6 +143,7 @@ footer {
 h1, h2, h3, h4 {
     font-weight: 200;
     margin: 0;
+    font-weight: bold;
 }
 
 h1
@@ -151,6 +152,7 @@ h1
     font-size: 48px;
     letter-spacing: -2px;
     margin: 12px 24px 20px;
+    font-weight: bold;
 }
 
 h2, h3
@@ -159,6 +161,7 @@ h2, h3
     font-weight: 700;
     letter-spacing: -1px;
     margin-bottom: 12px;
+    font-weight: bold;
 }
 
 h4
@@ -166,7 +169,7 @@ h4
     font-size: 18px;
     letter-spacing: -0.33px;
     margin-bottom: 12px;
-    color: #4d4e53;
+    color: #000000;
 }
 
 h5, .container-overview .subsection-title
@@ -296,11 +299,16 @@ h6
   user-select: text;
 }
 
+/* JSU */
 .params, .props
 {
-    border-spacing: 0;
-    border: 0;
-    border-collapse: collapse;
+  width: 100%;
+  border-spacing: 0;
+  border: 3px solid #858585; /* Dark Gray */
+  border-spacing: 0px;
+  border-collapse: separate;
+  border-spacing: 2px;  
+  border-collapse: collapse;
 }
 
 .params .name, .props .name, .name code {
@@ -311,7 +319,7 @@ h6
 
 .params td, .params th, .props td, .props th
 {
-    border: 1px solid #ddd;
+    border: 1px solid #000000;   /* JSU border of param table  cell*/
     margin: 0px;
     text-align: left;
     vertical-align: top;
@@ -331,8 +339,8 @@ h6
     font-weight: bold;
 }
 
-.params th, .props th { border-right: 1px solid #aaa; }
-.params thead .last, .props thead .last { border-right: 1px solid #ddd; }
+.params th, .props th { border-right: 1px solid #000; }
+.params thead .last, .props thead .last { border-right: 1px solid #000; }
 
 .params td.description > p:first-child,
 .props td.description > p:first-child
@@ -350,4 +358,95 @@ h6
 
 .disabled {
     color: #454545;
+}
+
+
+/* ------------------    JSU By F. Levis ----------------------------*/
+
+.tag-source{
+  font-family: Verdana;
+  color: blue;
+  font-weight: bold;
+  font-size: 12px;   
+  font-style: italic;   
+}
+
+.name{  /* name of parameters */
+  font-weight: bold;
+}
+
+table.jsDoc {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; 
+  background-color: #ffffff;
+  border: 2px solid #858585; /* Dark Gray */
+  border-spacing: 0px;
+  border-collapse: separate;
+  border-spacing: 2px;  
+}
+
+table.jsDocNoBorder {
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; /* Black */
+  background-color: #ffffff;
+  border: 0px; /*  */
+  border-collapse: separate;
+  border-spacing: 5px;  
+}
+
+tr.jsDocTitle,th.jsDocTitle, td.jsDocTitle, tr.jsDocTitleBig,th.jsDocTitleBig { /* */
+  background-color: #606060; 
+  border: 2px solid #858585; /* Dark Gray */
+  color: #FFFFFF; /*#CCFFFF cyan */
+  text-align: center;
+  font-family: Verdana;
+  font-weight: bold;
+}
+
+.jsDocParam{
+  font-size: 11px;   
+}
+
+.jsDocNote{
+  font-family: Verdana;
+  padding-top: 10px;
+  font-size: 10px;   
+  font-style: italic;   
+}	
+
+.jsDocTitle{
+  font-family: Verdana;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}	
+
+.jsDocGood{ /* Example: use for Feature of FREE JSU.zip that are always available */
+  background-color: #0b0e0e6;
+  border: raised black 2px blue;
+}	
+
+.jsDocWarn{ /* Example: use for Feature only of FULL JSU.zip that are NOT always available */
+  background-color: #0b0e0e6;
+  border: raised black 2px red;
+} 
+
+ul {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+li {
+  padding-top:0px;
+  padding-bottom:2px;
+  margin-top: 0px;
+  margin-bottom: 2px;
 }
