@@ -119,12 +119,13 @@
 <h1>
 <a id="par1" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) JSU SortTable</h1>
 <hr>
-JSU API to Sort an HTML table by clicking Column Header. You can add this feature to your existing Table without modifying the existing HTML, but simply adding one JSU API: <ul>
-<li> var cSortTblEl = new <label class="jsuAPI">cSortTable(szTblId, arSortCol, <i>objOpt</i>)</label> <BR/>
-Create a cSortTable instance, that will automatically Sort the HTML table:<BR/>
-      <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="800px">
-        <tr class="tiptitle"><th class="tipTitle" colspan="4">cSortTable constructor PARAMETERS</td></tr>
-        <tr class="tiptitle2">
+This JSU API is used to Sort an HTML table by clicking Column Header; you can add this feature to your existing Table without modifying the existing HTML, but simply adding one JSU API: 
+<ul>
+<li> var cSortTblEl = new <label class="jsuAPI">cSortTable(szTblId, arSortCol, <i>objOpt</i>)</label> &nbsp;&nbsp;
+<i>Create a cSortTable instance, that will automatically Sort the HTML table</i><BR/>
+      <table style="margin-top:10px;" class="det" BORDER="2" cellspacing="0" cellpadding="2" width="800px">
+        <tr class="detTitle"><th class="detTitle" colspan="4">cSortTable constructor PARAMETERS</td></tr>
+        <tr class="detTitle2">
           <td width="10%" class="tipc">Parameter</td>
           <td width="10%" class="tipc">Type</td>
           <td width="30%" class="tipc">Description</td>
@@ -156,10 +157,13 @@ Create a cSortTable instance, that will automatically Sort the HTML table:<BR/>
           <td class="tipl">See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/cSortTable.js/index.html" target="_blank">SortTable API Documentation</a>
    </td>
   </tr>
-      </table>
+</table>
+For the details see <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/cSortTable.js/cSortTable.html" target="_self">jsu/core/cSortTable.js</a>
 </li>
 </ul>
-We will show following cases:
+<BR/>
+
+We will describe following cases:
 <ul>
   <li> <a href="#par1.1">Standard SortTable Options</a>: an example with an HTML Table having a common Layout (e.g. 1 Row for Header,..)</li>
   <li> <a href="#par1.2">Particular SortTable Options</a> for particular Table Layout see SAMPLE_2 in  
@@ -168,7 +172,7 @@ We will show following cases:
 </ul>
 
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par1.1" class="anchor" href="#par1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1) Standard SortTable Options</hr>
+<a id="par1.1" class="anchor" href="#par1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1) Standard SortTable Options</h2>
 Follow example show how to add JSU Sort Feature to an HTML Table having a standard Layout (e.g. 1 Row for Header,..):
 <BR/><BR/>
 
@@ -214,7 +218,7 @@ Follow example show how to add JSU Sort Feature to an HTML Table having a standa
       <td class="sampleDesc"  id="col_1_2"  valign="top">
          <table >
            <tr valign="top"><td>
-               <label class="aboutSource">JS Souce Code</label> of Sample_1: <input type="button" class="tipFixJS" id="tipJSTbl1" onclick="tipFixCode( JS_CODE_SORT_TBL1,event);" /><BR/>
+               <label class="aboutSource">JS Souce Code</label> of Sample_1: <input type="button" class="tipFixJS" id="tipJSTbl1" onclick="TipFixCode( JS_CODE_SORT_TBL1,event);" /><BR/>
                Table of this sample has <label class="sampleBrown">FEW PROPERTIES (in Brown below) different from <label class="jsuAPI">cSortTable</label> JSU default.</label><BR/>
                Table Columns:
                <ul type="square">
@@ -240,8 +244,8 @@ Follow example show how to add JSU Sort Feature to an HTML Table having a standa
   
 
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par1.2" class="anchor" href="#par1.2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2) Particular SortTable Options</hr>
-Follow the SortTable options to be used for particular Table Layout :
+<a id="par1.2" class="anchor" href="#par1.2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2) Particular SortTable Options</h2>
+Follow an example with particular Table Layout:
 <BR/><BR/>
 
     <!--   SAMPLE and DESC HEADER-->
@@ -258,7 +262,7 @@ Follow the SortTable options to be used for particular Table Layout :
    <!--   ===================================== TBL2 ==============================================  -->
     <tr id="tr_sample_2">
       <td class="sample"  id="col_2_1" valign="top">
-        <label class="sampleTitle">SAMPLE_2 - Sort a Table with a CUSTOM FORMAT </label>
+        <label class="sampleTitle">SAMPLE_2 - Sort a Table with a CUSTOM FORMAT </label><BR/>
         <!--     TABLE tbl2 to SORT -->
 				<table class="sampleSort" style="margin-top:5px;margin-left:10px"  id="tbl2" border="1" width="500px">  
 				   <thead>    
@@ -270,7 +274,8 @@ Follow the SortTable options to be used for particular Table Layout :
 				        <th width="80px" class="header">Request Number</th>      
 				        <th width="90px" class="header">Insert Date</th>      
 				        <th width="100px" class="header">State</th>      
-				        <th width="100px" class="header">Amount</th>      
+				        <th width="100px" class="header">Amount</th>     
+                     </tr>                        
 				  </thead>  
 				  <tbody>   
 				    <tr>       
@@ -313,7 +318,7 @@ Follow the SortTable options to be used for particular Table Layout :
       <td class="sampleDesc" id="col_2_2"  valign="top">
          <table >
            <tr valign="top"><td>
-               <label class="aboutSource">JS Source Code</label> of SAMPLE_2: <input type="button" class="tipFixJS" id="tipJSTbl2" onclick="tipFixCode( JS_CODE_SORT_TBL2,event);" /><BR/>
+               <label class="aboutSource">JS Source Code</label> of SAMPLE_2: <input type="button" class="tipFixJS" id="tipJSTbl2" onclick="TipFixCode( JS_CODE_SORT_TBL2,event);" /><BR/>
                Table has <label class="sampleBrown">MANY PROPERTIES (in Brown below) different from <label class="jsuAPI">cSortTable</label> JSU default.</label><BR/>
                Table Columns:
                <ul type="square">
