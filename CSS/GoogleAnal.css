@@ -1,0 +1,51 @@
+/*---
+Google Analytics button  
+---
+<b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html">JSU Tooltip API Doc</a>
+
+```html
+<b>JSU GoogleAnalytics buttons :</b> <ul>
+ <li> tipFix button to show a Box with a List of Google Analytics URLs: <BR/>   
+     <b>input.googleAnalList</b>  <input type="button" class="googleAnalList"/> <BR/> 
+     <b>input.googleAnalListUp</b>  <input type="button" class="googleAnalListUp" />
+ </li><BR/>
+ <li> button to Go to the Page of Google Analytics:  
+     &nbsp;&nbsp; <b>input.googleAnal</b>  <input type="button" class="googleAnal"/>  
+ </li><BR/>
+
+</ul> 
+```
+*/
+
+input.googleAnalList, input.googleAnalListUp {  /* Button for Google Analytics: show TipFix with List of URLs to go to GoogleAnalytics */
+    height: 24px;
+    width: 225px;
+    border: 2px solid gray;
+    border-style: ridge;
+    cursor: pointer;
+}
+input.googleAnalList {
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalList.png) no-repeat center center; 
+}
+input.googleAnalListUp {
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListUp.png) no-repeat center center; 
+}
+
+
+input.googleAnalListJQPopup {  /* Like googleAnalList but in a JQPopup insyead of TipFix*/
+    height: 24px;
+    width: 225px;
+    border: 2px solid gray;
+    border-style: ridge;
+    cursor: pointer;
+    background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListJQPopup.png) no-repeat center center; 
+}
+
+
+input.googleAnal{  /* Button to show 1 page with Google Analytics  */
+    height: 23px;
+    width: 27px;
+    cursor: pointer;
+    margin-left: 2px; 
+   background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnal.png) no-repeat center center;
+}
