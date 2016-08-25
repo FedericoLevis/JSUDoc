@@ -375,7 +375,7 @@ h6
   font-weight: bold;
 }
 
-table.jsDoc {
+table.jsDoc {         /* used for generic Table of Option */
   text-align: center;
   font-family: Verdana;
   font-weight: normal;
@@ -388,6 +388,51 @@ table.jsDoc {
   border-spacing: 2px;  
 }
 
+
+table.jsDocGood,tr.jsDocGood,td.jsDocGood {         /* used for Table of Good Option (e.g always valid in BOTH FREE or FULL JSU) */
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; 
+  background-color: #ffffff;
+  border: 3px solid blue; /* blue */
+  border-spacing: 0px;
+  border-collapse: separate;
+  border-spacing: 2px;  
+}
+
+td.jsDocTitleGood {
+  background-color: #68FFFB !important;
+  text-align: center;
+  font-weight: bold;
+  font-size: 11px;
+  color: black; 
+}
+
+
+table.jsDocWarn,tr.jsDocWarn,td.jsDocWarn{         /* used for Table of Good Option (e.g always valid in BOTH FREE or FULL JSU) */
+  text-align: center;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; 
+  background-color: #ffffff;
+  border: 3px solid red; /* blue */
+  border-spacing: 0px;
+  border-collapse: separate;
+  border-spacing: 2px;  
+}
+
+td.jsDocTitleWarn{ /* Example: use for Feature only of FULL JSU.zip that are NOT always available */
+  background-color: yellow !important;
+  text-align: center;
+  font-weight: bold;
+  font-size: 11px;
+  color: red; 
+} 
+
+
 table.jsDocNoBorder {
   text-align: center;
   font-family: Verdana;
@@ -399,6 +444,9 @@ table.jsDocNoBorder {
   border-collapse: separate;
   border-spacing: 5px;  
 }
+
+
+
 
 tr.jsDocTitle,th.jsDocTitle, td.jsDocTitle, tr.jsDocTitleBig,th.jsDocTitleBig { /* */
   background-color: #606060; 
@@ -427,15 +475,6 @@ tr.jsDocTitle,th.jsDocTitle, td.jsDocTitle, tr.jsDocTitleBig,th.jsDocTitleBig { 
   text-align: center;
 }	
 
-.jsDocGood{ /* Example: use for Feature of FREE JSU.zip that are always available */
-  background-color: #0b0e0e6;
-  border: raised black 2px blue;
-}	
-
-.jsDocWarn{ /* Example: use for Feature only of FULL JSU.zip that are NOT always available */
-  background-color: #0b0e0e6;
-  border: raised black 2px red;
-} 
 
 ul {
   padding-top: 2px;
