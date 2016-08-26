@@ -413,6 +413,7 @@ td.jsDocTitleGood {
 
 table.jsDocWarn,tr.jsDocWarn,td.jsDocWarn{         /* used for Table of Good Option (e.g always valid in BOTH FREE or FULL JSU) */
   text-align: center;
+  margin-top: 5px;
   font-family: Verdana;
   font-weight: normal;
   font-size: 11px;
