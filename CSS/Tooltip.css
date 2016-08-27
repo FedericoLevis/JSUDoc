@@ -70,6 +70,10 @@ Tooltip: button for TipFix
  <li> JSU help Button: &nbsp;&nbsp;  
      <b>input.jsuHelp</b>  <input type="button" class="jsuHelp"/>
  </li>
+ </li><BR/>
+ <li> JSU Option Button: &nbsp;&nbsp;  
+     <b>input.jsuOpt</b>  <input type="button" class="jsuOpt"/>
+ </li>
 </ul> 
 ```
 */
@@ -147,15 +151,23 @@ input.jsuHelp{	/* Help Button */
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/help.png) no-repeat center center;
 }
 
+input.jsuOpt, input.jsuOptUp{  /* Option Button (we use the same also for Up)*/  
+    height: 27px;
+    width: 27px;
+    cursor: pointer;
+    margin-left: 0px; 
+    /* background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/option.png) no-repeat center center; */
+    background: #E0E0E0 url(../images/option.png) no-repeat center center;
+}
+
+
+
 
 input.tipFix,input.tipFixUp,       /* Border in Normal State */ 
 input.tipFixArrow, input.tipFixArrowUp,
 input.tipFixJS, input.tipFixJSUp,
 input.tipFixCode, input.tipFixCodeUp,
-input.googleAnal,
-input.googleAnalListJQPopup,
-input.googleAnalList, input.googleAnalListUp,
-input.jsuHelp
+input.jsuHelp, input.jsuOpt, input.jsuOptUp
 {
     border: 2px solid gray;
     border-style: ridge;
@@ -166,15 +178,11 @@ input.tipFix:hover,input.tipFixUp:hover,   /* Border when Mouse is over */
 input.tipFixArrow:hover, input.tipFixArrowUp:hover,
 input.tipFixJS:hover, input.tipFixJSUp:hover,
 input.tipFixCode:hover, input.tipFixCodeUp:hover,
-input.googleAnal:hover, 
-input.googleAnalListJQPopup:hover,
-input.googleAnalList:hover, input.googleAnalListUp:hover,
-input.jsuHelp:hover 
+input.jsuHelp:hover, input.jsuOpt:hover, input.jsuOptUp:hover    
 {
     border: 2px solid #e0e0e0;
     border-style: ridge;
 } 
-
 
 
 
@@ -195,7 +203,7 @@ div.ttTitle{  /* default Title */
 .ttClose {   /* for close button on Top Right */
   color: #000000 !important;
 /*   font-family: Calibri !important; */
-  font-family: Arial Black !important;
+  font-family: "Arial Black", Gadget, sans-serif !important;
   font-weight: bold !important ;
   font-size: 13px !important;
   background-color: #D4D4D4 !important;  /* dark gray */
@@ -510,7 +518,11 @@ table.note, table.tipNote {  /* for the Note (e.g at the bottom of the Google An
 td.note,td.tipNote{
   vertical-align: top;
   padding-right:5px;
-}	
+}
+
+td.tipNote{
+  background-color: #ffffCC;
+}
 
 input.note{ /* Image for the Note */
     height: 18px;

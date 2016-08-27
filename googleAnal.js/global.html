@@ -102,7 +102,7 @@
 
 
 <div class="description">
-    Default Value of googleAnal.js par
+    Default Value of ga.js par
 </div>
 
 
@@ -140,7 +140,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="googleAnal.js.html">googleAnal.js</a>, <a href="googleAnal.js.html#line53">line 53</a>
+        <a href="googleAnal.js.html">googleAnal.js</a>, <a href="googleAnal.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -164,7 +164,7 @@
 
 
 <div class="description">
-    Parameter szParTime of googleAnali.js API: 
+    Parameter szParTime of gai.js API: 
         <ul>
            <li>GA_PAR_TIME.all_time</li>
            <li>GA_PAR_TIME.month</li>
@@ -209,7 +209,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="googleAnal.js.html">googleAnal.js</a>, <a href="googleAnal.js.html#line42">line 42</a>
+        <a href="googleAnal.js.html">googleAnal.js</a>, <a href="googleAnal.js.html#line41">line 41</a>
     </li></ul></dd>
     
 
@@ -236,14 +236,14 @@
 
     
 
-    <h4 class="name" id="googleAnalList"><span class="type-signature"></span>googleAnalList<span class="signature">(arObjGoogleAnalList, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="gaShortUrlList"><span class="type-signature"></span>gaShortUrlList<span class="signature">(arObjGaList, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 
 
 
 <div class="description">
-    Display in a FixedTip/JQPopup an UserFriendly Table with the Link to Google Analytics. The Table is UserFriendly (Sort, Filters, Show/Hide Columns,..)
+    Display in a FixedTip/JQPopup an UserFriendly Table with the Link to Google Analytics of Short Url gaa.gl. The Table is UserFriendly (Sort, Filters, Show/Hide Columns,..)
 </div>
 
 
@@ -281,7 +281,7 @@
 
         <tr>
             
-                <td class="name"><code>arObjGoogleAnalList</code></td>
+                <td class="name"><code>arObjGaList</code></td>
             
 
             <td class="type">
@@ -389,13 +389,11 @@
 	        <li> szHeaderTxt {String}: [DEF_GA_LABEL.HEADER] Message to put before the Table of Link to Analytics. You can set "" to remove it 
 	        <li> szFooterTxt {String}: [DEF_GA_LABEL.FOOTER] Message to put after the Table of Link to Analytics. You can set "" to remove it 
 	        <li> szParTime {String}:  [GA_PAR_TIME.all_time] Default ParTime ar Startup. 
-	             &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#GA_PAR_TIME" target="_self">GA_PAR_TIME</a>  
+	             &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/ga.js/global.html#GA_PAR_TIME" target="_self">GA_PAR_TIME</a>  
 	        </li>
         </ul> 
         </td></tr>
-     </table>
-     
-  <BR/></td>
+     </table></td>
         </tr>
 
     
@@ -436,7 +434,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="googleAnal.js.html">googleAnal.js</a>, <a href="googleAnal.js.html#line147">line 147</a>
+        <a href="googleAnal.js.html">googleAnal.js</a>, <a href="googleAnal.js.html#line164">line 164</a>
     </li></ul></dd>
     
 
@@ -463,25 +461,44 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>//--------------------------------------------------------- JS
-	function jsuGoogleAnalTip(event){   
-	  // Prepare arObjGoogleAnalList: Only shortUrl is mandatory (if other fieleds are not present, they are not displayed). 
-	  // In this case we populate all fields
-	  var arObjGoogleAnalList = [
-	       {shortUrl: JSU_URL_DOWNLOAD_PAGE_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE ,
-	      	              cat:"FREE JSU",desc:'N&amp;ordm; Download &lt;b>JSU.ZIP FREE&lt;/b> Obfuscated'},
-	       {shortUrl: JSU_URL_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL,cat:"FREE JSU", desc:'Main JSU Sample'},
-	       {shortUrl: JSU_URL_SAMPLE_TIP, longUrl: JSU_LONG_URL_SAMPLE_TIP,cat:"FREE JSU", desc:'Tooltip Sample'},
-	       {shortUrl: JSU_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:"FREE JSU", desc:'SortTable Sample'},
-	       {shortUrl: JSU_URL_SAMPLE_BLOCKPOPUP, longUrl: JSU_LONG_URL_SAMPLE_BLOCKPOPUP, cat:"FREE JSU",desc:'Blocking Popup'}
-	     ];
-	  TipFixGoogleAnal(arObjGoogleAnalList,event,{
-	  	szTitle:'JSU Google Analitycs',
-	  	iTipWidth: 1200
-	  });
-	}	
- //--------------------------------------------------------- HTML   
-	 &lt;input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)" /> </code></pre>
+    <pre class="prettyprint"><code>//--------------------------------------------------------- HTML   
+	 &lt;input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)" />
+	  
+  // --------------------------------- JS
+  function jsuGoogleAnal(event){	
+	var GA_CAT_DOWN = "JSU DOWNLOAD";
+	var GA_CAT_SAMPLE_FREE = "JSU FREE - SAMPLES";
+	var GA_CAT_DOC_FREE = "JSU FREE - DOC";
+	
+  // Prepare arObjGaList: only shortUrl is mandatory  
+  // In this case we populate all fields
+  var arObjGaList = [
+       {shortUrl: JSU_SHORT_URL_DOWNLOAD_FREE, longUrl: JSU_LONG_URL_DOWNLOAD_PAGE_FREE , cat:GA_CAT_DOWN,desc:'Download JSU.ZIP FREE'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_ALL, longUrl: JSU_LONG_URL_SAMPLE_ALL,cat:GA_CAT_SAMPLE_FREE, desc:'Main JSU Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_TIP, longUrl: JSU_LONG_URL_SAMPLE_TIP,cat:GA_CAT_SAMPLE_FREE, desc:'Tooltip Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_LOADING, longUrl: JSU_LONG_URL_SAMPLE_LOADING, cat:GA_CAT_SAMPLE_FREE,desc:'LoadingDiv Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_JSLOG, longUrl: JSU_LONG_URL_SAMPLE_JSLOG, cat:GA_CAT_SAMPLE_FREE,desc:'JSLog Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:GA_CAT_SAMPLE_FREE, desc:'SortTable Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_IEPOPUP, longUrl: JSU_LONG_URL_SAMPLE_IEPOPUP, cat:GA_CAT_SAMPLE_FREE,desc:'IE Popup Sample'},
+       // --------------------------
+       {shortUrl: JSU_SHORT_URL_DOC, longUrl: JSU_LONG_URL_DOC, cat:GA_CAT_DOC_FREE,desc:'JSU Documentation'},
+       {shortUrl: JSU_SHORT_URL_DOC_TIP, longUrl: JSU_LONG_URL_DOC_TIP, cat:GA_CAT_DOC_FREE,desc:'JSU Tooltip Documentation'},
+       {shortUrl: JSU_SHORT_URL_DOC_LOADING, longUrl: JSU_LONG_URL_DOC_LOADING, cat:GA_CAT_DOC_FREE,desc:'JSU LoadingDiv Documentation'},
+       {shortUrl: JSU_SHORT_URL_DOC_JSLOG, longUrl: JSU_LONG_URL_DOC_JSLOG, cat:GA_CAT_DOC_FREE,desc:'JSU JSLog Doc'},
+       {shortUrl: JSU_SHORT_URL_DOC_SORT, longUrl: JSU_LONG_URL_DOC_SORT, cat:GA_CAT_DOC_FREE,desc:'JSU SortTable Documentation'},
+       {shortUrl: JSU_SHORT_URL_DOC_IEPOPUP, longUrl: JSU_LONG_URL_DOC_IEPOPUP, cat:GA_CAT_DOC_FREE,desc:'JSU IE Popup Doc'}
+     ];
+  // show the TipFix with the List of Link
+  gaShortUrlList(arObjGaList,event,{
+        bJQPopup: false,
+    	szTitle:'JSU Google Analitycs',
+    	iWidth: opt_ga_list.iWidth,  // Width of the Box
+    	iTblMaxHeight: opt_ga_list.iTblMaxHeight,  // Max Height	 of the Table with the LIst of Google Analitycs Links
+    	szParTime: opt_ga_list.szParTime,   // Initial Par Time
+    	bShortUrl: opt_ga_list.bShortUrl,   // ShortUrl visible or not at startup
+    	bLongUrl: opt_ga_list.bLongUrl  // LongUrl visible or not at startup
+    });
+ }   </code></pre>
 
 
 
@@ -501,13 +518,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#GA_DEF">GA_DEF</a></li><li><a href="global.html#GA_PAR_TIME">GA_PAR_TIME</a></li><li><a href="global.html#googleAnalList">googleAnalList</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#GA_DEF">GA_DEF</a></li><li><a href="global.html#GA_PAR_TIME">GA_PAR_TIME</a></li><li><a href="global.html#gaShortUrlList">gaShortUrlList</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Aug 25 2016 22:25:54 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sat Aug 27 2016 21:55:02 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
