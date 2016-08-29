@@ -425,6 +425,11 @@ table.jsDocWarn,tr.jsDocWarn,td.jsDocWarn{         /* used for Table of Option v
   border-spacing: 2px;  
 }
 
+label.jsDocWarn{         /* used for Table of Option valid only in FULL JSU */
+  font-weight: bold;
+  color: red; 
+}
+
 td.jsDocTitleWarn{ /* Example: use for Feature only of FULL JSU.zip that are NOT always available */
   background-color: yellow !important;
   text-align: center;
