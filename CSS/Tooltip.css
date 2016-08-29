@@ -79,7 +79,7 @@ Tooltip: button for TipFix
 */
 
 input.tipFix, input.tipFixUp{  /* Fields Common for input.tipFix and input.tipFixUp */ 
-    height: 20px;
+    height: 22px;
     width: 13px;
     font-weight: bold;
     cursor: pointer;
@@ -95,7 +95,7 @@ input.tipFixUp{ /* Specific filed of input.tipFixUp : different image */
 }
 
 input.tipFixJS, input.tipFixJSUp{
-    height: 21px;
+    height: 23px;
     width: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -110,7 +110,7 @@ input.tipFixJSUp{
 }
 
 input.tipFixCode, input.tipFixCodeUp{
-    height: 28px;
+    height: 30px;
     width: 40px;
     font-weight: bold;
     cursor: pointer;
@@ -528,17 +528,13 @@ input.note{ /* Image for the Note */
     height: 18px;
     width: 36px;
     border: 0px ;
-    /* DAFARE */
-    /* background: white url("https://rawgit.com/FedericoLevis/JSU/master/images/note.png") no-repeat center center; */ 
-    background: #FFFFFF url(../images/note.png) no-repeat center center; 
+    background: white url("https://rawgit.com/FedericoLevis/JSU/master/images/note.png") no-repeat center center;  
 }
 input.tipNote{ /* Image for the Note in the Tip */
     height: 18px;
     width: 36px;
     border: 0px ;
-    /* DAFARE */
-    /* background: white url("https://rawgit.com/FedericoLevis/JSU/master/images/tipNote.png") no-repeat center center; */ 
-    background: #FFFFCC url(../images/tipNote.png) no-repeat center center; 
+    background: #FFFFCC url("https://rawgit.com/FedericoLevis/JSU/master/images/tipNote.png") no-repeat center center;  
 }
 
 

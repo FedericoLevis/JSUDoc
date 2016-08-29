@@ -289,7 +289,7 @@ input.PopupBtn{ /* Button OK */
   font-family: Arial;
 	font-weight: bold !important;
   font-size: 14px !important;
-	width: 100px;
+	min-width: 100px;
 	margin-top:10px !important;
 	margin-bottom:10px !important;
   margin-left:20px !important;	
@@ -427,3 +427,34 @@ td.PopupError,label.PopupError{
 }
 
 
+
+/// PROVA
+
+
+
+/*  Change  .jquery CSS */
+.ui-dialog .ui-dialog-buttonpane {
+  text-align: left;
+  background-color: #BABABA !important;  /* Gray*/    
+  border-width: 1px 1px 1px 1px;
+  background-image: none;
+  margin-top: .1em;
+  padding: .1em 1em .1em .1em;
+}
+
+.ui-dialog-buttonpane {
+  text-align: center !important;
+}
+
+.ui-dialog-buttonpane, .ui-dialog-buttonset {
+  float: none !important;
+}
+
+.ui-dialog-buttonset{
+	min-width: 100px;
+}	
+
+.ui-button-text{
+  min-width: 100px !important;
+  font-weight: bold ! important;
+}	

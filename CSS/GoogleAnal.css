@@ -5,11 +5,11 @@ Google Analytics button
 
 ```html
 <b>JSU GoogleAnalytics buttons :</b> <ul>
- <li> tipFix button to show a TipFix with a List of Google Analytics URLs: <BR/>   
+ <li> button to show a TipFix with a List of Google Analytics URLs: <BR/>   
      <b>input.googleAnalList</b>  <input type="button" class="googleAnalList"/> <BR/> 
      <b>input.googleAnalListUp</b>  <input type="button" class="googleAnalListUp" />
  </li><BR/>
- <li> tipFix button to show a JQPopup with a List of Google Analytics URLs: <BR/>   
+ <li> button to show a JQPopup with a List of Google Analytics URLs: <BR/>   
      <b>input.googleAnalListJQPopup</b>  <input type="button" class="googleAnalListJQPopup"/> <BR/> 
      <b>input.googleAnalListJQPopupDisabled</b>  <input type="button" class="googleAnalListJQPopupDisabled" />
  </li><BR/>
@@ -51,7 +51,6 @@ input.googleAnalListJQPopupDisabled {  /* Like googleAnalList but in a JQPopup i
     border-style: ridge;
     cursor: pointer;
     background: #FEFEFE url(https://raw.github.com/FedericoLevis/JSU/master/images/googleAnalListJQPopupDisabled.png) no-repeat center center; 
-    background: #FEFEFE url(../images/googleAnalListJQPopupDisabled.png) no-repeat center center; 
 }
 
 

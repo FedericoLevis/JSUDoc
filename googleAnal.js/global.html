@@ -102,7 +102,7 @@
 
 
 <div class="description">
-    Default Value of ga.js par
+    Default Value of googleAnal.js par
 </div>
 
 
@@ -230,6 +230,181 @@
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="ga_GoToURL"><span class="type-signature"></span>ga_GoToURL<span class="signature">(szUrl, bNewWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    WE use an Hidden a tag, for compatibility with MObile (instead of using window.open)
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>szUrl</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bNewWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">default true</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="googleAnal.js.html">googleAnal.js</a>, <a href="googleAnal.js.html#line665">line 665</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+    
+
+
 
         
             
@@ -389,7 +564,7 @@
 	        <li> szHeaderTxt {String}: [DEF_GA_LABEL.HEADER] Message to put before the Table of Link to Analytics. You can set "" to remove it 
 	        <li> szFooterTxt {String}: [DEF_GA_LABEL.FOOTER] Message to put after the Table of Link to Analytics. You can set "" to remove it 
 	        <li> szParTime {String}:  [GA_PAR_TIME.all_time] Default ParTime ar Startup. 
-	             &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/ga.js/global.html#GA_PAR_TIME" target="_self">GA_PAR_TIME</a>  
+	             &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#GA_PAR_TIME" target="_self">GA_PAR_TIME</a>  
 	        </li>
         </ul> 
         </td></tr>
@@ -434,7 +609,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="googleAnal.js.html">googleAnal.js</a>, <a href="googleAnal.js.html#line164">line 164</a>
+        <a href="googleAnal.js.html">googleAnal.js</a>, <a href="googleAnal.js.html#line176">line 176</a>
     </li></ul></dd>
     
 
@@ -462,10 +637,10 @@
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>//--------------------------------------------------------- HTML   
-	 &lt;input type="button"  class="tipGoogleAnal" id="tipGoogleAnal"  onclick="jsuGoogleAnal(event)" />
+  &lt;input type="button"  class="googleAnalList" id="googleAnalList1"  onclick="jsuGoogleAnalList(event)" />
 	  
   // --------------------------------- JS
-  function jsuGoogleAnal(event){	
+  function jsuGoogleAnalList(event){	
 	var GA_CAT_DOWN = "JSU DOWNLOAD";
 	var GA_CAT_SAMPLE_FREE = "JSU FREE - SAMPLES";
 	var GA_CAT_DOC_FREE = "JSU FREE - DOC";
@@ -503,6 +678,231 @@
 
 
         
+            
+
+    
+
+    <h4 class="name" id="gaShortUrlPage"><span class="type-signature"></span>gaShortUrlPage<span class="signature">(szShortUrl, objOpt<span class="signature-attributes">opt</span>, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Display the Page with Google analytics related to szShortUrl
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>szShortUrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Short URL generated with <a class="tipLink" href="https://goo.gl/">https://goo.gl/</a></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objOpt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>objOpt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><table class="jsDoc" border="2" cellpadding="2" cellspacing="2">
+        <tr><td class="jsDocTitle">OPTION</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+	        <li> szParTime {String}:  [GA_PAR_TIME.all_time] Default ParTime ar Startup. 
+	             &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#GA_PAR_TIME" target="_self">GA_PAR_TIME</a>  
+	        </li>
+	        <li> bNewWindow {Boolean} [true] if true show Google Analytics in a new Page </li>
+        </ul> 
+        </td></tr>
+     </table></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="googleAnal.js.html">googleAnal.js</a>, <a href="googleAnal.js.html#line336">line 336</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>//--------------------------------------------------------- HTML   
+  &lt;input type="button"  class="googleAnal" id="googleAnal"  onclick="jsuGoogleAnalPage(event)" />
+	  
+  // --------------------------------- JS</code></pre>
+
+
+
+        
     
 
     
@@ -518,13 +918,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#GA_DEF">GA_DEF</a></li><li><a href="global.html#GA_PAR_TIME">GA_PAR_TIME</a></li><li><a href="global.html#gaShortUrlList">gaShortUrlList</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#GA_DEF">GA_DEF</a></li><li><a href="global.html#ga_GoToURL">ga_GoToURL</a></li><li><a href="global.html#GA_PAR_TIME">GA_PAR_TIME</a></li><li><a href="global.html#gaShortUrlList">gaShortUrlList</a></li><li><a href="global.html#gaShortUrlPage">gaShortUrlPage</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sat Aug 27 2016 21:55:02 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Aug 29 2016 02:31:52 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

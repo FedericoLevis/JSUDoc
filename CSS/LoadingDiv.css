@@ -128,6 +128,11 @@ td.loadingDivBtn {
   padding-bottom: 10px; 
 }
 
+input.loadingDivBtn {
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 100px;
+}
 
 td.loadingDivFooter { /* Footer with Elapsed sec */
 	padding-left: 5px;
@@ -139,7 +144,7 @@ td.loadingDivFooter { /* Footer with Elapsed sec */
 div.loadingDivGif{ /* The Loading Gif on the Left in the Box */
   width: 110px;
 	height: 110px;
-	background: url('https://raw.github.com/FedericoLevis/JSU/master/images/Disk.gif') no-repeat center center;
+	background: url('https://raw.github.com/FedericoLevis/JSU/master/images/FillingRing.gif') no-repeat center center;
 	z-index: 110;  
 }
 

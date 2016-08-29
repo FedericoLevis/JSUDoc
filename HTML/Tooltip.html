@@ -10,7 +10,7 @@
   <title>JS Utility | JSU Tooltip Doc | Federico Levis</title>
   <meta charset="utf-8"/>
   <meta name="description" content="JSU utility (JSU) - Floating/Fixed HTML Tooltip with GIF, Video, Pages, Google Analytics" />
-  <meta name="keywords" content="js, utility, JSU, tooltip, tip, google, analytics, html, gif, federico, levis" />
+  <meta name="keywords" content="js, utility, JSU, tooltip, tip, html, gif, federico, levis" />
     <!-- Tooltip sample -->
 	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.js" ></script>
 	<!--  JSU   -->
@@ -50,7 +50,7 @@
           <tr/>
           <tr>
             <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
-            <td class="tipl"><a class="tipLink" href="https://goo.gl/MoY5nK" target="_blank">Try JSU Samples</a> </td>
+            <td class="tipl"><a class="tipLink" href="https://goo.gl/MoY5nK" target="_self">Try JSU Samples</a> </td>
           <tr/>
           
         </table></td></tr>
@@ -85,7 +85,7 @@
 <h1 class="jsuDoc">JSU - JS Utility Plugin - Tooltip Documentation</h1>
 
 <!--  USED by jsuGoToURL()  -->
-<a id="href_hidden" target="_blank" href="javascript:null" style="display:none">HIDDEN</a>
+<a id="href_hidden" target="_self" href="javascript:null" style="display:none">HIDDEN</a>
 
 
 <!-- -------------  END COMMON PART ------------------------------------------>
@@ -139,14 +139,14 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
     </td>
   </tr>
   <tr>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/core.html" target="_self">jsu/core/jsu.css</a></td>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/core.html#tooltip-tip-with-info-image" target="_self">input.jsuInfo</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/index.html" target="_self">jsu/core/jsu.css</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/Tooltip.html#tooltip-tip-with-info-image" target="_self">input.jsuInfo</a></td>
   </tr>
 </table>
 <b>SAMPLEs:</b>  
 
    <!--   SAMPLE and DESC HEADER-->
-   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="1200px">
+   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tiptitleBig">
       <th class="tiptitleBig" colspan="2">Floating Tip SAMPLE </th>
     </tr>
@@ -160,6 +160,10 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
     <tr id="tr_sample_1" valign="top">
       <td class="sample" id="col_1_1">
          <label class="sampleTitle">SAMPLE_1 - Floating Tip:</label>
+		 <table class="sampleNote"><tr>
+		    <td class="sampleNote"><input class="sampleNote"></td>
+		    <td>Put the mouse over the DOM Elements, to see  the <b>Floating Tip</b></label></td>
+		 </tr></table>
          <table class="sampleNoBorder">
               <tr>
                   <td width="25%">
@@ -177,7 +181,7 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
                   <td width="25%"> 
                   Tip image <b>jsuInfo</b>      
                   <input type="button" class="jsuInfo"
-                        onmouseover="Tip(JSU_TIP_INFO);"    onmouseout="UnTip(event);"/></td>                        
+                        onmouseover="sample1d(event);"    onmouseout="UnTip(event);"/></td>                        
               </tr>           
           </table>
       </td>
@@ -203,6 +207,7 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
          </table>
       </td>
     </tr>
+
     </table>
  
 
@@ -220,18 +225,17 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
     <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html" target="_self">jsu/core/tooltip.js</a></td>
     <td>
        <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/global.html#TipFix" target="_self">TipFix</a> &nbsp;&nbsp;
-       <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/global.html#TipFixGoogleAnalList" target="_self">TipFixGoogleAnalList</a> &nbsp;&nbsp;
     </td>
   </tr>
   <tr>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/core.html" target="_self">jsu/core/jsu.css</a></td>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/core.html#tooltip-button-for-tipfix" target="_self">Buttons for TipFix</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/index.html" target="_self">jsu/core/jsu.css</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/Tooltip.html#tooltip-button-for-tipfix" target="_self">Buttons for TipFix</a></td>
   </tr>
 </table>
 <b>SAMPLEs:</b>  
 
    <!--   SAMPLE and DESC HEADER-->
-   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="1200px">
+   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tiptitleBig">
       <th class="tiptitleBig" colspan="2">Fixed Tip SAMPLE </th>
     </tr>
@@ -245,6 +249,11 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
     <tr id="tr_sample_2" valign="top">
       <td class="sample" id="col_2_1" >
          <label class="sampleTitle">SAMPLE_2 - Fixed Tip with GIF, button, link, VIDEO,..</label>
+         <label id="limit_sample_2" class="featSampleLimit" style="margin-left:20px;">FREE JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitations</a></label>
+		 <table class="sampleNote"><tr>
+		    <td><input class="sampleNote"></td>
+		    <td><b>Click</b> over the Button to Open <b>Fixed Tip</b> - <b>Click again</b> to Close it</label></td>
+		 </tr></table>
          <ul>
            <li>case a) FixedTip with <b>GIF, Button, Link</b>
                <input type="button"  class="tipFix" id="tipSample2a"  onclick="sample2a(event);" />
@@ -262,7 +271,7 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
            <tr valign="top"><td>
                To implement a <b>FixedTip</b> Tooltip :  
                <ul> 
-               <li>Set an <i><b>input button</b></i> with JSU <label class="jsuAPI">core.css</label> class like <label class="jsuAPI">tipFix, tipFixArrow</label> </li>
+               <li>Set an <i><b>input button</b></i> with JSU <label class="jsuAPI">jsu.css</label> class like <label class="jsuAPI">tipFix, tipFixArrow</label> </li>
                <li>In the <b>onclick event</b> call the <b>JSU Tip API</b>   <label class="jsuAPI">TipFix</label>(<b><i>tipHTML</i></b>,event,<b><i>objOpt</i></b>)</li>
                </ul>
                Code of SAMPLE_2 cases:
@@ -312,7 +321,7 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
 
 
    <!--   SAMPLE and DESC HEADER-->
-   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="1200px">
+   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tiptitleBig">
       <th class="tiptitleBig" colspan="2">Fixed Tip with Code Hightlighted - SAMPLE </th>
     </tr>
@@ -321,11 +330,19 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
       <td width="50%" class="tipc" >DESCRIPTION</td>
     </tr>
     <!--   SAMPLE and DESC-->
-    <!--   ===================================== SAMPLE_3 ==============================================  -->
+    
+
+<!--   ===================================== SAMPLE_3 ==============================================  -->
     <tr id="tr_sample_3" valign="top">
       <td class="sample" id="col_3_1" >
-         <label class="sampleTitle">SAMPLE_3 - FixedTip with Code Highlighted</label><BR/>
-         The Tooltip API <label class="jsuAPI">TipFixCode</label> <b>higlights SW Code</b>: js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..
+         <label class="sampleTitle">SAMPLE_3 - FixedTip with Code Highlighted</label>
+         <label id="limit_sample_3" class="featSampleLimit" style="margin-left:20px;">FREE JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitations</a></label>
+		 <table class="sampleNote"><tr>
+		    <td class="sampleNote"><input class="sampleNote"></td>
+		    <td>The Tooltip API <label class="jsuAPI">TipFixCode</label> <b>higlights SW Code</b>: js, java,  perl, pl, pm, bsh, csh, sh, c, cpp, rb, py, cv, cs ,json, ..<b><BR/>
+			   Click</b> over the Button to Open <b>Fixed Tip</b> - <b>Click again</b> to Close it</label></td>
+		 </tr></table>
+         
          <ul>
            <li>case a) <b>Highlight JS</b> Code:&nbsp;
               <input type="button" class="tipFixJS" id="sample3a"  onclick="sample3a(event);" />  </li>    
@@ -340,7 +357,7 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
            <tr valign="top"><td>
                To hightlight one or more Section of  Code (JS, CSS, Java,..):  
                <ul> 
-	               <li>Set an <b>input</b> with JSU <label class="jsuAPI">core.css</label> class like <label class="jsuAPI">tipFixJS, tipFixCode, ...</label> </li>
+	               <li>Set an <b>input</b> with JSU <label class="jsuAPI">jsu.css</label> class like <label class="jsuAPI">tipFixJS, tipFixCode, ...</label> </li>
 	               <li>In the <b>onclick </b> event, call 
 	                  <label class="jsuAPI">TipFixJSCode</label>(<b><i>szCode</i></b>,event,<b><i>objOpt</i></b>)</label> for one Code section, &nbsp;&nbsp;
 	                   <label class="jsuAPI">TipFixJSMultiCode</label>(<b><i>arObjCode</i></b>,event,<b><i>objOpt</i></b>)</label> </li> for MultiCode Sections
@@ -356,11 +373,17 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
             </li>    
            </ul>    
 
+
+               
            </td></tr>
          </table>
       </td>
     </tr>
- </table>
+
+
+
+
+  </table>
  
 
 <!-- ========================================================================================================================================================== -->   
@@ -370,23 +393,13 @@ Many HTML Tooltips options, all supporting whatever HTML Tag  (also GIF, Video, 
 
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par2" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) API Documentation</h1>
-<a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html" target="_blank">Tooltip API Documentation</a> <BR/>
+<a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html" target="_self">Tooltip API Documentation</a> <BR/>
 
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par3" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3) Samples</h1>
-<a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/Tip/TipSample.html" target="_blank">Try Tip Sample</a>
-<BR/><BR/>
+<a class="tipLink" href="javascript:showSampleTip(false);">Try Tooltip Sample</a><BR/><BR/>
 <!--     VIDEO -->
-<!-- TBD -->
-<ul>
-  <li> JSU standard Tooltip:  
-     <a href="https://youtu.be/wpo2oM_L3ds" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>
-  </li>
-  <BR/>
-  <li> JSU GoogleAnalytics Tooltip:  
-     <a href="https://youtu.be/wpo2oM_L3ds" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>
-  </li>
-</ul>
+<a href="javascript:jsuVideoTip(false)"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Tooltip Feature"/></a>
 
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par4" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4) Required</h1>
@@ -394,7 +407,7 @@ NO External Plugin is required: <b><i>Pure JS Code</i></b>
 
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par5" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5) Installation, Configuration, Version, Licence</h1>
-See <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/README.html" target="_blank">JSU Documentation</a>
+See <a class="tipLink" href="javascript:jsuDoc(false);"> JSU Documentation</a>
 
 <BR/><BR/>
 <hr class="jsuDoc">
@@ -406,23 +419,23 @@ See <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/README.
         <tr><td ><table class="jsuFooterNoBorder" width="100%">
           <tr>
             <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
-            <td class="tipl"><a class="tipLink" href="https://goo.gl/MoY5nK" target="_blank">Try JSU Samples</a> </td>
+            <td class="tipl"><a class="tipLink" href="https://goo.gl/MoY5nK" target="_self">Try JSU Samples</a> </td>
           <tr/>
           <tr>
             <td class="tipl"><label class="tiptitle">JSU Doc: </label></td>
-            <td class="tipl"><a class="tipLink" href="https://goo.gl/JzIXW0" target="_blank">https://rawgit.com/FedericoLevis/JSU/master/README.html</a> </td>
+            <td class="tipl"><a class="tipLink" href="https://goo.gl/JzIXW0" target="_self">https://rawgit.com/FedericoLevis/JSU/master/README.html</a> </td>
           <tr/>
           <tr>
             <td class="tipl" width="180px"><label class="tiptitle">JSU GitHub: </label></td>
-            <td class="tipl"><a class="tipLink" href="https://goo.gl/LYDepH" target="_blank">https://github.com/FedericoLevis/JSU</a> </td>
+            <td class="tipl"><a class="tipLink" href="https://goo.gl/LYDepH" target="_self">https://github.com/FedericoLevis/JSU</a> </td>
           <tr/>
           <tr>
             <td  class="tipl"><label class="tiptitle">Author: </label></td>
-            <td class="tipl"><a class="tipLink" href="https://goo.gl/J9mJfh" target="_blank">Federico Levis</a> </td>
+            <td class="tipl"><a class="tipLink" href="https://goo.gl/J9mJfh" target="_self">Federico Levis</a> </td>
           <tr/>
           <tr>
             <td class="tipl"><label class="tiptitle">Email:</label></td>
-            <td class="tipl"><a class="tipLink" href="mailto:federico.levis@virgilio.it" target="_blank">federico.levis@virgilio.it</a> </td>
+            <td class="tipl"><a class="tipLink" href="mailto:federico.levis@virgilio.it" target="_self">federico.levis@virgilio.it</a> </td>
           <tr/>
         </table></td></tr>
       </table></td> 

@@ -1,0 +1,359 @@
+
+<head>
+<script>
+  // Required for DOC of JS Code
+  var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master";
+</script>
+
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
+  <!-- DOC like sample-->
+  <title>JS Utility | JSU Google Analytics Doc | Federico Levis</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="JSU utility (JSU) - Floating/Fixed HTML Google Analytics with GIF, Video, Pages, Google Analytics" />
+  <meta name="keywords" content="js, utility, JSU, google, analytics, shorten, URL, tooltip, tip, html, gif, federico, levis" />
+    <!-- GA sample -->
+	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.js" ></script>
+	<!--  JSU   -->
+    
+	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/jsu.css" type="text/css">
+	<script data-main="https://rawgit.com/FedericoLevis/JSU/master/plugin/jsu.js" src="https://rawgit.com/FedericoLevis/JSU/master/core/require.js"></script>
+    <!-- About -->
+    <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.css" type="text/css">
+    
+    <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.js" ></script>
+   <!-- for developers -->
+   <!-- 
+    <script type="text/javascript" src="../../../Cognos/jsu/samples/about/about.js" ></script>
+   -->    
+ 
+   <!-- for developers -->
+   <!-- 
+   <link rel="stylesheet" href="../../../Cognos/jsu/samples/about/about.css" type="text/css">  
+   -->
+
+   
+ </head>
+<body>
+<!-- JSU HEADER COMMON FOR ALL DOC  -->
+<table class="jsuHeader" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="250px" align="center"> <img width="290px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
+      <td ><table class="jsuHeaderNoBorder" width="100%">
+        <tr><td ><table class="jsuHeaderNoBorder" width="100%">
+          <tr>
+            <td class="tipl" width="150px"><label class="tiptitle">JSU Help: </label></td>
+            <td class="tiplBold">Features<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" /></td>
+          <tr/>
+          <tr>
+            <td  class="tipl"><label class="tiptitle">Author:</label></td>
+            <td class="tiplBold">Federico Levis <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" /></td>
+          <tr/>
+          <tr>
+            <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://goo.gl/MoY5nK" target="_self">Try JSU Samples</a> </td>
+          <tr/>
+          
+        </table></td></tr>
+      </table></td> 
+    </tr>
+</table> 
+
+
+<!--  TOOLBAR Table: GoogleAnalytics and download -  common for all the JSU HTML -->
+<table class="sampleToolbar" width="100%" >
+  <tr >
+    <td class="tipl" width="30%">
+        <input type="button"  class="googleAnalList" id="googleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
+    </td>
+    <td class="tipr" width="70%">
+     <table valign="bottom" align="right">
+        <tr>
+            <td class="tipr" ><b>Download Options:</b> </td>
+            <td><input type="button"  class="tipFix" id="downloadOption"  onclick="downloadTip(event)" /> </td>
+            <td valign="bottom"> <input type="button" class="downloadPay"  id="downloadPay"    onclick="downloadPay()" onmouseover="downloadTipPay(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button"  class="googleAnal" id="googleAnalPay"  onclick="jsuGoogleAnalPay();"  onmouseover="jsuGoogleAnalPayTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="bottom"> <input type="button" class="downloadFree" id="downloadFree" onclick="downloadFree();" onmouseover="downloadTipFree(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="bottom"> <input type="button"  class="googleAnal" id="googleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
+        </tr>
+      </table>  
+    </td>
+  </tr>
+</table>   
+
+
+<hr class="jsuDoc">
+<h1 class="jsuDoc">JSU - JS Utility Plugin - Google Analytics Documentation</h1>
+
+<!--  USED by jsuGoToURL()  -->
+<a id="href_hidden" target="_self" href="javascript:null" style="display:none">HIDDEN</a>
+
+
+<!-- -------------  END COMMON PART ------------------------------------------>
+
+
+<!--  ========================================   INDEX  -->
+
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of Contents</h2>
+
+<ul>
+<li> <a href="#par1">1) JSU Google Analytics</a> 
+    <ul>
+    <li> <a href="#par1.1">1.1) List of Google Analytics</a> </li>
+    <li> <a href="#par1.2">1.2) Google Analytics Single Page</a> </li>
+    </ul>
+</li>
+<li> <a href="#par2">2) API Documentation</a> </li>
+<li> <a href="#par3">3) Samples</a> </li>
+<li> <a href="#par4">4) Required</a> </li>
+<li> <a href="#par5">5) Installation, Configuration, Version, Licence</a> </li>
+</ul>
+
+<BR/> 
+
+<!-- ----------------------------------------------------- par1 ---------------------------------------------------------------------------------- -->
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="par1" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) JSU Google Analytics</h2>
+API to create UserFriendly List of Links to Google Analytics:
+<ul>
+  <li> <a href="#par1.1">List of Google Analytics</a></li>
+  <li> <a href="#par1.2">Google Analytics Single Page</a></li>
+</ul>
+
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="par1.1" class="anchor" href="#par1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1) List of Google Analytics</h2>
+
+<b>JSU API items</b> of these samples:  
+<table class="det jsuDocLink" BORDER="1" cellspacing="5" cellpadding="10" >
+  <tr class="detTitle">
+    <td >JSU File</td>
+    <td>JSU API Item</td>
+  </tr> 
+  <tr>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html" target="_self">jsu/core/googleAnal.js</a></td>
+    <td>
+       <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlList" target="_self">gaShortUrlList()</a> 
+    </td>
+  </tr>
+  <tr>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/index.html" target="_self">jsu/core/jsu.css</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/GoogleAnal.html#google-analytics-button">JSU Google Analytics CSS Classes</a></td>
+  </tr>
+</table>
+<b>SAMPLEs:</b>  
+
+   <!--   SAMPLE and DESC HEADER-->
+   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tiptitleBig">
+      <th class="tiptitleBig" colspan="2">List of  Google Analitycs  </th>
+    </tr>
+    <tr class="tiptitleBig2">
+      <td width="50%" class="tipc" >SAMPLES</td>
+      <td width="50%" class="tipc" >DESCRIPTION</td>
+    </tr>
+    <!--   SAMPLE and DESC-->
+
+    <!--   ===================================== SAMPLE_1 ==============================================  -->
+    <tr id="tr_sample_1" valign="top">
+      <td class="sample" id="col_1_1" >
+         <table class="detNoBorder" width="100%">
+           <tr><td class="tipl" width="100%">
+             <label class="sampleTitle">SAMPLE_1 - List of  Google Analitycs </label> 
+             <label id="limit_sample_1" class="featSampleLimit" style="margin-left:20px;">FREE JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitation</a></label>
+             <BR/>
+             <table class="sampleNote"><tr>
+                <td class="sampleNote"><input class="sampleNote"></td>
+                <td>
+                 <ul class="sampleNote">
+                  <li>Click the Button to show the List of GoogleAnalytics URL in a TipFixed or JQPopup (Available only with FULL JSU)</li>
+                  <li>Click Option Button, change Options and try again clicking GoogleAnalytic buttons</li>
+                </ul>
+                </td>
+             </tr>
+             </table>
+           </td></tr>
+           <!--   --------------------------------- 2 BUTTONS and Option ---->
+           <tr><td>  
+              <table class="detNoBorder" cellspacing="0px" width="100%">
+                 <tr>
+                   <td class="tiplBold" width="40%"> TipFix:<BR/>
+                      <input style="margin-top:5px" type="button"  class="googleAnalList" id="sample1a"  onclick="sample1(event,false);"  onmouseover="sample1aTip(event);" onmouseout="UnTip(event)"/> 
+                   </td>
+                    <td class="tiplBold" width="40%"> JQPopup <i>(Available Only with FULL JSU)</i>:<BR/>
+                       <input  style="margin-top:5px" type="button"  class="googleAnalListJQPopup" id="googleAnalListJQPopup"  onclick="sample1(event,true);"  onmouseover="sample1bTip(event);" onmouseout="UnTip(event)"/> 
+                    </td>
+                    <td class="tipc" style="vertical-align:bottom;" width="20%"> <BR/>
+                       <input  type="button"  class="jsuOpt" id="jsuSample1Opt"  onclick="sample1Opt(event,true);"  onmouseover="sample1OptTip(event);" onmouseout="UnTip(event)"/> 
+                    </td>
+                 </tr>  
+               </table>
+           </td></tr>
+         </table>
+      </td>
+      <!--   SAMPLE1 DESCRIPTION -->
+      <td class="sampleDesc" id="col_1_2">
+         <table style="margin-bottom:30px;" >
+           <tr valign="top"><td>
+               Steps to implement an UserFriendly Box with a List of  Google Analitycs of <a class="tipLink" href="https://goo.gl/">Google Shorten URL</a></label> :  
+               <ul> 
+               <li>Get from <a class="tipLink" href="https://goo.gl/">https://goo.gl/</a> the Shorten URL associated to the LongURLs of your pages</li>
+               <li>Replace your LongURL with the ShortURL in the Links to your pages</li>
+               <li>Set an <i><b>input button</b></i> with the desired <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/GoogleAnal.html#google-analytics-button">JSU Google Analytics CSS Classes</a></li>
+               <li>In the <b>onclick event</b> call the JSU GoogleAnalytic API <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlList">gaShortUrlList()</a>  </li>
+               </ul>
+               Code of the Samples:
+			   <input type="button" class="tipFixCode" id="sampleCode1" onclick="sampleCode1(event);" /> 
+           </td></tr>
+         </table>
+      </td>
+    </tr>
+
+    </table>
+ 
+
+
+<!-- ========================================================================================================================================================== -->   
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="par1.2" class="anchor" href="#par1.2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2) Google Analytics Single Page</h2>
+<b>JSU API items</b> of these samples:  
+<table class="det jsuDocLink" BORDER="1" cellspacing="5" cellpadding="10" >
+  <tr class="detTitle">
+    <td >JSU File</td>
+    <td>JSU API Item</td>
+  </tr> 
+  <tr>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html" target="_self">jsu/core/googleAnal.js</a></td>
+    <td>
+       <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlPage" target="_self">gaShortUrlPage()</a> 
+    </td>
+  </tr>
+  <tr>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/index.html" target="_self">jsu/core/jsu.css</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/GoogleAnal.html#google-analytics-button">JSU Google Analytics CSS Classes</a></td>
+  </tr>
+</table>
+<b>SAMPLEs:</b>  
+
+   <!--   SAMPLE and DESC HEADER-->
+   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tiptitleBig">
+      <th class="tiptitleBig" colspan="2">Google Analitycs Single Page </th>
+    </tr>
+    <tr class="tiptitleBig2">
+      <td width="50%" class="tipc" >SAMPLES</td>
+      <td width="50%" class="tipc" >DESCRIPTION</td>
+    </tr>
+    <!--   SAMPLE and DESC-->
+
+    <!--   ===================================== SAMPLE_2 ==============================================  -->
+    <tr id="tr_sample_2" valign="top">
+      <td class="sample" id="col_2_1" >
+         <table class="detNoBorder" width="100%">
+           <tr><td class="tipl" width="100%">
+             <label class="sampleTitle">SAMPLE_2 - Google Analitycs Single Page</label> 
+             <label id="limit_sample_2" class="featSampleLimit" style="margin-left:20px;">FREE JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitation</a></label>
+             <BR/>
+             <table class="sampleNote"><tr>
+                <td class="sampleNote"><input class="sampleNote"></td>
+                <td class="tipl">
+                 <ul class="sampleNote">
+                  <li>Click the Button to show the Page of GoogleAnalytics</li>
+                  <li>Click Option Button, change Options and try again clicking GoogleAnalytic buttons</li>
+                </ul>
+                </td>
+             </tr>
+             </table>
+           </td></tr>
+           <!--   --------------------------------- 1 BUTTONS and Option ---->
+           <tr><td>  
+              <table class="detNoBorder" cellspacing="0px" width="100%">
+                 <tr>
+                   <td class="tipcBold" width="50%"> TipFix:<BR/>
+                      <input style="margin-top:5px" type="button"  class="googleAnal" id="sample2a"  onclick="sample2(event);"  onmouseover="sample2Tip(event);" onmouseout="UnTip(event)"/> 
+                   </td>
+                    <td class="tipl" style="vertical-align:bottom;" width="50%"> <BR/>
+                       <input  type="button"  class="jsuOpt" id="jsuSample2Opt"  onclick="sample2Opt(event,true);"  onmouseover="sample2OptTip(event);" onmouseout="UnTip(event)"/> 
+                    </td>
+                 </tr>  
+               </table>
+           </td></tr>
+           
+         </table>
+      </td>
+      <!--   SAMPLE1 DESCRIPTION -->
+      <td class="sampleDesc"  id="col_2_2">
+         <table style="margin-bottom:30px;" >
+           <tr valign="top"><td>
+               Steps to implement the SAMPLE_2:  
+               <ul> 
+               <li>Get from <a class="tipLink" href="https://goo.gl/">https://goo.gl/</a> the Shorten URL associated to the LongURL of your page</li>
+               <li>Replace your LongURL with the ShortURL in the Links to your page</li>
+               <li>Set an <i><b>input button</b></i> with the class <b>googleAnal</b> from <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/GoogleAnal.html#google-analytics-button">JSU Google Analytics CSS Classes</a></li>
+               <li>In the <b>onclick event</b> call the JSU GoogleAnalytic API <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlPage">gaShortUrlPage()</a>  </li>
+               </ul>
+               Code of the Samples:
+			   <input type="button" class="tipFixCode" id="sampleCode2" onclick="sampleCode2(event);" /> 
+           </td></tr>
+         </table>
+      </td>
+    </tr>
+
+  </table>
+ 
+
+<!-- ======================================================================================================================================== END SPECIFIC API-->
+
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="par2" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) API Documentation</h1>
+<a href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html" target="_self">Google Analytics API Documentation</a> <BR/>
+
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="par3" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3) Samples</h1>
+<a class="tipLink" href="javascript:showSampleGA(false);">Try Google Analytics Sample</a><BR/><BR/>
+<!--     VIDEO -->
+     <a href="javascript:showJSUVideoGA(false);"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Google Analytics Feature"/></a>
+
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="par4" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4) Required</h1>
+NO External Plugin is required: <b><i>Pure JS Code</i></b>
+
+<hr class="h2Sep"><h2 class="jsuDoc">
+<a id="par5" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5) Installation, Configuration, Version, Licence</h1>
+See <a class="tipLink" href="javascript:jsuDoc(false);" target="_self">JSU Documentation</a>
+
+<BR/><BR/>
+<hr class="jsuDoc">
+<!-- JSU FOOTER  COMMON-->
+<table class="jsuFooter" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="180px" align="center"> <img width="180px" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/JSUDancing.gif"/></td> 
+      <td ><table class="jsuFooterNoBorder" width="100%">
+        <tr><td ><table class="jsuFooterNoBorder" width="100%">
+          <tr>
+            <td class="tipl"><label class="tiptitle">JSU Samples: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://goo.gl/MoY5nK" target="_self">Try JSU Samples</a> </td>
+          <tr/>
+          <tr>
+            <td class="tipl"><label class="tiptitle">JSU Doc: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://goo.gl/JzIXW0" target="_self">https://rawgit.com/FedericoLevis/JSU/master/README.html</a> </td>
+          <tr/>
+          <tr>
+            <td class="tipl" width="180px"><label class="tiptitle">JSU GitHub: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://goo.gl/LYDepH" target="_self">https://github.com/FedericoLevis/JSU</a> </td>
+          <tr/>
+          <tr>
+            <td  class="tipl"><label class="tiptitle">Author: </label></td>
+            <td class="tipl"><a class="tipLink" href="https://goo.gl/J9mJfh" target="_self">Federico Levis</a> </td>
+          <tr/>
+          <tr>
+            <td class="tipl"><label class="tiptitle">Email:</label></td>
+            <td class="tipl"><a class="tipLink" href="mailto:federico.levis@virgilio.it" target="_self">federico.levis@virgilio.it</a> </td>
+          <tr/>
+        </table></td></tr>
+      </table></td> 
+    </tr>
+</table> 
+
+
+</body>
+</html>

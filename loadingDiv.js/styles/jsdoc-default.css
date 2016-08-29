@@ -411,7 +411,7 @@ td.jsDocTitleGood {
 }
 
 
-table.jsDocWarn,tr.jsDocWarn,td.jsDocWarn{         /* used for Table of Good Option (e.g always valid in BOTH FREE or FULL JSU) */
+table.jsDocWarn,tr.jsDocWarn,td.jsDocWarn{         /* used for Table of Option valid only in FULL JSU */
   text-align: center;
   margin-top: 5px;
   font-family: Verdana;
@@ -463,9 +463,9 @@ tr.jsDocTitle,th.jsDocTitle, td.jsDocTitle, tr.jsDocTitleBig,th.jsDocTitleBig { 
 }
 
 .jsDocNote{
-  font-family: Verdana;
+  font-family: Calibri;
   padding-top: 10px;
-  font-size: 10px;   
+  font-size: 13px;   
   font-style: italic;   
 }	
 
