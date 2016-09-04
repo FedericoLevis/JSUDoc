@@ -105,7 +105,9 @@
 
             
 
-            <td class="description last">constraints described in <a href="http://validatejs.org" target="_blank">validate.js</a></td>
+            <td class="description last">JSON <b>constraints</b> described in <a href="http://validatejs.org" target="_self">validate.js</a> <BR/>
+                              In addition there is also the <b>tip</b> field, used to add a JSU 
+                              <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/global.html#Tip" target="_self">JSU HTML Tooltip</a> on the right of the Item to Validate</td>
         </tr>
 
     
@@ -142,8 +144,6 @@
   <tr><td class="jsDocTitle">OPTIONS</td></tr>
   <tr><td class="jsDocParam">
   <ul>
-									  <li> szDateFmt {String} default is "YYYY-MM-DD" </li> 
-									  <li> szDateTimeFmt {String} default is "YYYY-MM-DD hh:mm:ss" </li> 
 									  <li> bInstantFieldValidation {Boolean} [false]   if true each field is validated on Validate Event <BR/> 
 									--------------------------------------------------------- Possible Option for validation Error case:</li> 
 									  <li> bOnErrShowLabel {Boolean}: [true] show a label with error on the rigth of item  </li> 
@@ -151,6 +151,10 @@
 									  <li>	bOnErrShowSect {Boolean}: [true] show a section on the Top og Page with all the Errors </li> 
 									  <li>	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item </BR> 
 									----------------------------------------------------------  </li> 
+									  <li> szDateFmt {String} to use for date Validation - default is "yyyy-MM-dd" </li> 
+									  <li> szDateTimeFmt {String} to use for DateTime Validation is "yyyy-MM-dd hh:mm:ss" <BR/>
+									  <b>NTE</b>szDateFmt and szDateTimeFmt use the Format defined in <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/date.js/index.html" target="_self">JSU core/date.js</a>  
+									  </li> 
   									<li> bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item </li> 
 									  <li>	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body </li> 
 									  <li>	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  </li> 
@@ -165,7 +169,7 @@
 		  <b>JSU DEMO Version has some limitations:</b>
 		  <ul>
 		    <li>Some Options are not available in JSU DEMO Version: 
-		       <label class="jsDocWarn">szDateFmt, szDateTimeFmt,bOnErrShowAlarm, szErrPopupTitle</label>
+		       <label class="jsDocWarn">szDateFmt, szDateTimeFmt</label>
 		    </li>
 		    <li>Below the Validation Error Messages there is an additional Link to JSU</li>
 		  </ul>
@@ -339,7 +343,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cValidate.js.html">cValidate.js</a>, <a href="cValidate.js.html#line337">line 337</a>
+        <a href="cValidate.js.html">cValidate.js</a>, <a href="cValidate.js.html#line369">line 369</a>
     </li></ul></dd>
     
 
@@ -429,7 +433,7 @@
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">Object</span>
 
 
             
@@ -439,19 +443,40 @@
 
             
 
-            <td class="description last">Options:	 <BR/>
-									  - szDateFmt  default is "YYYY-MM-DD" <BR/>
-									  - szDateTimeFmt {String} default is "YYYY-MM-DD hh:mm:ss" <BR/>
-									  - bInstantFieldValidation {Boolean} [false]   if true each field is validated on Validate Event <BR/>
-									-------- Possible Option for validation Error case:				 <BR/>
-									  - bOnErrShowLabel {Boolean}: [true] show a label with error on the rigth of item  <BR/>
-									  -	bOnErrShowPopup {Boolean}: [false] show a Popup with all the Errors <BR/>
-									  -	bOnErrShowSect {Boolean}: [true] show a section on the Top og Page with all the Errors <BR/>
-									  -	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item <BR/>
-									--------  <BR/>
-  									  - bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item <BR/>
-									  -	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body <BR/>
-									  -	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  <BR/></td>
+            <td class="description last"><table class="jsDoc" border="2" cellpadding="2" cellspacing="2" width="100%">
+  <tr><td class="jsDocTitle">OPTIONS</td></tr>
+  <tr><td class="jsDocParam">
+  <ul>
+									  <li> bInstantFieldValidation {Boolean} [false]   if true each field is validated on Validate Event <BR/> 
+									--------------------------------------------------------- Possible Option for validation Error case:</li> 
+									  <li> bOnErrShowLabel {Boolean}: [true] show a label with error on the rigth of item  </li> 
+									  <li>	bOnErrShowPopup {Boolean}: [false] show a Popup with all the Errors </li> 
+									  <li>	bOnErrShowSect {Boolean}: [true] show a section on the Top og Page with all the Errors </li> 
+									  <li>	bOnErrShowAlarm {Boolean}: [false] show an alarm gif in the item </BR> 
+									----------------------------------------------------------  </li> 
+									  <li> szDateFmt {String} to use for date Validation - default is "yyyy-MM-dd" </li> 
+									  <li> szDateTimeFmt {String} to use for DateTime Validation is "yyyy-MM-dd hh:mm:ss" </li> 
+  									<li> bEnphasizeItemBorder {Boolean} [true] Enphasize Border item for Mandatory or Error Item </li> 
+									  <li>	szErrSectId {String} [Useful only of bOnErrShowSect]. Id of the Sect for Error (all together). If not present a Section is Created on the Top of body </li> 
+									  <li>	szErrPopupTitle {String} [Useful only of bOnErrShowPopup] Title of the Popup  </li> 
+  </ul> 
+  </td></tr>
+  </table>  
+ 
+ <table class="jsDocWarn" border="3" cellpadding="2" cellspacing="2" width="100%">
+   <tr ><td class="jsDocTitleWarn">Limitations in JSU DEMO Version</td></tr>
+   <tr><td>
+		  <div class="jsDocNote">
+		  <b>JSU DEMO Version has some limitations:</b>
+		  <ul>
+		    <li>Some Options are not available in JSU DEMO Version: 
+		       <label class="jsDocWarn">szDateFmt, szDateTimeFmt</label>
+		    </li>
+		    <li>Below the Validation Error Messages there is an additional Link to JSU</li>
+		  </ul>
+		  </div>
+	</td></tr>
+ </table></td>
         </tr>
 
     
@@ -492,7 +517,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cValidate.js.html">cValidate.js</a>, <a href="cValidate.js.html#line291">line 291</a>
+        <a href="cValidate.js.html">cValidate.js</a>, <a href="cValidate.js.html#line299">line 299</a>
     </li></ul></dd>
     
 
@@ -574,7 +599,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="cValidate.js.html">cValidate.js</a>, <a href="cValidate.js.html#line346">line 346</a>
+        <a href="cValidate.js.html">cValidate.js</a>, <a href="cValidate.js.html#line378">line 378</a>
     </li></ul></dd>
     
 
@@ -632,7 +657,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sat Sep 03 2016 21:38:02 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Sep 05 2016 01:01:15 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

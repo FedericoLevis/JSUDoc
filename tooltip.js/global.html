@@ -140,7 +140,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line84">line 84</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line87">line 87</a>
     </li></ul></dd>
     
 
@@ -202,7 +202,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line66">line 66</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -264,7 +264,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line41">line 41</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line44">line 44</a>
     </li></ul></dd>
     
 
@@ -326,7 +326,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line32">line 32</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -530,7 +530,7 @@ Set tip_type = tipType</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line259">line 259</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line264">line 264</a>
     </li></ul></dd>
     
 
@@ -693,7 +693,7 @@ Set tip_type = tipType</td>
             
 
             <td class="description last"><table class="jsDoc" border="2" cellpadding="2" cellspacing="2">
-        <tr><td class="jsDocTitle">OPTION</td></tr>
+        <tr><td class="jsDocTitle">OPTIONS</td></tr>
         <tr><td class="jsDocParam">
         <ul>
            <li> szTitle{String}  default: ''   </li> 
@@ -758,7 +758,7 @@ Set tip_type = tipType</td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line322">line 322</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line327">line 327</a>
     </li></ul></dd>
     
 
@@ -789,7 +789,7 @@ Set tip_type = tipType</td>
 
     
 
-    <h4 class="name" id="TipFixCode"><span class="type-signature"></span>TipFixCode<span class="signature">(szCode, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="TipFixCode"><span class="type-signature"></span>TipFixCode<span class="signature">(szCode, event)</span><span class="type-signature"></span></h4>
 
     
 
@@ -826,8 +826,6 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 
         <th>Type</th>
 
-        
-        <th>Attributes</th>
         
 
         
@@ -854,14 +852,6 @@ See prettify-jsu.js for the detail of supported languages <BR/>
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
 
@@ -878,60 +868,29 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 
             <td class="type">
             
-            </td>
-
-            
-                <td class="attributes">
                 
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>objOpt</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
+<span class="param-type">String</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last">Option: <ul>    
-                          <li> szTitle{String}  default:  TIP_DEF_CODE_TITLE   </li> 
-													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
-													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL </li>  
-                          <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
-													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li> 
-													</ul></td>
+            <td class="description last"><table class="jsDoc" border="2" cellpadding="2" cellspacing="2">
+        <tr><td class="jsDocTitle">OPTIONS</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+                          <li> szTitle  default:  TIP_DEF_CODE_TITLE   </li> 
+ 													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+ 													 <li> iTipMaxHeight {Number}:  [0] Max Height of the Tip (Scroll will be used if required). If 0 the height is automatically calculated to show all the Tip. . Default =0 NO SCROLL </li>  
+                           <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  </li> 
+ 													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)  n   default=TIP_FIXED_POS.CENTER   </li> 
+        </ul> 
+        </td></tr>
+     </table></td>
         </tr>
 
     
@@ -972,7 +931,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line534">line 534</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line589">line 589</a>
     </li></ul></dd>
     
 
@@ -997,13 +956,40 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 
 
 
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>function sample3b(event){
+	var szCode =
+	'public class Factorial   \n'+
+	'{   \n'+
+	'	public static void main(String[] args)   \n'+
+	'	{	final int NUM_FACTS = 100;   \n'+
+	'		for(int i = 0; i &lt; NUM_FACTS; i++)   \n'+
+	'			System.out.println( i + "! is " + factorial(i));   \n'+
+	'	}   \n'+
+	'	   \n'+
+	'	public static int factorial(int n)   \n'+
+	'	{	int result = 1;   \n'+
+	'		for(int i = 2; i &lt;= n; i++)   \n'+
+	'			result *= i;   \n'+
+	'		return result;   \n'+
+	'	} ';
+
+	TipFixCode(szCode,event,
+			 {iTipWidth:1000,
+		    iTipMaxHeight:600,
+		    szTitle:'Tip Sample with Java Code Hightlighted'
+		   });	
+}</code></pre>
+
+
 
         
             
 
     
 
-    <h4 class="name" id="TipFixMultiCode"><span class="type-signature"></span>TipFixMultiCode<span class="signature">(arObjCode, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="TipFixMultiCode"><span class="type-signature"></span>TipFixMultiCode<span class="signature">(arObjCode, event)</span><span class="type-signature"></span></h4>
 
     
 
@@ -1041,8 +1027,6 @@ See prettify-jsu.js for the detail of supported languages <BR/>
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -1068,14 +1052,6 @@ See prettify-jsu.js for the detail of supported languages <BR/>
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
 
@@ -1098,61 +1074,30 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 
             <td class="type">
             
-            </td>
-
-            
-                <td class="attributes">
                 
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>objOpt</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
+<span class="param-type">String</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last">Option: <ul>   
-                          <li> szTitle{String}  default: 'Source Code'  <li/>
-													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
-													 <li> iTipMaxHeight {Number}:  Max Height (px) of the Tip . Default =0 NO SCROLL <li/> 
-                          <li> iColNum  {Number}  default: 80 Can be used to change the colnum of all the TextArea of the Tip  <li/>
-                          <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <li/>
-													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)     default=TIP_FIXED_POS.CENTER   <li/>
-													</ul></td>
+            <td class="description last"><table class="jsDoc" border="2" cellpadding="2" cellspacing="2">
+        <tr><td class="jsDocTitle">OPTIONS</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+                            <li> szTitle  default: 'Source Code'  <li/>
+  													 <li> iTipWidth {Number}: [undefined] TipWidth  - do not pass it to automatically set it basing on content. </li> 
+  													 <li> iTipMaxHeight {Number}:  Max Height (px) of the Tip . Default =0 NO SCROLL <li/> 
+                            <li> iColNum  {Number}  default: 80 Can be used to change the colnum of all the TextArea of the Tip  <li/>
+                            <li> bCloseBtn {Boolean}  default: true (if true show a Close Button on the Bottom)  <li/>
+  													 <li> tipFixedPos:  TipPosition using  TIP_FIXED_POS possible values (TIP_FIXED_POS.CENTER,...)     default=TIP_FIXED_POS.CENTER   <li/>
+  													</ul>	  
+        </td></tr>
+     </table></td>
         </tr>
 
     
@@ -1193,7 +1138,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line587">line 587</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line669">line 669</a>
     </li></ul></dd>
     
 
@@ -1220,7 +1165,28 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>DAFARE</code></pre>
+    <pre class="prettyprint"><code>function sampleCode1b(event){
+	var JS_CODE_1b_JS = '//Define in JS a constant (e.g. JSU_TIP_HTML) with the MsgHtml to show in the Tip:  \n'+
+	'var JSU_TIP_HTML="&lt;b>Simple Tooltip&lt;/b> with &lt;i>HTML tags&lt;/i>&lt;br/>Tip (You can use &lt;u>whatever HTML TAG&lt;/u>";';
+	
+	var JS_CODE_1b_HTML = '// To add whatever HTML FloatingTip to whatever HTML Item: \n'+	 
+	'// - onmouseover="Tip(HtmlMsg);" \n'+	
+	'// - onmouseout="UnTip();" \n'+	
+	'// In This example: \n'+
+	'&lt;input type="text" value="HTML Tip" style="width:60px;" \n' +
+  '  onmouseover="Tip(JSU_TIP_HTML);"  \n'+	
+  '  onmouseout="UnTip(event);"/>'; 
+	
+  // 2 Codes, both contain HTML TAGS
+	TipFixMultiCode([
+ 	      {szTitle:"JS: TipSample.js", szCode: JS_CODE_1b_JS,  bPrettify:false},
+	      {szTitle:"HTML: TipSample.html", szCode: JS_CODE_1b_HTML,  bPrettify:false}
+	    ],
+      event,
+      { szTitle:"SAMPLE_1 HTML Tip - Source Code" , 
+		    iTipWidth: 1000
+		  } );	
+}</code></pre>
 
 
 
@@ -1229,7 +1195,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 
     
 
-    <h4 class="name" id="TipFixTextArea"><span class="type-signature"></span>TipFixTextArea<span class="signature">(szTxt, event, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="TipFixTextArea"><span class="type-signature"></span>TipFixTextArea<span class="signature">(szTxt, event)</span><span class="type-signature"></span></h4>
 
     
 
@@ -1260,8 +1226,6 @@ See prettify-jsu.js for the detail of supported languages <BR/>
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -1287,14 +1251,6 @@ See prettify-jsu.js for the detail of supported languages <BR/>
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
 
@@ -1310,55 +1266,22 @@ See prettify-jsu.js for the detail of supported languages <BR/>
 
             <td class="type">
             
-            </td>
-
-            
-                <td class="attributes">
                 
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>objOpt</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
+<span class="param-type">String</span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last">Option: <ul>    
-                          <li> szTitle{String}  default: 'Text'  </li> 
+            <td class="description last"><table class="jsDoc" border="2" cellpadding="2" cellspacing="2">
+        <tr><td class="jsDocTitle">OPTIONS</td></tr>
+        <tr><td class="jsDocParam">
+        <ul>
+                          <li> szTitle  default: 'Text'  </li> 
                           <li> iColNum{Number}  default=100 Number of Column for TextArea </li> 
                           <li> iRowNum{Number}  default=20 Number of Rows for TextArea (if more rows are present, scrollbar will be created).  
                                Usually do not pass iRowNum, so it is automatically calculatd</li>
@@ -1407,7 +1330,7 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line727">line 727</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line812">line 812</a>
     </li></ul></dd>
     
 
@@ -1467,8 +1390,12 @@ See prettify-jsu.js for the detail of supported languages <BR/>
     Call this function to Hide the Tip after Tip() Call <BR/>
 If currently a TipFix is displayed, it is not closed (to manage both TipFix at Click and Tip/Untip
  
-GLOBAL 
-tip_type Set it to TIP_TYPE.NONE
+  <div class="jsDocNote">
+  <b>Implementation NOTES:</b>
+  <ul>
+    <li>tip_type Set it to TIP_TYPE.NONE</li>
+  </ul>
+  </div>
 </div>
 
 
@@ -1512,7 +1439,7 @@ tip_type Set it to TIP_TYPE.NONE
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line491">line 491</a>
+        <a href="tooltip.js.html">tooltip.js</a>, <a href="tooltip.js.html#line515">line 515</a>
     </li></ul></dd>
     
 
@@ -1560,7 +1487,7 @@ tip_type Set it to TIP_TYPE.NONE
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Aug 29 2016 02:31:58 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Sep 05 2016 01:01:23 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
