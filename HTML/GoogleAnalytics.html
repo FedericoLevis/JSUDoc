@@ -16,10 +16,17 @@
     <!--  ***************************   JSU ****************************** -->
     <!--  Define JSU_GA_TRACKING_ID to Enable GoogleAnalitycs and send a pageView statistic  -->
     <script>
-      var JSU_GA_TRACKING_ID = 'UA-83225633-1'
+      var JSU_GA_TRACKING_ID = 'UA-83225633-1';
     </script>
 	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/jsu.css" type="text/css">
 	<script data-main="https://rawgit.com/FedericoLevis/JSU/master/plugin/jsu.js" src="https://rawgit.com/FedericoLevis/JSU/master/core/require.js"></script>
+	
+	<!--  To try JSU  with JQ  
+	  <link rel="stylesheet" href="../../externalPlugin/jquery/jquery-ui.css">
+	  <link rel="stylesheet" href="../../core/jsu.css" type="text/css">
+	  <script  data-main="../../plugin/jsu-jq.js" src="../../core/require.js"></script>
+   --> 
+	
     <!-- About -->
     <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.css" type="text/css">
     
@@ -84,14 +91,27 @@
 </table>   
 
 
+<!-- -------------  END COMMON PART ------------------------------------------>
+
 <hr class="jsuDoc">
 <h1 class="jsuDoc">JSU - JS Utility Plugin - Google Analytics Documentation</h1>
 
-<!--  USED by jsuGoToURL()  -->
-<a id="href_hidden" target="_self" href="javascript:null" style="display:none">HIDDEN</a>
+<!--   TIP Warning for Limitations -->
+<div style="width:100%;" id="sample_limit" align="center">
+  <table class="tipNoBorder" width="450px" >
+    <tr><td>
+             <table class="sampleLimit" align="left"><tr>
+                <td class="sampleLimit" style="vertical-align:middle;"><input class="sampleLimit"></td>
+                <td class="tipl">
+                  <label class="tipWarnBold">This is FREE JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitations</a></label>
+                </td>
+             </tr>
+             </table>
+    </td></tr>
+  </table>
+ </div> 
 
 
-<!-- -------------  END COMMON PART ------------------------------------------>
 
 
 <!--  ========================================   INDEX  -->
@@ -155,21 +175,18 @@ API to create UserFriendly List of Links to Google Analytics:
       <td width="50%" class="tipc" >DESCRIPTION</td>
     </tr>
     <!--   SAMPLE and DESC-->
-
     <!--   ===================================== SAMPLE_1 ==============================================  -->
     <tr id="tr_sample_1" valign="top">
       <td class="sample" id="col_1_1" >
          <table class="detNoBorder" width="100%">
            <tr><td class="tipl" width="100%">
-             <label class="sampleTitle">SAMPLE_1 - List of  Google Analitycs </label> 
-             <label id="limit_sample_1" class="featSampleLimit" style="margin-left:20px;">FREE JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitation</a></label>
-             <BR/>
+             <label class="sampleTitle">SAMPLE_1 - List of  Google Analitycs </label>  <BR/>
              <table class="sampleNote"><tr>
                 <td class="sampleNote"><input class="sampleNote"></td>
                 <td>
                  <ul class="sampleNote">
-                  <li>Click the Button to show the List of GoogleAnalytics URL in a TipFixed or JQPopup (Available only with FULL JSU)</li>
-                  <li>Click Option Button, change Options and try again clicking GoogleAnalytic buttons</li>
+                  <li>Click the <b> Google Analytics Button</b> to show the List of GoogleAnalytics URL in a TipFixed or JQPopup (Available only with FULL JSU)</li>
+                  <li>Click <b>Option Button</b>, change Options and try again clicking GoogleAnalytic buttons</li>
                 </ul>
                 </td>
              </tr>
@@ -185,8 +202,10 @@ API to create UserFriendly List of Links to Google Analytics:
                     <td class="tiplBold" width="40%"> JQPopup <i>(Available Only with FULL JSU)</i>:<BR/>
                        <input  style="margin-top:5px" type="button"  class="googleAnalListJQPopup" id="googleAnalListJQPopup"  onclick="sample1(event,true);"  onmouseover="sample1bTip(event);" onmouseout="UnTip(event)"/> 
                     </td>
-                    <td class="tipc" style="vertical-align:bottom;" width="20%"> <BR/>
+                    <td class="sampleOpt" width="20%"> 
+                       <BR/><BR/>       
                        <input  type="button"  class="jsuOpt" id="jsuSample1Opt"  onclick="sample1Opt(event,true);"  onmouseover="sample1OptTip(event);" onmouseout="UnTip(event)"/> 
+                       <BR/><BR/>
                     </td>
                  </tr>  
                </table>
@@ -210,6 +229,7 @@ API to create UserFriendly List of Links to Google Analytics:
          </table>
       </td>
     </tr>
+
 
     </table>
  
@@ -254,14 +274,13 @@ API to create UserFriendly List of Links to Google Analytics:
          <table class="detNoBorder" width="100%">
            <tr><td class="tipl" width="100%">
              <label class="sampleTitle">SAMPLE_2 - Google Analitycs Single Page</label> 
-             <label id="limit_sample_2" class="featSampleLimit" style="margin-left:20px;">FREE JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitation</a></label>
-             <BR/>
+             <label id="limit_sample_2" class="featSampleLimit" style="margin-left:20px;">FREE JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitations</a></label>
              <table class="sampleNote"><tr>
                 <td class="sampleNote"><input class="sampleNote"></td>
                 <td class="tipl">
                  <ul class="sampleNote">
-                  <li>Click the Button to show the Page of GoogleAnalytics</li>
-                  <li>Click Option Button, change Options and try again clicking GoogleAnalytic buttons</li>
+                  <li>Click the <b> Google Analytics Button</b>  to show the Page of GoogleAnalytics</li>
+                  <li>Click <b>Option Button</b>, change Options and try again clicking GoogleAnalytic buttons</li>
                 </ul>
                 </td>
              </tr>
@@ -271,11 +290,13 @@ API to create UserFriendly List of Links to Google Analytics:
            <tr><td>  
               <table class="detNoBorder" cellspacing="0px" width="100%">
                  <tr>
-                   <td class="tipcBold" width="50%"> TipFix:<BR/>
+                   <td class="tipcBold" width="50%"> 
                       <input style="margin-top:5px" type="button"  class="googleAnal" id="sample2a"  onclick="sample2(event);"  onmouseover="sample2Tip(event);" onmouseout="UnTip(event)"/> 
+                      <BR/><BR/>
                    </td>
-                    <td class="tipl" style="vertical-align:bottom;" width="50%"> <BR/>
+                    <td class="sampleOpt" width="50%"> 
                        <input  type="button"  class="jsuOpt" id="jsuSample2Opt"  onclick="sample2Opt(event,true);"  onmouseover="sample2OptTip(event);" onmouseout="UnTip(event)"/> 
+                       <BR/><BR/>
                     </td>
                  </tr>  
                </table>
@@ -283,7 +304,7 @@ API to create UserFriendly List of Links to Google Analytics:
            
          </table>
       </td>
-      <!--   SAMPLE1 DESCRIPTION -->
+      <!--   SAMPLE2 DESCRIPTION -->
       <td class="sampleDesc"  id="col_2_2">
          <table style="margin-bottom:30px;" >
            <tr valign="top"><td>
@@ -300,7 +321,7 @@ API to create UserFriendly List of Links to Google Analytics:
          </table>
       </td>
     </tr>
-
+	
   </table>
  
 
@@ -324,8 +345,7 @@ NO External Plugin is required: <b><i>Pure JS Code</i></b>
 <a id="par5" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5) Installation, Configuration, Version, Licence</h1>
 See <a class="tipLink" href="javascript:jsuDoc(false);" target="_self">JSU Documentation</a>
 
-<BR/><BR/>
-<hr class="jsuDoc">
+<hr class="footerSep">
 <!-- JSU FOOTER  COMMON-->
 <table class="jsuFooter" BORDER="1" cellspacing="0" cellpadding="0" width="100%">
     <tr>
