@@ -102,7 +102,13 @@
 
 
 <div class="description">
-    Popup() return
+    Return value of Popup() and PopupChoice() API:  POPUP_BTN indicate the Button clicked or ESC or click into x
+<ul>  
+    <li> POPUP_BTN.CLOSE: "CLOSE"    // Close with ESC or x of Window  </li>
+    <li> POPUP_BTN.CONFIRM: "CONFIRM"    // Clicked Confirm Button  </li>
+    <li> POPUP_BTN.NO: "NO"    // Clicked NO Button  </li>
+    <li> POPUP_BTN.CANCEL: "CANCEL"    // Clicked CANCEL Button  </li>
+</ul>
 </div>
 
 
@@ -140,7 +146,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line109">line 109</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line145">line 145</a>
     </li></ul></dd>
     
 
@@ -164,7 +170,24 @@
 
 
 <div class="description">
-    Popup() szPopupType par <BR/>NOTE: DO NOT Change this values: they are used also to compose the img class e.g PopupInfo, PopupConfirm,..
+    POPUP_TYPE used in Popup() API as szPopupType par, to identify the PopupType to display:  <ul>  
+<li> POPUP_TYPE.INFO: "Info", </li>
+<li> POPUP_TYPE.CONFIRM: "Confirm", </li>
+<li> POPUP_TYPE.ERR:"Error", </li>
+<li> POPUP_TYPE.ALARM:"Alarm", </li>
+<li> POPUP_TYPE.WARN:"Warning", </li>
+<li> POPUP_TYPE.QUESTION:"Question", // Question with YES NO </li>
+<li> POPUP_TYPE.QUESTION_3:"Question_3Btn", // Question with YES NO CANCEL </li>
+<li> POPUP_TYPE.PROMPT:"Prompt", // Prompt to insert one value </li>
+<li> POPUP_TYPE.CHOICE:"Choice" // Choice in a select </li>
+</ul>
+
+  <div class="jsDocNote">
+  <b>Imlementation NOTE</b>
+  <ul>
+    <li>DO NOT Change this values: they are used also to compose the img class e.g PopupInfo, PopupConfirm,..</li>
+  </ul>
+  </div>
 </div>
 
 
@@ -202,7 +225,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line94">line 94</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line111">line 111</a>
     </li></ul></dd>
     
 
@@ -227,6 +250,10 @@
 
 <div class="description">
     Option iPromptType for POPUP_TYPE.PROMPT
+<ul>  
+	<li> PROMPT_TYPE.NUMBER: "number" </li>
+	<li> PROMPT_TYPE.STRING: "string" </li>
+</ul>
 </div>
 
 
@@ -264,7 +291,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line121">line 121</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line130">line 130</a>
     </li></ul></dd>
     
 
@@ -342,7 +369,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line1214">line 1214</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line1273">line 1273</a>
     </li></ul></dd>
     
 
@@ -391,11 +418,15 @@
 
     
 
-    <h4 class="name" id="Popup"><span class="type-signature"></span>Popup<span class="signature">(szPopupType, szMsgHtml, objOpt)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="Popup"><span class="type-signature"></span>Popup<span class="signature">(szPopupType, szMsgHtml, objOpt<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
 
     
 
 
+
+<div class="description">
+    Show the Popup
+</div>
 
 
 
@@ -417,6 +448,8 @@
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -443,20 +476,18 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">POPUP_TYPE.INFO,  POPUP_TYPE.CONFIRM, ..    <BR/>
-    POPUP_TYPE:  <BR/>
-        .INFO: "Info", <BR/>
-        .CONFIRM: "Confirm", <BR/>
-        .ERR:"Error", <BR/>
-        .ALARM:"Alarm", <BR/>
-        .WARN:"Warning", <BR/>
-        .QUESTION:"Question", // Question with YES NO <BR/>
-        .QUESTION_3:"Question_3Btn", // Question with YES NO CANCEL <BR/>
-        .PROMPT:"Prompt", // Prompt to insert one value <BR/>
-        .CHOICE:"Choice" // Choice in a select</td>
+            <td class="description last">POPUP_TYPE.INFO,  POPUP_TYPE.CONFIRM, ..                                &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#POPUP_TYPE" target="_self">POPUP_TYPE</a></td>
         </tr>
 
     
@@ -476,10 +507,18 @@
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">HTML TAG are Accepted (e.g <b>, <br/>,..)    /n if present is converted to <BR/></td>
+            <td class="description last">HTML TAG are Accepted - Newline if present is converted to HTML Newline</td>
         </tr>
 
     
@@ -492,17 +531,66 @@
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">Object</span>
 
 
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">[Object]}    Optional Object to change default Option: <BR/>         szConfirmLabel:   Label of Confirm Button  <BR/>         iConfirmWidth:   {Number}  Width of Confirm Button  <BR/>         szNoLabel:  {String}      Label of No Button  <BR/>         iNoWidth:   {Number}      Width of No Button  <BR/>         szNoLabel:  {String}      Label of No Button  <BR/>          iNoWidth:   {Number}      Width of No Button  <BR/>          szTitle:    {String}      change default Title <BR/>          iWidth:  {Number}      Optional Width: if it passed it is used - If 0 or null or undefined, Default Width is used <BR/>          iHeight:  {Number}      Optional Height: if it passed it is used - If 0 or null or undefined, Height is automatically calculated<BR/>          bShowTitle: {Boolean}     true to show Title  (Default=true) <BR/>          bShowImg:    {Boolean}     true to show Image  (Default=true) <BR/>          bShowBtnSect:    {Boolean} [true] false to hide all the Button Section (used in embedded HTML pages) <BR/>          bScroll:    {Boolean}      true to show ScroolBar  (Default=false)    <BR/>          bResize:    {Boolean}     true to allow Resize Dialog  (Default=false)    <BR/>          bCloseOnEscape: {Boolean}  Default true</td>
+            <td class="description last"><table class="jsDoc" border="2" cellpadding="2" cellspacing="2" width="100%">
+  <tr><td class="jsDocTitle">OPTIONS</td></tr>
+  <tr><td class="jsDocParam">
+  <ul>
+    <li> szTitle:    {String}      change default Title </li> 
+    <li> iWidth:  {Number}      Optional PopupWidth: if it passed it is used <li> Else DEfault is used </li> 
+    <li> iHeight:  {Number}     Optional PopupHeight: if it passed it is Set<li> Else is automarically calculated </li> 
+    <li> szConfirmLabel:  {String} Label of Confirm Button  </li> 
+    <li> iConfirmWidth:   {Number}  Width of Confirm Button  </li> 
+    <li> szConfirmLabel:  {String}      Label of Confirm Button  </li> 
+    <li> iConfirmWidth:   {Number}      Width of Confirm Button  </li> 
+    <li> szCancelLabel:  {String}      Label of Cancel Button  </li> 
+    <li> iCancelWidth:   {Number}      Width of Cancel Button  </li> 
+    <li> szNoLabel:  {String}      Label of No Button  </li> 
+    <li> iNoWidth:   {Number}      Width of No Button  </li> 
+    <li> bShowImg:    {Boolean}     true to show Image  (Default=true) </li> 
+    <li> bShowBtnSect:    {Boolean} [true] false to hide all the Button Section (used in embedded HTML pages) </li> 
+    <li> bResize:    {Boolean}     true to allow Resize Dialog  (Default=true) </li> 
+    <li> bCloseOnEscape: {Boolean}  Default true    </li> 
+    <li> <b>ONLY For POPUP_TYPE.CHOICE</b>:  
+      <ul> 
+		    <li> bChoiceMultiSel: {Boolean}  true if MultiSelect,else single select. Default false </li> 
+		    <li> iChoiceMultiSize: {Number}  if bChoiceMultiSel=true:  size (Num item) to display without Scrollbar </li>
+		  </ul>
+		</li>       
+    <li> <b>ONLY For POPUP_TYPE.PROMPT</b>:
+      <ul>  
+		    <li> szPromptType: {String}  [PROMPT_TYPE.STRING] PROMPT_TYPE.NUMBER  PROMPT_TYPE.STRING  
+                                 &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#PROMPT_TYPE" target="_self">PROMPT_TYPE</a>
+        </li> 
+		    <li> szPromptLabel: {String}  Label in Front of Prompt   </li> 
+		    <li> szPromptValue: {String}  Default Value to set        </li> 
+		    <li> iPromptWidth: {Number}  Width (px) of the Prompt Item        </li> 
+		    <li> iPromptMin: {Number}   Min (MinValue for PROMPT_TYPE.NUMBER, MinLen for PROMPT_TYPE.STRING)           </li> 
+		    <li> iPromptMax: {Number}   Max (MaxValue for PROMPT_TYPE.NUMBER, MaxLen for PROMPT_TYPE.STRING)           </li>   
+		  </ul>
+		</li>       
+  </ul> 
+  </td></tr>
+  </table></td>
         </tr>
 
     
@@ -543,7 +631,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line1168">line 1168</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line1219">line 1219</a>
     </li></ul></dd>
     
 
@@ -570,7 +658,11 @@
 
         
 <div class="param-desc">
-    retObj  <BR/>                          Example: <BR/>                          {   <BR/>                            retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL <BR/>                            choiceValue      Only for POPUP_TYPE.CHOICE: Value chosen in selectChoice <BR/>                            choiceText    Only for POPUP_TYPE.CHOICE: Text chosen in selectChoice <BR/>                            ......          for POPUP_CUSTOM: you can add your personal memeber   <BR/>                          }
+    retObj  <BR/>                           Example: <ul>                          {  <BR/>                            <li> retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL 
+                                 &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#POPUP_BTN" target="_self">POPUP_BTN</a>
+                               </li>  
+                               <li> <b>ONLY For POPUP_TYPE.CHOICE</b>:
+                               <ul>                              <li> choiceSelValue    Value chosen in selectChoice    (valueSel1, valueSel2, .. for MultiSel)</li>                              <li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) </li>                              <li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) </li>                              <li> arChoice          like input with the bSel=true/false depending on selected state </li>                            </ul>                          </li>                            } <BR/>                          </ul>
 </div>
 
 
@@ -796,7 +888,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line1191">line 1191</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line1250">line 1250</a>
     </li></ul></dd>
     
 
@@ -823,7 +915,11 @@
 
         
 <div class="param-desc">
-    retObj  <BR/>                          Example: <BR/>                          {   <BR/>                            retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.CANCEL <BR/>                            choiceSelValue    Value chosen in selectChoice    (valueSel1, valueSel2, .. for MultiSel) <BR/>                            choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) <BR/>                            arChoice          like inpout with the bSel=true/false depending on selected state
+    retObj  <BR/>                           Example: <ul>                          {  <BR/>                            <li> retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL 
+                                 &nbsp;see  <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#POPUP_BTN" target="_self">POPUP_BTN</a>
+                               </li>  
+                               <li> <b>ONLY For POPUP_TYPE.CHOICE</b>:
+                               <ul>                              <li> choiceSelValue    Value chosen in selectChoice    (valueSel1, valueSel2, .. for MultiSel)</li>                              <li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) </li>                              <li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) </li>                              <li> arChoice          like input with the bSel=true/false depending on selected state </li>                            </ul>                          </li>                            } <BR/>                          </ul>
 </div>
 
 
@@ -944,7 +1040,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line1117">line 1117</a>
+        <a href="Popup.js.html">Popup.js</a>, <a href="Popup.js.html#line1142">line 1142</a>
     </li></ul></dd>
     
 
@@ -992,7 +1088,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Sep 07 2016 22:49:10 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Sep 11 2016 21:08:53 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

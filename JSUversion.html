@@ -81,9 +81,6 @@
 
 <hr class="jsuDoc">
 
-<!--  USED by jsuGoToURL()  -->
-<a id="href_hidden" target="_blank" href="" style="display:none"">HIDDEN</a>
-
 <h1 class="jsuDoc">JSU - JS Utility Plugin<BR/>Possible JSU version to Download </h1>
 
 <!--  ========================================   INDEX  -->
@@ -102,29 +99,29 @@
 
     </ul>
 </li>
-<li> <a href="#par2">2) NOT FREE Features (JQPopup and Validate): Limitation in the sample provided</a> </li>
+<li> <a href="#par2">2) Limitations in JSU DEMO Samples of Validate and JQ Popup Features</a> </li>
 </ul>
 
-<BR/> 
 
 <!-- ----------------------------------------------------- par1 ---------------------------------------------------------------------------------- -->
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par1" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) JSU Version Type</h1>
 You can download 2 different JSU versions:
 <ul>
-  <li> <a href="#par1.1">JSU FULL version</a> All Features are present and JS Source code is available <i>in clear</i> with comments and also minified </li>
-  <li> <a href="#par1.2">JSU FREE version</a>: Only few features are available and JS Code is obfuscated</li>
+  <li> <a href="#par1.1">JSU FULL version</a>: All Features are present and JS Source code is available <i>in clear</i> with comments. Also the JS minified files are available: they can be chosen by changing a single line in plugin/jsu.js  </li>
+  <li> <a href="#par1.2">JSU FREE version</a>: Validate and JQ Popup Features are not available. Tooltip and GoogleAnalytics have Limitations. All JS Code is obfuscated</li>
 </ul>
 
 <!-- Like AllSample.html Table without First Row and change tipTitle2 to tipTitle -->
 
-<table class="tip" BORDER="2" cellspacing="0" cellpadding="4" width="100%">
+<table style="margin-top:10px" class="tip" BORDER="2" cellspacing="0" cellpadding="4" width="100%" >     
+      
   <tr class="tipTitle" style="font-size:13px">
 	<td width="10%" class="tipc">JSU Feature</td>
 	<td width="32%" class="tipc">Description</td>
     <td width="10%" class="tipc">Browser<BR/>Compatibility</td>      
-	<td width="10%" class="tipc">FULL JSU.zip<BR/>Feature<BR/>Availability</td>
-	<td width="10%" class="tipc">FREE JSU.zip<BR/>Feature<BR/>Availability</td>
+	<td width="10%" class="tipc">FULL JSU<BR/>Feature<BR/>Availability</td>
+	<td width="10%" class="tipc">FREE JSU<BR/>Feature<BR/>Availability</td>
     <td width="7%" class="tipc">External<BR/>Plugin<BR/> Required</td>
     <td width="8%" class="tipc">YouTube<BR/>Video<BR/></td>
 	<td width="13%" class="tipc">Try an Example</td>
@@ -134,9 +131,9 @@ You can download 2 different JSU versions:
     <td class="tipl"><b>Floating/Fixed Tips</b> with GIF, Video, Code Highlight (JS, CSS, Java, Shell,...), <b>Google Analytics</b>    </td>
                 <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
-    <td><label class="allSampleGood">Available</label><BR/><label class="allSampleLimit"><a class="tipLink" href="javascript:showJSUVersionParLimit();">with Limitation</a></label> </td> 
+    <td><label class="allSampleGood">Available</label><BR/><label class="allSampleLimit"><a class="tipLink" href="javascript:showJSUVersionParLimit();">with Limitations</a></label> </td> 
     <td rowspan="7"><label class="tipGoodBold" style="font-size:13px;">PURE JQ Plugin<BR/>No External Plugin<BR/> Required</label> </td> 
-    <td class="tipc"><a href="javascript:showJSUVideoTip()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a>  </td>
+    <td class="tipc"><a href="javascript:jsuVideoTip()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a>  </td>
     <td class="tipc"><a class="tipLink" href="javascript:showSampleTip();">Tooltip Sample</a></td>
   </tr>
   <tr>
@@ -144,8 +141,8 @@ You can download 2 different JSU versions:
     <td class="tipl">JSU API to build in few minutes a <b>User Friendly List of Links to Google Analytics</b> </td> 
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
-    <td><label class="allSampleGood">Available</label><BR/><label class="allSampleLimit"><a class="tipLink" href="javascript:showJSUVersionParLimit();">with Limitation</a></label> </td> 
-    <td class="tipc"><a href="javascript:showJSUVideoGA()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
+    <td><label class="allSampleGood">Available</label><BR/><label class="allSampleLimit"><a class="tipLink" href="javascript:showJSUVersionParLimit();">with Limitations</a></label> </td> 
+    <td class="tipc"><a href="javascript:jsuVideoGA()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleGA();">Google Analytics Sample</a></td>
   </tr>
   <tr>
@@ -154,8 +151,8 @@ You can download 2 different JSU versions:
     </td> 
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
-    <td><label class="allSampleGood">Available</label><BR/><label class="allSampleLimit"><a class="tipLink" href="javascript:showJSUVersionParLimit();">with Limitation</a></label> </td> 
-    <td class="tipc"><a href="javascript:showJSUVideoLoading()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
+    <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
+    <td class="tipc"><a href="javascript:jsuVideoLoading()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleLoading();">LoadingDiv Sample</a></td>
   </tr>
   <tr>
@@ -163,8 +160,8 @@ You can download 2 different JSU versions:
     <td class="tipl"><b>Log</b> whatever from JS Code into an optional Window: Log Text, Object, JSON, DOM elements, Elapsed Time,..  </b></td> 
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
-    <td><label class="allSampleGood">Available</label><BR/><label class="allSampleLimit"><a class="tipLink" href="javascript:showJSUVersionParLimit();">with Limitation</a></label> </td> 
-    <td class="tipc"><a href="javascript:showJSUVideojslog()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
+    <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
+    <td class="tipc"><a href="javascript:jsuVideojslog()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleJSlog();">JSlog Sample</a></td>
   </tr>
   <tr>
@@ -173,7 +170,7 @@ You can download 2 different JSU versions:
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
-    <td class="tipc"><a href="javascript:showJSUVideoSort()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
+    <td class="tipc"><a href="javascript:jsuVideoSort()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleSort();">SortTable Sample</a></td>
   </tr>
   <tr>
@@ -182,16 +179,16 @@ You can download 2 different JSU versions:
     <td class="tipc"><input type="button"  class="browserIE" onmouseover="jsuTipBrowserIEPopup(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
-    <td class="tipc"><a href="javascript:showJSUVideoIEPopup()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a></td>  
+    <td class="tipc"><a href="javascript:jsuVideoIEPopup()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a></td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleIEPopup();">IE Popup Sample</a></td>
   </tr>
   <tr>
     <td class="tipc"><a class="tipLink" href="javascript:jsuDocValidate();">Validate</a></td>
-    <td class="tipl"><b>Validate Items</b> with many constraints/options</BR>Show Validate Errors in Red Items or Section, Popup ...</td> 
+    <td class="tipl">One single API for both <b>Item Validation </b> and <b>Presentation of Validation Errors</b> (in Items, Section, Popup)</td> 
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td><label class="allSampleErr">NOT Available</label></td> 
-    <td class="tipc"><a href="javascript:showJSUVideoValidate()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
+    <td class="tipc"><a href="javascript:jsuVideoValidate()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleValidate();">Validate Sample</a></td>
   </tr>
   <tr>
@@ -202,13 +199,11 @@ You can download 2 different JSU versions:
     <td><label class="allSampleGood">Fully<BR/>Available</label> </td> 
     <td><label class="allSampleErr">NOT Available</label></td> 
     <td rowspan="1" style="font-size:13px"><b>jquery, jquery-ui</b></label></td> 
-    <td class="tipc"><a href="javascript:showJSUVideoJQPopup()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a></td>  
+    <td class="tipc"><a href="javascript:jsuVideoJQPopup()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a></td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">JQ Popup Sample</a></td>
   </tr>
 </table>
 
-<!--  USED by jsuGoToURL()  -->
-<a id="href_hidden" target="_blank" href="" style="display:none"">HIDDEN</a>
 
 
 </body>
@@ -238,38 +233,25 @@ You can download 2 different JSU versions:
 
 <h3 class="jsuDoc">
 <a id="par1.2.1" class="anchor" href="#par1.2.1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2.1) Feature Limitation in JSU FREE Version</h3>
-<label class="tipErrBold">TipFix is available with following limitation: </label>
+Tooltip and GoogleAnalytics Features are FULLY Available only in FULL JSU version. <BR/>
+<label class="tipErrBold">In FREE JSU Version the following Features are available with Limitations (click the Links below to see the details):</label>
   <ul>
-     <li>A Link <a href="javascript:null" >JSU Demo Version </a>to this document is displayed in the TipFix Title.
-      Example of TipFix Limitation in JSU FREE Version:<input type="button"  class="tipFixCode" id="tipFixSample1"  onclick="tipFixLimitInJSUFree();" />  
-     </li>
-    <BR/>     
-      
-     <li><b> TBD GoogleAnal</li>
-     
+     <li><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html" target="_self">Tooltip Limitations in FREE JSU Version</a></li>
+     <li><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html" target="_self">Google Analytics Limitations in FREE JSU Version</a></li>
   </ul>   
-TBD es 
 
 
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par2" class="anchor" href="#par2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) NOT FREE Features (JQPopup and Validate): Limitation in the sample provided</h2>
-
-<table width="100%" class="tipNoBorder">
-  <tr>
-    <td width="30px" class="tipc">
-       <img width="30px" src="https://rawgit.com/FedericoLevis/JSU/master/images/PopupAlarm.gif"/>
-    </td>
-    <td class="tipl"> From <a class="tipLink" href="https://goo.gl/MoY5nK" target="_blank">Main JSU Samples</a> it is possible to access also to the samples relative to the Features that are NOT available in JSU FREE Version: LoadingDiv, Validate, JSLog, JQPopup<BR/>
-        <label class="tipWarn">These samples use a <b><u>Very limited version of these features, with most of the original code absent/modifed</u></b></label> 
-        <label class="tipWarnBold">Therefore the SW used in these samples can be used only for this limited DEMO purpose</label>
-    </td>
-  </tr>
-<table>
+<a id="par2" class="anchor" href="#par2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) Limitations in JSU DEMO Samples of Validate and JQ Popup Features</h2>
+Validate and JQ Popup features are FULLY Available only in FULL JSU version. <BR/>
+<label class="tipErrBold">In DEMO JSU Version the following Features have Limitations (click the Links below to see the details):</label>
+  <ul>
+     <li><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/index.html" target="_self">Validate Limitations in DEMO JSU Version</a></li>
+     <li><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/index.html" target="_self">JQ Popup Limitations in DEMO JSU Version</a></li>
+  </ul>   
 
 
-<BR/> <BR/> 
-
-<hr class="jsuDoc">
+<hr class="footerSep">
 
 <!-- JSU FOOTER  COMMON-->
 <table class="jsuFooter" BORDER="1" cellspacing="5" cellpadding="5" width="100%">

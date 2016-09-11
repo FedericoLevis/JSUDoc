@@ -11,8 +11,6 @@
   <meta charset="utf-8"/>
   <meta name="description" content="JSU utility (JSU) - Modal IE Popup: Info, Warning, Error, Alarm, Question, Choice, Prompt" />
   <meta name="keywords" content="js, utility, JSU, popup, modal, IE, Info, Warning, Error, Alarm, Question, Choice, Prompt, Blocking, federico, levis" />
-    <!--   sample -->
-	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/IEPopup/PopupSample.js" ></script>
     <!--  ***************************   JSU ****************************** -->
     <!--  Define JSU_GA_TRACKING_ID to Enable GoogleAnalitycs and send a pageView statistic  -->
     <script>
@@ -76,18 +74,17 @@
 
 <hr class="jsuDoc">
 <h1 class="jsuDoc">JSU - JS Utility Plugin - IE Popup Documentation</h1>
-
 <!--   TIP Warning for Limitations -->
-<div style="width:100%;" id="sample_limit" align="center">
+<div style="width:100%;" align="center">
   <table class="tipNoBorder" width="800px" >
     <tr><td>
              <table class="sampleLimit" align="left"><tr>
                 <td class="sampleLimitBig" style="vertical-align:middle;"><input class="sampleLimitBig"></td>
                 <td class="tipl">
                  <ul class="sampleNote ">
-                  <li><label class="tipWarnBold">IE Popup Browser Compatibility: ONLY IE <input type="button" class="browserTipIESmall" onmouseover="jsuTipBrowserIEPopup(event);" onmouseout="UnTip(event)"/></label></li>
-                  <li id="noteBrowserNotIE">Current Browser is NOT Supported by&nbsp;<label class="tipWarnBold">IE Popup that will display only simple alert</label> instead of HTML Popup</li>
-                  <li>For JSU Popup with FULL Browser Compatibility see <a class="tipLink" href="javascript:showSampleIEPopup();">IE Popup</a></li>
+                  <li><label class="tipWarnBold">IE Popup feature is compatible only with IE <input type="button" class="browserTipIESmall" onmouseover="jsuTipBrowserIEPopup(event);" onmouseout="UnTip(event)"/></label></li>
+                  <li>With Browser different from IE (e.g Firefox, Chrome,..) IE Popup will display only simple alert instead of HTML Popup</li>
+                  <li>If you need Popup with FULL Browser Compatibility you should use  <a class="tipLink" href="javascript:showSampleIEPopup();">JSU JQ Popup</a></li>
                 </ul>
                 </td>
              </tr>
@@ -96,7 +93,6 @@
   </table>
  </div> 
 
- 
 <!-- -------------  END COMMON PART ------------------------------------------>
 
 
@@ -106,443 +102,70 @@
 <a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of Contents</h2>
 
 <ul>
-<li> <a href="#par1">1) JSU IE Popup</a> 
-    <ul>
-    <li> <a href="#par1.1">1.1) IE Popup</a> </li>
-    <li> <a href="#par1.2">1.2) Common IE Popup Option</a> </li>
-    <li> <a href="#par1.3">1.3) Advanced IE Popup</a> </li>
-    </ul>
-</li>
-<li> <a href="#par2">2) API Documentation</a> </li>
-<li> <a href="#par3">3) Samples</a> </li>
-<li> <a href="#par4">4) Required</a> </li>
-<li> <a href="#par5">5) Installation, Configuration, Version, Licence</a> </li>
+<li> <a href="#par1">1) JSU IE Popup API</a> </li>
+<li> <a href="#par2">2) Samples</a> </li>
+<li> <a href="#par3">3) Required</a> </li>
+<li> <a href="#par4">4) Installation, Configuration, Version, Licence</a> </li>
 </ul>
 
 <BR/> 
 
 <!-- ----------------------------------------------------- par1 ---------------------------------------------------------------------------------- -->
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par1" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) JSU IE Popup</h2>
-Modal Blocking Popup</b> designed only for <b>IE</b>. <b>Blocking Code</b>, based on <i>IE ShowModalDialog()</i><BR/>
-Very simple but powerful APIs. For example the single API <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#Popup" target="_self">Popup()</a> allow displaying different Popup with whatever HTML tags (and also Gif, Videos,...):
+<a id="par1" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) JSU IE Popup API</h2>
+<b>JSU IE Popup </b> is a feature designed specifically for following cases:
+<ul>
+  <li>Modal Blocking Popup with <b>Blocking Code</b></li>
+  <li><b>ONLY IE Browser</b> because this features uses <i>IE ShowModalDialog() API</i> that is deprecated or removed by other Browsers </li>
+</ul>
 
-<table class="det jsuDocLink" BORDER="1" cellspacing="5" cellpadding="10" >
+IE Popup has very simple but powerfull APIs. For example with one single API <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#Popup" target="_self">Popup()</a> 
+You can display different Popup (Information, Warning, Error, Question,...) with an HTML Message containing whatever TAG (supported also GIF, Video, Embedded HTML page,..).<BR>
+The Popup presentation (Icon, color, font,..) can be easily changed modifying jsu.css that is provide also with an advanced <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/Popup.html" target="_self">Preview IE Popup CSS</a> documentation.
+
+<table style="margin-top:10px;margin-bottom:10px;" class="det jsuDocLink" BORDER="1" cellspacing="5" cellpadding="10" >
   <tr class="detTitle">
+    <td colspan="3">IE Popup APIs & CSS</td>
+  </tr> 
+  <tr class="detTitle2">
     <td >JSU File</td>
     <td>JSU API Item</td>
+    <td>Description</td>
   </tr> 
   <tr>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/index.html" target="_self">jsu/core/IEPopup/Popup.js</a></td>
-    <td>
-       <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#Popup" target="_self">Popup</a> &nbsp;&nbsp;
-       <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#PopupChoice" target="_self">PopupChoice</a> &nbsp;&nbsp;
-       <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#PopupPrompt" target="_self">PopupPrompt</a> &nbsp;&nbsp;
-    </td>
+    <td rowspan="2"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/index.html" target="_self">jsu/core/IEPopup/Popup.js</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#Popup" target="_self">Popup()</a></td>
+    <td class="tipl">Show different Popup (Information, Warning, Error, Question,...) with an HTML Message containing whatever TAG (supported also GIF, Video, Embedded HTML page,..)</td>
   </tr>
   <tr>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/index.html" target="_self">jsu/core/jsu.css</a></td>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/Popup.html" target="_self">JSU IE/JQ Popup CSS</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#PopupCoice" target="_self">PopupCoice()</a></td>
+    <td class="tipl">Specific API to Show a Popup with a ListBox or ComboBox to select one/more items</td>
+  </tr>
+  <tr>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/Popup.html" target="_self">jsu/core/jsu.css</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/Popup.html" target="_self">JSU IE & JQ Popup CSS</a></td>
+    <td class="tipl">Popup Icons, Title Color, Background, Font,... </td>
   </tr>
 </table>
 
 
-
-<hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par1.1" class="anchor" href="#par1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1) IE Popup</h2>
-
-   <!--   SAMPLE and DESC HEADER-->
-   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
-    <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="2">IE Popup - SAMPLE  </th>
-    </tr>
-    <tr class="tiptitleBig2">
-      <td width="50%" class="tipc" >SAMPLES</td>
-      <td width="50%" class="tipc" >DESCRIPTION</td>
-    </tr>
-
-    <!--   ===================================== SAMPLE_1 ==============================================  -->
-    <tr  id="tr_sample_1">
-      <td class="sample"  id="col_1_1" valign="top" >
-         <label class="sampleTitle">SAMPLE_1 - IE Popup</label>
-     <!--   Popup TIP  -->
-        <table id="sample_1_note_popup" class="sampleNote"><tr>
-                <td class="sampleNote"><input class="sampleNote"></td>
-                <td>
-                 <ul class="sampleNote">
-                  <li>You can Try the various <b>POPUP_TYPE</b> and than Click the Button <b>Show IE Popup</b></li>
-                </ul>
-                </td>
-             </tr>
-       </table>
-     <!--   TIP for PopupChoice -->
-             <table id="sample_1_note_choice" class="sampleNote" style="display:none;"><tr>
-                <td class="sampleNote"><input class="sampleNote"></td>
-                <td>
-                 <ul class="sampleNote">
-                  <li>You can <b>change PopupChoice OPTIONS</b> and than Click the Button <b>Show IE Popup</b></li>
-                </ul>
-                </td>
-             </tr>
-             </table>
-     <!--   TIP for PopupPrompt -->
-             <table id="sample_1_note_prompt" class="sampleNote" style="display:none;"><tr>
-                <td class="sampleNote"><input class="sampleNote"></td>
-                <td>
-                 <ul class="sampleNote">
-                  <li>You can <b>change PopupPrompt OPTIONS</b> and than Click the Button <b>Show IE Popup</b></li>
-                </ul>
-                </td>
-             </tr>
-             </table>
-     
-
-         <table class="sampleNoBorder">
-         <tr>
-            <td><b>POPUP_TYPE: </b></td>
-            <td>
-                <select id="popupType1" style="width:120px" onchange="onchangeSampleType1()"></select>  
-                <input type="button" class="jsuButton"value="Show IE Popup" onclick="sample1()"  />
-            </td>
-          </tr>
-        </table>
-        
-        
-        <table class="sampleNoBorder">
-          <!--=========================================   OPTION for Choice -->
-          <tr>
-            <td>
-              <div id="optChoice" style="display:none;">
-	              <table class="det" BORDER="2" width="700px" cellspacing="0" cellpadding="3">
-	                 <tr class="detTitle">
-                    <td colspan="4"> <a class="tipLinkJsLog" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#Popup" target="_blank">PopupChoice Options</a> for Custom Layout </td>
-	                </tr>
-	                 <tr class="detTitle2">
-	                  <td>OPTION</td>
-                    <td>Default</td>
-	                  <td>Value</td>
-	                  <td>Description</td>
-	                </tr>
-	                <tr>
-	                  <td class="tipcBold">bChoiceMultiSel</td>
-                    <td class="tipr">false</td>
-	                  <td class="tiprBold">
-	                    <select id="selectChoiceMultiSel" style="font-weight:bold;width:60px;margin-left:10px" onchange="onchangeChoiceMultiSel();">  
-	                                  <option value="FALSE" selected >false</option> 
-	                                  <option value="TRUE">true</option>
-	                   </select>                
-	                  </td>
-	                  <td class="tipl"><b>true:</b> Multiple Selection - <b>false:</b> Single Selection</td>
-	                </tr>
-	                <tr>
-	                  <td class="tipcBold">iChoiceMultiSize</td>
-                    <td class="tipr">10</td>
-	                  <td class="tiprBold">
-							        <div id="divChoiceSize" style="display:none">               
-							          <select id="selectChoiceSize" style="font-weight:bold;width:60px;margin-left:5px" >  
-							                          <option value="5">5</option> 
-							                          <option value="10" selected>10</option> 
-							                          <option value="15">15</option> 
-							                          <option value="20">20</option> 
-							          </select>
-							         </div> 
-	                  </td>
-	                  <td class="tipl"><b>Number of Item Visible</b> (Only for <b>bChoiceMultiSel=true</b>) </td>
-	                </tr>
-	              </table>
-              </div> 
-            </td>  
-          </tr>
-          <!--   OPTION for Prompt -->
-          <tr>
-            <td colspan="2">
-              <div id="optPrompt" style="display:none;">
-                <table class="det" BORDER="2" width="600px" cellspacing="0" cellpadding="3">
-                   <tr class="detTitle">
-                    <td colspan="4"> <a class="tipLinkJsLog" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#Popup" target="_blank">PopupPrompt Options</a> for Custom Layout </td>
-                  </tr>
-                   <tr class="detTitle2">
-                    <td>OPTION</td>
-                    <td>Default</td>
-                    <td>Value</td>
-                    <td>Description</td>
-                  </tr>
-                  <tr>
-                    <td class="tipcBold">szPromptLabel</td>
-                    <td class="tipr"></td>
-                    <td class="tiprBold">
-                      <input id="szPromptLabel" style="font-weight:bold;width:90px;" title="Label in front of the Prompt Item"/>
-                    </td>
-                    <td class="tipl"><b>Label</b> in front of the Prompt Item</td>
-                  </tr>
-                  <tr>
-                    <td class="tipcBold">szPromptType</td>
-                    <td class="tipr">number</td>
-                    <td class="tiprBold">
-							        <select id="szPromptType" style="font-weight:bold;width:90px;margin-left:10px">  
-							             <option value="number" selected>number</option> 
-							             <option value="string">string</option>
-							        </select>                
-                    </td>
-                    <td class="tipl">Prompt Type:<b>number</b> or <b>string</b></td>
-                  </tr>
-                  <tr>
-                    <td class="tipcBold">iPromptMin</td>
-                    <td class="tipr"></td>
-                    <td class="tiprBold">
-                      <input id="iPromptMin" style="font-weight:bold;width:40px;"/>
-                    </td>
-                    <td class="tipl">if number: <b>Min Value</b> - if string: <b>Min Length</b></td>
-                  </tr>
-                  <tr>
-                    <td class="tipcBold">iPromptMax</td>
-                    <td class="tipr"></td>
-                    <td class="tiprBold">
-                      <input id="iPromptMax" style="font-weight:bold;width:40px;"/>
-                    </td>
-                    <td class="tipl">if number: <b>Max Value</b> - if string: <b>Max Length</b></td>
-                  </tr>
-                  <tr>
-                    <td class="tipcBold">szPromptValue</td>
-                    <td class="tipr"></td>
-                    <td class="tiprBold">
-                      <input id="szPromptValue" style="font-weight:bold;width:90px;" title="Default Prompt Value to Set"/>
-                    </td>
-                    <td class="tipl"><b>Default Prompt Value</b> to set in the Prompt Item</td>
-                  </tr>
-                  <tr>
-                    <td class="tipcBold">iPromptWidth</td>
-                    <td class="tipr"></td>
-                    <td class="tiprBold">
-                      <input id="iPromptWidth" style="font-weight:bold;width:90px;" />
-                    </td>
-                    <td class="tipl"><b>Width (px)</b> of the Prompt Item</td>
-                  </tr>
-                </table>
-              </div> 
-            </td>  
-          </tr>  
-          </table>
-
-      </td>
-      <!--   SAMPLE DESCRIPTION -->
-      <td class="sampleDesc"  id="col_1_2" valign="top">
-         <table >
-           <tr valign="top"><td>
-               <label style="color:blue;font-weight:bold">JS Source Code</label> of SAMPLE_1 - <b> POPUP_TYPE=</b> 
-                <select id="popupType1Desc" style="width:120px;margin-left:5px""></select>  
-               <input type="button" class="tipFixJS" id="sample1JS" onclick="sample1Code(event);" />
-           </td></tr>
-         </table>
-      </td>
-    
-    </tr>
-  </table>
- 
-
-
-<!-- ========================================================================================================================================================== -->   
-<hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par1.2" class="anchor" href="#par1.2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2) Common IE Popup Option</h2>
-
-   <!--   SAMPLE and DESC HEADER-->
-   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
-    <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="2">IE Popup - SAMPLE </th>
-    </tr>
-    <tr class="tiptitleBig2">
-      <td width="50%" class="tipc" >SAMPLES</td>
-      <td width="50%" class="tipc" >DESCRIPTION</td>
-    </tr>
-    <!--   SAMPLE and DESC-->
-    <!--   ===================================== SAMPLE_2 ==============================================  -->
-    <tr  id="tr_sample_2">
-      <td class="sample"  id="col_2_1" valign="top" >
-       <label class="sampleTitle">SAMPLE_2 - Common IE Popup Option </label>
-     <!--   TIP for PopupChoice -->
-        <table id="sample_2_note_layout" class="sampleNote" style="display:none;"><tr>
-                <td class="sampleNote"><input class="sampleNote"></td>
-                <td>
-                 <ul class="sampleNote">
-                  <li>You can <b>change Popup OPTIONS</b> and than Click the Button <b>Show IE Popup</b></li>
-                </ul>
-                </td>
-             </tr>
-       </table>
-       
-       <table class="sampleNoBorder">
-         <tr>
-            <td><b>Popup Custom Option: </b></td>
-            <td>
-                <select id="type2" style="width:160px" onchange="onchangeSample2()">
-                       <option value="LAYOUT" >Custom Layout</option> 
-                       <option value="1BTN" selected >1 Custom Button</option>
-                       <option value="2BTN">2 Custom Button</option>
-                       <option value="3BTN">3 Custom Button</option>
-                </select>  
-                <input type="button" class="jsuButton"value="Show Popup with Custom Option" onclick="sample2()"  />
-            </td>
-          </tr>
-        </table>
-        <table class="sampleNoBorder">
-          <!--=========================================   OPTION for Custom Layout-->
-          <tr>
-            <td>
-              <div id="optLayout" style="display:none;">
-                <table class="det" BORDER="2" width="700px" cellspacing="0" cellpadding="3">
-                   <tr class="detTitle">
-                    <td colspan="4"> <a class="tipLinkJsLog" href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/global.html#Popup" target="_blank">Popup Options</a> for Custom Layout </td>
-                  </tr>
-                   <tr class="detTitle2">
-                    <td>OPTION</td>
-                    <td>Default</td>
-                    <td>Value</td>
-                    <td>Description</td>
-                  </tr>
-                  <tr>
-                    <td class="tipcBold">bShowImg</td>
-                    <td class="tipr">true</td>
-                    <td class="tipcBold">
-                      <select id="bShowImg" style="font-weight:bold;width:60px;margin-left:10px" onchange="onchangeChoiceMultiSel();">  
-                          <option value="FALSE">false</option> 
-                          <option value="TRUE" selected >true</option>
-                     </select>                
-                    </td>
-                    <td class="tipl"><b>true:</b> Show Popup Default Image related to PopupType</td>
-                  </tr>
-                  <tr>
-                    <td class="tipcBold">bResize</td>
-                    <td class="tipr">false</td>
-                    <td class="tipcBold">
-                      <select id="bResize" style="font-weight:bold;width:60px;margin-left:10px" onchange="onchangeChoiceMultiSel();">  
-                          <option value="FALSE" selected >false</option> 
-                          <option value="TRUE" >true</option>
-                     </select>                
-                    </td>
-                    <td class="tipl"><b>true:</b> Popup is resizable</td>
-                  </tr>
-                  <tr>
-                    <td class="tipcBold">szTitle</td>
-                    <td class="tipr"></td>
-                    <td class="tipcBold">
-                      <input id="szTitle" style="font-weight:bold;width:100px;"/>
-                    </td>
-                    <td class="tipl">Set a <b>Popup Title</b> different from default</td>
-                  </tr>
-                  <tr>
-                    <td class="tipcBold">iWidth</td>
-                    <td class="tipr">600</td>
-                    <td class="tipcBold">
-                      <select id="iWidth" style="font-weight:bold;width:60px" >  
-                        <option value="400">400</option> 
-                        <option value="600" selected>600</option>
-                        <option value="800">800</option>
-                        <option value="1000">1000</option>
-                        <option value="1200">1200</option>
-                      </select>                      
-                    </td>
-                    <td class="tipl">Initial Popup <b>Width (px)</b></td>
-                  </tr>
-                </table>
-              </div> 
-            </td>  
-          </tr>
-          </table>
-      </td>
-      <!--   SAMPLE DESCRIPTION -->
-      <td class="sampleDesc"  id="col_2_2" valign="top">
-         <table >
-           <tr valign="top"><td>
-               <label style="color:blue;font-weight:bold">JS Source Code</label> of SAMPLE_2: </label>
-               <input type="button" class="tipFixJS" id="sample2Code" onclick="sample2Code(event);" />
-           </td></tr>
-         </table>
-      </td>    
-    </tr>
-	
-  </table>
- 
-
-
-<!-- ========================================================================================================================================================== -->   
-
-<hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par1.3" class="anchor" href="#par1.3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.3) Advanced IE Popup</h2>
-
-
-   <!--   SAMPLE and DESC HEADER-->
-   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
-    <tr class="tiptitleBig">
-      <th class="tiptitleBig" colspan="2">IE Popup - SAMPLE </th>
-    </tr>
-    <tr class="tiptitleBig2">
-      <td width="50%" class="tipc" >SAMPLES</td>
-      <td width="50%" class="tipc" >DESCRIPTION</td>
-    </tr>
-    <!--   SAMPLE and DESC-->
-    <!--   ===================================== SAMPLE_3 ==============================================  -->
-    <tr id="tr_sample_2">
-      <td id="col_2_1" class="sample" valign="top" >
-       <label class="sampleTitle">SAMPLE_3 - Advanced IE Popup </label>
-         <table class="sampleNoBorder">
-         <tr>
-            <td><b>Advanced Popup Samples: </b></td>
-            <td>
-                <select id="type3" style="width:180px" onchange="onchangeSampleType3()">
-                       <option value="VIDEO" >Popup with Video</option> 
-                       <option value="VIDEO" >Popup with Video</option> 
-                       <option value="PAGE" selected >Embedded HTML Page</option>
-                </select>  
-                <input type="button" class="jsuButton"value="Show Popup" onclick="sample3()"  />
-            </td>
-          </tr>  
-          </table>
-      </td>
-      <!--   SAMPLE DESCRIPTION -->
-      <td id="col_3_2" class="sampleDesc" valign="top">
-         <table >
-           <tr valign="top"><td>
-               <label style="color:blue;font-weight:bold">JS Source Code</label> of SAMPLE_3 - </label>
-                <select id="type3Desc" style="width:180px" >
-                       <option value="VIDEO" >Popup with Video</option> 
-                       <option value="PAGE" selected >Embedded HTML Page</option>
-                </select>  
-               <input type="button" class="tipFixJS" id="sample3Code" onclick="sample3Code(event);" />
-           </td></tr>
-         </table>
-      </td>
-      
-    </tr>
-
-    
-
-
-
-  </table>
- 
-
-<!-- ========================================================================================================================================================== -->   
-
+IE Popup should not be used with browser different form IE. However, if it used with different Browser, IE Popup will still work but with limitation: IE Popup will convert the HTML message into text message and it will display it in a simple alert.<BR/>
+You can easily switch between IE Popup and <a class="tipLink" href="javascript:showSampleIEPopup();">JSU JQ Popup</a></li>, that supports all the Browser: in fact the 2 features have the same interface and use the same CSS.<BR/>
 
 <!-- ======================================================================================================================================== END SPECIFIC API-->
 
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par2" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) API Documentation</h1>
-<a href="https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/index.html" target="_self">IE Popup API Documentation</a> <BR/>
-
-<hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par3" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3) Samples</h1>
+<a id="par2" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) Samples</h1>
 <a class="tipLink" href="javascript:showSampleIEPopup(false);">Try IE Popup Sample</a><BR/><BR/>
 <!--     VIDEO -->
 <a href="javascript:jsuVideoTip(false)"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Tooltip Feature"/></a>
 
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par4" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4) Required</h1>
+<a id="par3" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3) Required</h1>
 NO External Plugin is required: <b><i>Pure JS Code</i></b>
 
-
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par5" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5) Installation, Configuration, Version, Licence</h1>
+<a id="par4" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4) Installation, Configuration, Version, Licence</h1>
 See <a class="tipLink" href="javascript:jsuDoc(false);"> JSU Documentation</a>
 
 <hr class="footerSep">

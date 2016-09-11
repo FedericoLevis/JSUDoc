@@ -120,24 +120,53 @@
 <a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of Contents</h2>
 
 <ul>
-<li> <a href="#par1">1) JSU Google Analytics</a> 
+<li> <a href="#par1">1) JSU Google Analytics API</a> 
     <ul>
     <li> <a href="#par1.1">1.1) List of Google Analytics</a> </li>
     <li> <a href="#par1.2">1.2) Google Analytics Single Page</a> </li>
     </ul>
 </li>
-<li> <a href="#par2">2) API Documentation</a> </li>
-<li> <a href="#par3">3) Samples</a> </li>
-<li> <a href="#par4">4) Required</a> </li>
-<li> <a href="#par5">5) Installation, Configuration, Version, Licence</a> </li>
+<li> <a href="#par2">2) Samples</a> </li>
+<li> <a href="#par3">3) Required</a> </li>
+<li> <a href="#par4">4) Installation, Configuration, Version, Licence</a> </li>
 </ul>
 
 <BR/> 
 
 <!-- ----------------------------------------------------- par1 ---------------------------------------------------------------------------------- -->
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par1" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) JSU Google Analytics</h2>
-API to create UserFriendly List of Links to Google Analytics:
+<a id="par1" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) JSU Google Analytics API</h2>
+
+
+APIs to display the Google Analytics related to the <a class="tipLink" href="https://goo.gl/">Google Shorten URLs</a>  of your pages</li>:
+
+<table style="margin-bottom:10px;margin-top:10px;" class="det jsuDocLink" BORDER="1" cellspacing="5" cellpadding="10" >
+  <tr class="detTitle">
+    <td colspan="3">GoogleAnal APIs & CSS</td>
+  </tr> 
+  <tr class="detTitle2">
+    <td >JSU File</td>
+    <td>JSU API Item</td>
+    <td>Description</td>
+  </tr> 
+  <tr>
+    <td rowspan="2"><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html" target="_self">jsu/core/googleAnal.js</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlList" target="_self">gaShortUrlList()</a></td>
+    <td class="tipl">Show a Box with an User Friendly List of Links to Google Analytics Pages</td>
+  </tr>
+  <tr>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlPage" target="_self">gaShortUrlPage()</a></td>
+    <td class="tipl">Show one Google Analytic Page</td>
+  </tr>
+  <tr>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/jsu.html" target="_self">jsu/core/jsu.css</a></td>
+    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/GoogleAnal.html#google-analytics-button">JSU Google Analytics CSS Classes</a></td>
+    <td class="tipl">Buttons to call Google Analytics APIS</td>
+  </tr>
+</table>
+
+
+We will describe APIs:
 <ul>
   <li> <a href="#par1.1">List of Google Analytics</a></li>
   <li> <a href="#par1.2">Google Analytics Single Page</a></li>
@@ -146,27 +175,8 @@ API to create UserFriendly List of Links to Google Analytics:
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par1.1" class="anchor" href="#par1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.1) List of Google Analytics</h2>
 
-<b>JSU API items</b> of these samples:  
-<table class="det jsuDocLink" BORDER="1" cellspacing="5" cellpadding="10" >
-  <tr class="detTitle">
-    <td >JSU File</td>
-    <td>JSU API Item</td>
-  </tr> 
-  <tr>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html" target="_self">jsu/core/googleAnal.js</a></td>
-    <td>
-       <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlList" target="_self">gaShortUrlList()</a> 
-    </td>
-  </tr>
-  <tr>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/index.html" target="_self">jsu/core/jsu.css</a></td>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/GoogleAnal.html#google-analytics-button">JSU Google Analytics CSS Classes</a></td>
-  </tr>
-</table>
-<b>SAMPLEs:</b>  
-
    <!--   SAMPLE and DESC HEADER-->
-   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+   <table style="margin-top:10px;" class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tiptitleBig">
       <th class="tiptitleBig" colspan="2">List of  Google Analitycs  </th>
     </tr>
@@ -238,27 +248,8 @@ API to create UserFriendly List of Links to Google Analytics:
 <!-- ========================================================================================================================================================== -->   
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par1.2" class="anchor" href="#par1.2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.2) Google Analytics Single Page</h2>
-<b>JSU API items</b> of these samples:  
-<table class="det jsuDocLink" BORDER="1" cellspacing="5" cellpadding="10" >
-  <tr class="detTitle">
-    <td >JSU File</td>
-    <td>JSU API Item</td>
-  </tr> 
-  <tr>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html" target="_self">jsu/core/googleAnal.js</a></td>
-    <td>
-       <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlPage" target="_self">gaShortUrlPage()</a> 
-    </td>
-  </tr>
-  <tr>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/index.html" target="_self">jsu/core/jsu.css</a></td>
-    <td><a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/GoogleAnal.html#google-analytics-button">JSU Google Analytics CSS Classes</a></td>
-  </tr>
-</table>
-<b>SAMPLEs:</b>  
-
-   <!--   SAMPLE and DESC HEADER-->
-   <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+ 
+   <table style="margin-top:10px;" class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr class="tiptitleBig">
       <th class="tiptitleBig" colspan="2">Google Analitycs Single Page </th>
     </tr>
@@ -274,7 +265,7 @@ API to create UserFriendly List of Links to Google Analytics:
          <table class="detNoBorder" width="100%">
            <tr><td class="tipl" width="100%">
              <label class="sampleTitle">SAMPLE_2 - Google Analitycs Single Page</label> 
-             <label id="limit_sample_2" class="featSampleLimit" style="margin-left:20px;">FREE JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitations</a></label>
+             <label id="limit_sample_2" class="featSampleLimit" style="margin-left:10px;">FREE JSU Version with <a class="tipLink" href="javascript:showJSUVersionParLimit();">Limitations</a></label>
              <table class="sampleNote"><tr>
                 <td class="sampleNote"><input class="sampleNote"></td>
                 <td class="tipl">
@@ -327,22 +318,19 @@ API to create UserFriendly List of Links to Google Analytics:
 
 <!-- ======================================================================================================================================== END SPECIFIC API-->
 
-<hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par2" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) API Documentation</h1>
-<a href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/index.html" target="_self">Google Analytics API Documentation</a> <BR/>
 
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par3" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3) Samples</h1>
+<a id="par2" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) Samples</h1>
 <a class="tipLink" href="javascript:showSampleGA(false);">Try Google Analytics Sample</a><BR/><BR/>
 <!--     VIDEO -->
      <a href="javascript:showJSUVideoGA(false);"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Google Analytics Feature"/></a>
 
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par4" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4) Required</h1>
+<a id="par3" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3) Required</h1>
 NO External Plugin is required: <b><i>Pure JS Code</i></b>
 
 <hr class="h2Sep"><h2 class="jsuDoc">
-<a id="par5" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5) Installation, Configuration, Version, Licence</h1>
+<a id="par4" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4) Installation, Configuration, Version, Licence</h1>
 See <a class="tipLink" href="javascript:jsuDoc(false);" target="_self">JSU Documentation</a>
 
 <hr class="footerSep">
