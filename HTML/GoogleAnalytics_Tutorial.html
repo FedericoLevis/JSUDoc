@@ -5,8 +5,8 @@
   <!-- DOC like sample-->
   <title>JS Utility | JSU Google Analytics Tutorial | Federico Levis</title>
   <meta charset="utf-8"/>
-  <meta name="description" content="JSU utility (JSU) - Floating/Fixed HTML Google Analytics with GIF, Video, Pages, Google Analytics" />
-  <meta name="keywords" content="js, utility, JSU, google, analytics, shorten, URL, tooltip, tip, html, gif, federico, levis" />
+  <meta name="description" content="JSU utility (JSU) - API to access to Google Analytics pages created with goo.gl url shortener"/>
+  <meta name="keywords" content="js, utility, google, analytics, tuturial, goo.gl, shortener, JSU, tooltip, tip, statistics, federico, levis" />
     <!--  ***************************   JSU ****************************** -->
     <!--  Define JSU_GA_TRACKING_ID to Enable GoogleAnalitycs and send a pageView statistic  -->
     <script>
@@ -21,7 +21,6 @@
    <!-- 
    <link rel="stylesheet" href="../../../Cognos/jsu/samples/about/about.css" type="text/css">  
    -->
-
 
     
     <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.js" ></script>
@@ -110,17 +109,19 @@ STEPs to add in 5 minutes the Google Analytics Visualization from your HTML Page
 <a id="par1" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1) STEPs to display Google Analytics from your HTML page</h2>
 
 We will describe the STEPs to add Google Analytics visualization to Following HTML page example: </i>: <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/SimpleProduct.html" target="_blank">https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/SimpleProduct.html</a>
-<iframe style="margin-top:10px;margin-bottom:10px;" width="100%" height="300" src="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/SimpleProduct.html" ></iframe>
+<iframe class="jsuDoc" height="250" src="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/SimpleProduct.html" ></iframe>
 <BR/>
 As displayed, it is a very simple page with:
 <ul>
- <li>A Download Button, that open the Download Page <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html" target="_blank">https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html</a>  </li>
+ <li>The <b>FREE JSU</b> Download Button, that open the Download Page <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html" target="_blank">https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html</a>  </li>
  <li>4 Links to <b>Product Item pages</b>; for example <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Tooltip.html" target="_blank">https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Tooltip.html</a> for <b>Product Item 1: Tooltip</b> </li>
 </ul>
 Our goal is to <b>add the Visualization of the number of Click that are done in the Download Page and in the Single Product Item pages</b>; each counter must be separated per each page.<BR/><BR/>
 To easily identify the required modification: <ul>
-  <li>We have enphasized the modification with <b>GOOGLE_ANAL</b> Label into the <a class="tipLink" href="https://github.com/FedericoLevis/JSU/blob/master/samples/GoogleAnal/SimpleProduct.html" target="_blank">HTML Code of SimpleProduct.html</a> </li>
-  <li>We have saved the HTML with the required modification into a new HTML page <a class="tipLink" href="https://github.com/FedericoLevis/JSU/blob/master/samples/GoogleAnal/SimpleProductWithGA.html" target="_blank">SimpleProductWithGA.html</a> </li>
+  <li>We have enphasized the modification with <b>GOOGLE_ANAL</b> Label into the 
+    <a class="tipLink" href="https://github.com/FedericoLevis/JSU/blob/master/samples/GoogleAnal/SimpleProduct.html" target="_blank">HTML Code of SimpleProduct.html</a> </li>
+  <li>We have saved the HTML with the required modification into a new Page: 
+    <a class="tipLink" href="https://github.com/FedericoLevis/JSU/blob/master/samples/GoogleAnal/SimpleProductWithGAShort.html" target="_blank">HTML Code of SimpleProductWithGAShort.html</a> </li>
 </ul>
 Follow the STEPs required, that could be <b>easily completed in less than 5 minutes</b>.
 
@@ -160,7 +161,8 @@ var JSU_URL_JSLOG  =	"https://goo.gl/Iobg3a";
 <a id="par1.3" class="anchor" href="#par1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par1.3" class="anchor" href="#par1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.3) STEP3: ADD JSU Button for Single Google Analytics Page </h2>
-On the right of Download Button, add the JSU Button to display the Google Analytics Page realative to JSU FREE Download: <BR/>
+On the right of Download Button, add the <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/GoogleAnal.html#google-analytics-button">JSU Button googleAnal</a>  that calls 
+ <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlPage">JSU API gaShortUrlPage()</a> to display the Google Analytics Page relative to JSU FREE Download: <BR/>
 <textarea class="jsuCode" rows="7" cols="160"> <!--  GOOGLE_ANAL Modification  STEP 3)  ADD googleAnal Button to show the Page of LastMonth GoogleAnalytics of JSU_URL_DOWNLOAD   -->
 <td valign="bottom"> <input type="button"  class="googleAnal" id="googleAnalFree"  
     onclick="gaShortUrlPage (JSU_URL_DOWNLOAD, {  bNewWindow: true,  szParTime: GA_PAR_TIME.month });"
@@ -171,11 +173,8 @@ On the right of Download Button, add the JSU Button to display the Google Analyt
 
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par1.2" class="anchor" href="#par1.1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1.4) STEP4: ADD JSU Button for List of Google Analytics Pages </h2>
-<ul>
-<li>Add the JS function <b>showGAList()</b> calling <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlList">JSU API gaShortUrlList()</a>  to display a Box with an <b>User Friendly List of URLs to Google Analytics</b></li>
-<li>In the <b>onclick event</b> call the JSU GoogleAnalytic API <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlList">gaShortUrlList()</a>  </li>
-
-</ul>
+Add the <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/GoogleAnal.html#google-analytics-button">JSU Button googleAnalList</a>  that calls 
+<a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/googleAnal.js/global.html#gaShortUrlList">JSU API gaShortUrlList()</a>  to display a Box with an <b>User Friendly List of URLs to Google Analytics</b>
 
 <textarea class="jsuCode" rows="24" cols="160"> <script>
 /* GOOGLE_ANAL Modification  STEP 4a)  ADD JS procedure to show Show a Box with an User Friendly List of URLs to Google Analytics */
@@ -206,8 +205,14 @@ function showGAList(event){
 <!-- ----------------------------------------------------- par2 ---------------------------------------------------------------------------------- -->
 <hr class="h2Sep"><h2 class="jsuDoc">
 <a id="par1" class="anchor" href="#par1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2) The Modifed Page, with 2 Buttons for Google Analytics Visualization</h2>
-Follow the resulting page with the described modification, that has been saved into </i>: <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/SimpleProductWithGA.html" target="_blank">https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/SimpleProductWithGA.html</a>:
-<iframe style="margin-top:10px;margin-bottom:10px;" width="100%" height="400" src="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/SimpleProductWithGA.html" ></iframe>
+<ul>
+  <li>
+    In the Link you can see the resulting Code of the New Page: <a class="tipLink" href="https://github.com/FedericoLevis/JSU/blob/master/samples/GoogleAnal/SimpleProductWithGAShort.html" target="_blank">Resulting HTML Code of SimpleProductWithGAShort.html</a> 
+  </li>  
+  <li>
+    The new HTML can be tried at following Link:  </i>: <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/SimpleProductWithGAShort.html" target="_blank">https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/SimpleProductWithGAShort.html</a>
+	and it is displayed below:
+  <iframe class="jsuDoc" height="450" src="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/SimpleProductWithGAShort.html" ></iframe>
 <BR/>
 
 
