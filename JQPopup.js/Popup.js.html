@@ -23,84 +23,1080 @@
 
 
 
-
-<section>
-
-<header>
     
-        <h2></h2>
-        
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @fileOverview
+========================================================================================= &lt;BR/> 
+&lt;b>File:&lt;/b> 			JQPopup/Popup.js  &lt;BR/>
+&lt;b>Author:&lt;/b>     		&lt;a href="https://www.linkedin.com/in/federicolevis" target="_self">Federico Levis&lt;/a> &lt;BR/>
+&lt;b>JSPopup Doc:&lt;/b> &lt;a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/JSPopup.html" target="_self">JSU JSPopup Documentation&lt;/a> &lt;BR/>
+&lt;b>JSU API Doc:&lt;/b> &lt;a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_self">JSU API Documentation&lt;/a> &lt;BR/>
+&lt;b>Description:&lt;/b>       JQ Popup API, generic for ALL Browsers (IE, Mozilla, Chrome, ..) &lt;BR/>                               
+&lt;b>REQUIRED:&lt;/b>          From JSU: &lt;ul>
+                            &lt;li>&lt;b>jsu/externalPlugin/jquery:&lt;/b> jquery-ui.css jquery.js jquery-ui.js &lt;/li>
+                            &lt;li>&lt;b>CSS:&lt;/b> jsu.css &lt;/li>
+                            &lt;li>&lt;b>JS&lt;/b> jsuCmn.js  util.js &lt;/li>
+                            &lt;li>&lt;b>OPTIONAL JS:&lt;/b> jslog.js, dom-drag.js (required only to enable jslog)&lt;/li>
+                          &lt;/ul>
+&lt;b>First Version:&lt;/b>     1.0 Jan 2015  &lt;BR/>
+&lt;b>Current Version:&lt;/b>   1.8 Jul 2016    &lt;BR/>
+&lt;BR/>-----------------------------------------------------------------------------------&lt;BR/>
+&lt;b>DISCLAIMER&lt;/b>  &lt;BR/>
+Copyright by Federico Levis - &lt;a href="https://github.com/FedericoLevis/JSU" target="_self">JSU&lt;/a> &lt;BR/> 
+This file may be freely distributed under the MIT license.   &lt;BR/>
+========================================================================================= &lt;BR/> 
+*/
+ /* ====================================================================================================
+ *          GLOBAL COSTANT
+ ====================================================================================================*/
+
+/**
+ * POPUP_TYPE used in Popup() API as szPopupType par, to identify the PopupType to display:  
+&lt;ul>  
+	&lt;li> POPUP_TYPE.INFO: "Info", &lt;/li>
+	&lt;li> POPUP_TYPE.CONFIRM: "Confirm", &lt;/li>
+	&lt;li> POPUP_TYPE.ERR:"Error", &lt;/li>
+	&lt;li> POPUP_TYPE.ALARM:"Alarm", &lt;/li>
+	&lt;li> POPUP_TYPE.WARN:"Warning", &lt;/li>
+	&lt;li> POPUP_TYPE.QUESTION:"Question", // Question with YES NO &lt;/li>
+	&lt;li> POPUP_TYPE.QUESTION_3:"Question_3Btn", // Question with YES NO CANCEL &lt;/li>
+	&lt;li> POPUP_TYPE.PROMPT:"Prompt", // Prompt to insert one value &lt;/li>
+	&lt;li> POPUP_TYPE.CHOICE:"Choice" // Choice in a select &lt;/li>
+&lt;/ul>
+
+  &lt;div class="jsDocNote">
+  &lt;b>Imlementation NOTE&lt;/b>
+  &lt;ul>
+    &lt;li>DO NOT Change this values: they are used also to compose the img class e.g PopupInfo, PopupConfirm,..&lt;/li>
+  &lt;/ul>
+  &lt;/div> 
+  
+ */
+var POPUP_TYPE = {
+  INFO: "Info",
+  CONFIRM: "Confirm",
+  ERR:"Error",
+  ALARM:"Alarm",
+  WARN:"Warning",
+  QUESTION:"Question", // Question with YES NO
+  QUESTION_3:"Question_3Btn", // Question with YES NO CANCEL
+  PROMPT:"Prompt", // Prompt to insert one value
+  CHOICE:"Choice" // Choice in a select
+};
+
+/**
+ * Option iPromptType for POPUP_TYPE.PROMPT
+&lt;ul>  
+	&lt;li> PROMPT_TYPE.NUMBER: "number" &lt;/li>
+	&lt;li> PROMPT_TYPE.STRING: "string" &lt;/li>
+&lt;/ul>
+ */ 
+var PROMPT_TYPE = {
+    NUMBER: "number",
+    STRING: "string"
+  };
+
+
+/**
+ * Return value of Popup() and PopupChoice() API:  POPUP_BTN indicate the Button clicked or ESC or click into x
+&lt;ul>  
+    &lt;li> POPUP_BTN.CLOSE: "CLOSE"    // Close with ESC or x of Window  &lt;/li>
+    &lt;li> POPUP_BTN.CONFIRM: "CONFIRM"    // Clicked Confirm Button  &lt;/li>
+    &lt;li> POPUP_BTN.NO: "NO"    // Clicked NO Button  &lt;/li>
+    &lt;li> POPUP_BTN.CANCEL: "CANCEL"    // Clicked CANCEL Button  &lt;/li>
+&lt;/ul>
+ */ 
+var POPUP_BTN = {
+    CLOSE: "CLOSE",    /* Close on x of Window */
+    CONFIRM: "CONFIRM", /* BTN OK (YES) */
+    NO: "NO", /* BTN NO */ 
+    CANCEL: "CANCEL"  /* BTN CANCEL */
+};
+
+
+
+/* ====================================================================================================
+ *          DEFAULT CONFIGURATION: see description of objOpt in Popup(szPopupType, szMsgHtml,objOpt) API  
+ ====================================================================================================*/
+var POPUP_DEF_WIDTH = 600;    //iWidth {Number}
+var POPUP_DEF_MULTICHOICE_SIZE = 5;  //iChoiceMultiSize {Number}
+var POPUP_DEF_SHOW_IMG = true;  //bShowImg {Boolean} (show/hide Image (Info, Warn,..) On the Left of Message
+//Default
+var POPUP_DEF_RESIZE = true;  // bResize {Boolean}
+var POPUP_DEF_CLOSE_ON_ESCAPE = true; // bCloseOnEscape {Boolean}
+// For DEVELOPER: you can set false
+var POPUP_DEF_MODAL = true;  // bModal {Boolean}
+var POPUP_DEF_POSITION = { my: "center", at: "center"};     // "center" "top" "left" "right" 
+var POPUP_DEF_PROMPT_NUMBER_W = 50;
+var POPUP_DEF_PROMPT_STRING_W = 200;
+
+var POPUP_DEF_BTN_WIDTH = 120;    //Width of Btn when it is not set
+
+
+ /* ====================================================================================================
+ *          INTERNAL CONSTANT
+ ====================================================================================================*/
+var POPUP_IMG_CLASS_PREFIX = "PopupImg";  // e.g PopupImgInfo, PopupImgConfirm,..
+var POPUP_TBLMSG_CLASS_PREFIX = "PopupTblMsg";  // e.g PopupTblMsgInfo, 
+var POPUP_TITLE_CLASS_PREFIX = "PopupTitle";  // e.g PopupTitleInfo, 
+var POPUP_MSG_MIN_HEIGHT = 160;  /* Becaase we Need space for Image and Button */
+var POPUP_FS_CHOICE_MIN_WIDTH=200; // Min width to allow SelectAll DeselectAll
+
+var POPUP_DIV_EMPTY = '&lt;div id="PopupDiv" class="Popup" style="display:none;">&lt;/div> ';
+// The html of the Div
+var POPUP_DIV_HTML = '&lt;table id="PopupTblHea" class="PopupTitleInfo" style="display:none" width="100%" >'+
+'      &lt;tr>&lt;td id="PopupTitle" class="PopupTitle" width="100%">INFORMATION&lt;/td>  &lt;/tr>'+
+'    &lt;/table>  '+
+'    &lt;table id="PopupTblMsg" class="PopupTblMsgInfo" style="min-height:80px;" width="100%">'+
+'      &lt;tr>'+
+'        &lt;td id="PopupImg" class="PopupImgConfirm" height="100%" width="80px">'+
+'        &lt;/td>'+
+'        &lt;td>'+
+'          &lt;table class="PopupMsg">'+
+'            &lt;tr>'+
+'              &lt;td id="PopupMsg" class="PopupMsg" >'+
+'              &lt;/td>'+
+'            &lt;/tr>'+
+'            &lt;tr>'+
+'              &lt;!--    Section for  PopupPrompt   -->'+
+'               &lt;td id="PopupPromptSect" class="PopupPrompt" style="display:none">'+
+'                 &lt;table>' +
+'                   &lt;tr>' +
+'                     &lt;td>&lt;label id="PopupPromptLabel" class="PopupPrompt">&lt;/label>&lt;/td>'+
+'                     &lt;td>&lt;input id="PopupPromptInput" class="PopupPrompt" onfocus="pp_OnFocusPromptInput();"/>&lt;/td>'+
+'                   &lt;/tr>' +
+'                   &lt;tr>' +
+'                     &lt;td>&lt;/td>' +
+'                     &lt;td>&lt;label id="PopupPromptError" class="PopupPromptError"/>&lt;/td>'+
+'                   &lt;/tr>' +
+'                 &lt;/table>' +
+'               &lt;/td>'+
+'            &lt;/tr>'+
+'            &lt;tr>'+
+'              &lt;!--    Section for  PopupChoice Single   -->'+
+'               &lt;td id="PopupChoiceSingleSect" class="PopupChoiceSingle" style="display:none">'+
+'                 &lt;label id="PopupChoiceSingleLabel" class="PopupChoiceSingle">Choice:&lt;/label>'+
+'                 &lt;select id="PopupChoiceSingleSelect" class="PopupChoiceSingle">&lt;/select>  '+
+'               &lt;/td>'+
+'            &lt;/tr>'+
+'            &lt;tr>'+
+'              &lt;!--    Section for  PopupChoice Multi   -->'+
+'               &lt;td id="PopupChoiceMultiSect" class="PopupChoiceMulti" style="display:none;text-align:center;">'+
+'                     &lt;fieldset id="PopupChoiceMultiFS" class="PopupChoiceMulti">'+
+'                       &lt;legend id="PopupChoiceMultiLabel" class="PopupChoiceMulti">Multi&lt;/legend>'+
+'                       &lt;select id="PopupChoiceMultiSelect" class="PopupChoiceMulti" multiple=true>&lt;/select>'+
+'                       &lt;div style="margin-top:10px; margin-bottom:10px;">'+
+'                          &lt;a id="PopupSelectAll" href="javascript:pp_SelectAll();" class="Popup">SELECT All&lt;/a>'+
+'                          &lt;a id="PopupDeselectAll" href="javascript:pp_DeselectAll();" class="Popup" style="padding-left:15px;">DESELECT All&lt;/a>'+
+'                       &lt;/div>'+
+'                     &lt;/fieldset>'+
+'                &lt;/td>'+
+'            &lt;/tr>'+
+'            &lt;tr>&lt;td class="tipr" id="pp_f">&lt;/td>&lt;/tr>' + 
+'          &lt;/table>'+
+'        &lt;/td>'+
+'      &lt;/tr>'+
+'    &lt;/table>';
+
+
+
+
+/* ====================================================================================================
+ *         GLOBAL VAR
+ ====================================================================================================*/
+// Current Dlg Status
+var jsPopup_bScroll = false;
+
+
+//===================================================================================
+//        LOCAL FUNCTION
+//===================================================================================
+
+/*
+ * MAIN Local Function. Depending on BRowser and Configuration. 
+ * 
+* @param szPopupType {String}  POPUP_TYPE.INFO, POPUP_TYPE.WARN, POPUP_TYPE.ERR, ...... 
+* @param szMsgHtml {String}  HTML TAG are Accepted (e.g &lt;b>, &lt;br/>,..)   also /n is present is accepted as NewLine
+* @param [objOpt]   [Object]}    Optional Object with the Option - see Popup()
+* * @return {Object}  retObj 
+*                           Example:
+*                           {  
+*                             retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL
+*                           }  
+*/
+function pp_Show(szPopupType,szMsgHtml,objOpt){
+  var fn = "[Popup.js pp_Show] ";
+  
+  jsu_log(fn + JSU_LOG_FUN_START);
+  jsu_log(fn + "IN: szPopupType=" + szPopupType);
+  jsu_logObj(fn + "IN: objOpt=" , objOpt);
+  jsu_logHtml(fn + "IN: szMsgHtml=" , szMsgHtml);
+  
+  pp_Init();
+  // Replace /n with &lt;BR/> 
+  szMsgHtml =   strReplaceAll(szMsgHtml,"\n","&lt;BR/>");
+
+  //  Init
+  var iWidth = POPUP_DEF_WIDTH;
+  var height = "auto";
+  // Default
+  var bModal = POPUP_DEF_MODAL;
+  var bResize = POPUP_DEF_RESIZE;
+  var bShowImg = POPUP_DEF_SHOW_IMG;
+  var bCloseOnEscape = POPUP_DEF_CLOSE_ON_ESCAPE;
+  var position = POPUP_DEF_POSITION;
+  var bLog = (jslogGetLogLev() > 0);
+  if (bLog){
+    bResize = true;
+  }
+  var jqePopup = jQuery( "#PopupDiv" );
+  
+  jqePopup[0].fnCallback = undefined; // DEfault
+  var bOpt = (objOpt != undefined &amp;&amp; objOpt != null ); 
+  var bShowBtnSect = true; //default
+  if  (bOpt){
+    if (objOpt.iWidth != undefined &amp;&amp; objOpt.iWidth != null &amp;&amp; objOpt.iWidth){
+      iWidth = objOpt.iWidth;
+    }
+    if (objOpt.iHeight != undefined &amp;&amp; objOpt.iHeight != null){
+      height = objOpt.iHeight;
+    }
+     if (objOpt.position  != undefined){
+      position = objOpt.position;
+    }
+    if (objOpt.bModal != undefined &amp;&amp; objOpt.bModal != null){
+      bModal = objOpt.bModal;
+    }
+    if (objOpt.bResize != undefined &amp;&amp; objOpt.bResize != null){
+      bResize = objOpt.bResize;  
+    }
+    if (objOpt.bShowImg != undefined &amp;&amp; objOpt.bShowImg != null){
+      bShowImg = objOpt.bShowImg;
+    }    
+    if (objOpt.bCloseOnEscape != undefined &amp;&amp; objOpt.bCloseOnEscape != null){
+      bCloseOnEscape = objOpt.bCloseOnEscape;  
+    }
+    if (objOpt.bShowBtnSect != undefined &amp;&amp; objOpt.bShowBtnSect != null){
+    	bShowBtnSect = objOpt.bShowBtnSect;  
+    }
     
-</header>
+    if (objOpt.fnCallback != undefined){
+      jsu_log(fn + "fnCallback is defined");
+      jqePopup[0].fnCallback = objOpt.fnCallback; 
+    }
+  }  
+  jqePopup.dialog("destroy"); // destroy previous, to make jquery recalculating Size with new one
+  var szTitle = pp_getTitle (szPopupType,objOpt);  
+  
+  var buttons = null;
+  if (bShowBtnSect){
+    var buttons = pp_GetBtn (szPopupType,objOpt);
+  }
+  jsu_logObj(fn + "buttons", buttons);
+  jqePopup.dialog({
+  	autoOpen: false,
+    modal: bModal,  
+    dialogClass: "PopupDialog",
+    title: szTitle,
+    position: position,
+    resizable: bResize,
+    // resize: function(event, ui) { pp_OnResize(event,ui);},  // FUTURE
+    width: iWidth,
+    height: height,
+    minHeight: POPUP_MSG_MIN_HEIGHT,
+    closeOnEscape: bCloseOnEscape,
+    buttons: buttons,
+    close: function( event, ui ) {pp_OnClose(event);}
+  });  
+  /* Set className of button */
+  var arIdBtn = ['#PopupConfirm','#PopupNo','#PopupCancel'];
+  for (var i=0;i &lt; arIdBtn.length; i++){
+    var elBtn = jQuery(arIdBtn[i])[0];
+     // Not all the Btn are always created, so we must check if elBtn si present
+    if (elBtn){
+      elBtn.className = "PopupBtn";
+    }
+  }
+  //
+  pp_ClassInit (szPopupType,jqePopup);
+  pp_idShow ("PopupImg", bShowImg);
+  pp_ChoiceInit (szPopupType,objOpt);  // Init Section Choice
+  pp_PromptInit (szPopupType,objOpt);  // Init Section Prompt
+  var jqeMsg = jQuery('#PopupMsg');
+  jqeMsg.html (szMsgHtml);
+  jQuery( "#PopupDiv" ).dialog( "open" );
+  jsu_log(fn + JSU_LOG_FUN_END);
+}  
 
-<article>
-    <div class="container-overview">
+
+
+
+/*
+ * Add the Popup Div to document, if it is not already presente
+ * - Reset Div to default empty state
+ * - Init dialog
+ */
+
+function pp_Init(){
+  var fn = "[Popup.js pp_Init] ";
+  jsu_log(fn + JSU_LOG_FUN_START);
+
+  var elPopup = document.getElementById ("PopupDiv");
+  if (elPopup == null){
+    jsu_log(fn + "'PopupDiv' NOT present - we add it to document");
+    jQuery('body,html').append (POPUP_DIV_EMPTY);
+  }
+  // Set initial Empty Layout
+  var jqePopup = jQuery( "#PopupDiv"); 
+  jqePopup.hide();
+  jqePopup.html (POPUP_DIV_HTML);
+  jqePopup.dialog({ autoOpen: false });    
+  jsu_log(fn + JSU_LOG_FUN_END);
+}
+
+
+
+/*
+ * Init Class of Layout Objects
+ * @param szPopupType {String} in  
+ * @param jqepopup {jquery Object}
+ */
+function pp_ClassInit(szPopupType, jqePopup){
+  var fn = "[Popup.js pp_ClassInit] ";
+  jsu_log(fn + JSU_LOG_FUN_START);
+  // Get Class
+  var szClassId = szPopupType;
+  if (szPopupType == POPUP_TYPE.QUESTION_3){
+    szClassId = POPUP_TYPE.QUESTION; // Mapped to the same Class
+  }
+  //---------------
+  var szTitleClassName = POPUP_TITLE_CLASS_PREFIX + szClassId;
+  jsu_log(fn + "set PopupTblHea className=" + szTitleClassName);
+  jsu_getElementById2("PopupTblHea").className = szTitleClassName;
+  
+  
+  // Set className of TitleBar
+  var elTitleBar = jqePopup.siblings('.ui-dialog-titlebar')[0];
+  var szClassName = szTitleClassName + " " + elTitleBar.className;
+  elTitleBar.className =szClassName;
+  
+  
+  // Get the css and set to the TitleBar
+  elTitleBar.style.backgroundColor =  jQuery('#PopupTblHea').css( "background-color" );
+  elTitleBar.style.textAlign =  "center";
+  elTitleBar.style.fontSize = jQuery('#PopupTblHea').css( "font-size" ); 
+  elTitleBar.style.fontWeight= jQuery('#PopupTblHea').css( "font-weight" ); 
+  elTitleBar.style.color= jQuery('#PopupTblHea').css( "color" );
+  //---------------
+  var szImgClassName = POPUP_IMG_CLASS_PREFIX + szClassId;
+  jsu_log(fn + "set PopupImg className=" + szImgClassName);
+  jsu_getElementById2("PopupImg").className = szImgClassName;
+  //---------------
+  var szTblMsgClassName = POPUP_TBLMSG_CLASS_PREFIX + szClassId;
+  jsu_log(fn + "set PopupTblMsg className=" + szTblMsgClassName);
+  jsu_getElementById2("PopupTblMsg").className = szTblMsgClassName;
+  
+  jsu_log(fn + JSU_LOG_FUN_END);
+}
+
+
+
+
+
+/*
+ * @param el
+ * @param bShow
+ */
+function pp_idIsVisible (szId){
+  var fn = "[Popup.js pp_idIsVisible] ";
+  var el = jsu_getElementById2(szId);
+  if (el == null){
+    return alert (fn + "SW ERROR szId=" + szId + "   NOT FOUND");
+  }
+  return  el.style.display != "none";
+}
+
+/*
+ * Only if bShow = false we Hide szId
+ * @param szId
+ * @param bShow
+ */
+function pp_idShow (szId, bShow){
+  var jqId = '#' + szId;
+  var jqEl = jQuery(jqId); 
+  if (bShow){
+    jqEl.show();
+  }else{
+    jqEl.hide();
+  }  
+}  
+
+
+/*
+ * Gget the Btn depending on szPopupType and objOpt if present
+ * @param szPopupType {String} in
+ * @param objOpt {Object} in  
+ * 
+ * @return buttons {Object}   e.g:
+ *     {
+        "OK" : {
+          text: "OK",
+          id: "PopupConfirm",
+          click: function(){  pp_OnClickConfirm();  }
+          },       
+        "NO" : {
+            text: "This is Custom Label",
+            width: 200,
+            id: "PopupNo",
+            click: function(){pp_OnClickNo();  }
+          },
+         "CANCEL" : {
+              text: "Cancel",
+              id: "PopupCancel",
+              click: function(){pp_OnClickCancel(); }       
+          }
+        }      
+
+ * 
+ */
+function pp_GetBtn (szPopupType,objOpt){
+  var fn = "[Popup.js pp_BtnInit] ";
+  jsu_log(fn + JSU_LOG_FUN_START);
+
+  var bQuestion = (szPopupType == POPUP_TYPE.QUESTION || szPopupType == POPUP_TYPE.QUESTION_3); 
+  var bQuestion3 = (szPopupType == POPUP_TYPE.QUESTION_3);
+  var bOpt = (objOpt != undefined &amp;&amp; objOpt != null);
+  // Default
+  var szConfirmLabel = (bQuestion) ?  POPUP_BTN_LABEL. QUESTION_CONFIRM :  POPUP_BTN_LABEL. CONFIRM; 
+  var szNoLabel =  POPUP_BTN_LABEL. QUESTION_NO;
+  var szCancelLabel =  POPUP_BTN_LABEL. QUESTION_CANCEL;
+  jsu_log(fn + "Default Label: szConfirmLabel=" + szConfirmLabel + "   szNoLabel=" + szNoLabel + "   szCancelLabel=" + szCancelLabel);
+  if (objOpt != null){
+    if (objOpt.szConfirmLabel != undefined &amp;&amp; objOpt.szConfirmLabel != ""){
+      szConfirmLabel = objOpt.szConfirmLabel; 
+    }
+    if (objOpt.szNoLabel != undefined &amp;&amp; objOpt.szNoLabel != ""){
+      szNoLabel = objOpt.szNoLabel; 
+    }
+    if (objOpt.szCancelLabel != undefined &amp;&amp; objOpt.szCancelLabel != ""){
+      szCancelLabel = objOpt.szCancelLabel; 
+    }
+  }
+  var objBtnConfirm = { text: szConfirmLabel,  id: "PopupConfirm",
+                    click: function(){  pp_OnClickConfirm();  }  
+                 };
+  if  (bOpt &amp;&amp; objOpt.iConfirmWidth!= undefined &amp;&amp; objOpt.iConfirmWidth!= null){
+    objBtnConfirm.width = objOpt.iConfirmWidth;
+  }else {
+    objBtnConfirm.width = POPUP_DEF_BTN_WIDTH;  
+  }
+  //-------
+  var objBtnNo = { text: szNoLabel,  id: "PopupNo",
+      click: function(){  pp_OnClickNo();  }  
+   };
+  if  (bOpt &amp;&amp; objOpt.iNoWidth!= undefined &amp;&amp; objOpt.iNoWidth!= null){
+      objBtnNo.width = objOpt.iNoWidth;
+  }else {
+    objBtnNo.width = POPUP_DEF_BTN_WIDTH;  
+  }
+  //-------
+  var objBtnCancel = { text: szCancelLabel,  id: "PopupCancel",
+      click: function(){  pp_OnClickCancel();  }  
+   };
+  if  (bOpt &amp;&amp; objOpt.iCancelWidth!= undefined &amp;&amp; objOpt.iCancelWidth!= null){
+      objBtnCancel.width = objOpt.iCancelWidth;
+  }else {
+    objBtnCancel.width = POPUP_DEF_BTN_WIDTH;  
+  }
+  var buttons = new Object();
+  buttons.confirm =  objBtnConfirm;
+  if (szPopupType == POPUP_TYPE.QUESTION){
+    buttons.no =  objBtnNo;
+  }else if (szPopupType == POPUP_TYPE.QUESTION_3){
+    buttons.no =  objBtnNo;
+    buttons.cancel =  objBtnCancel;
+  }else if (szPopupType == POPUP_TYPE.CHOICE || szPopupType == POPUP_TYPE.PROMPT){
+    buttons.cancel =  objBtnCancel;
+  }
+  jsu_log(fn + JSU_LOG_FUN_END);
+  return buttons;
+}  
+
+
+/*
+ * Init Section of Choice 
+ * @param szPopupType {String} in
+ * @param parIn {Object} in  
+ */
+function pp_ChoiceInit(szPopupType,objOpt){
+  var fn = "[Popup.js pp_ChoiceInit] ";
+  jsu_log(fn + JSU_LOG_FUN_START);
+  pp_idShow ("PopupChoiceMultiSect", false);
+  pp_idShow ("PopupChoiceSingle", false);
+  if (szPopupType == POPUP_TYPE.CHOICE &amp;&amp; objOpt != null){
+    jsu_log(fn + "objOpt.bChoiceMultiSel=" + objOpt.bChoiceMultiSel);
+    szId =  objOpt.bChoiceMultiSel ? "PopupChoiceMulti" : "PopupChoiceSingle";
+    pp_idShow (szId + "Sect", true);
+    jsu_getElementById2(szId + "Label").innerHTML = objOpt.szChoiceLabel;
+    // Populate selectChoice
+    var selectChoice = jsu_getElementById2(szId + "Select");
+    if (objOpt.bChoiceMultiSel){
+      var iChoiceMultiSize = POPUP_DEF_MULTICHOICE_SIZE;
+      if (objOpt.iChoiceMultiSize != undefined &amp;&amp; objOpt.iChoiceMultiSize != null){
+        iSize = objOpt.iChoiceMultiSize; 
+      } 
+      selectChoice.size = iSize;
+      // Label
+      var aElSelectAll = jsu_getElementById2("PopupSelectAll");
+      aElSelectAll.childNodes[0].textContent = POPUP_SELECT_ALL;
+      var aElDeselectAll = jsu_getElementById2("PopupDeselectAll");
+      aElDeselectAll.childNodes[0].textContent=POPUP_DESELECT_ALL;
+    }
+    for (var i=0; i &lt; objOpt.arChoice.length; i++){
+      var objOptItem = objOpt.arChoice[i];
+      var elOpt = new Option(objOptItem.szText,objOptItem.value);
+      elOpt.dv = objOptItem.szText;
+      elOpt.selected = objOptItem.bSel;
+      selectChoice[selectChoice.length] = elOpt;
+    }
+    // ------------- adjust width
+    var elFS= jsu_getElementById2("PopupChoiceMultiFS");
+    var iWidth = selectChoice.clientWidth + 15;
+    if (iWidth &lt; POPUP_FS_CHOICE_MIN_WIDTH){
+      iWidth = POPUP_FS_CHOICE_MIN_WIDTH;
+    }
+    elFS.style.width = iWidth + "px";
+    jsu_log(fn + "We have SET elFS.style.width=" + elFS.style.width);
     
-        
-
-        
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
+  }
+  jsu_log(fn + JSU_LOG_FUN_END);
+}  
 
 
-        
-    
-    </div>
 
-    
+/*
+ * Init Section of Prompt 
+ * @param szPopupType {String} in
+ * @param parIn {Object} in  
+ */
+function pp_PromptInit(szPopupType, objOpt){
+  var fn = "[Popup.js pp_PromptInit] ";
+  jsu_log(fn + JSU_LOG_FUN_START);
+  pp_idShow ("PopupPromptSect", false);
+  if (szPopupType == POPUP_TYPE.PROMPT){
+    pp_idShow ("PopupPromptSect", true);
+    if (objOpt != null){
+      if (objOpt.szPromptLabel &amp;&amp; objOpt.szPromptLabel.length){
+        jsu_getElementById2("PopupPromptLabel").innerHTML = objOpt.szPromptLabel;
+      }
+      var elInput = jsu_getElementById2("PopupPromptInput");
+      if (objOpt.szPromptValue &amp;&amp; objOpt.szPromptValue.length){
+        jsu_log(fn + "Set Default PromptValue=" + objOpt.szPromptValue);
+        elInput.value = objOpt.szPromptValue;
+      }
+      szPromptType = (objOpt.szPromptType) ? objOpt.szPromptType : PROMPT_TYPE.STRING;
+      var bNumber = (szPromptType == PROMPT_TYPE.NUMBER);
+      elInput.setAttribute ("type",szPromptType);
+      var iMin=null, iMax=null;
+      var bMin=false, bMax=false;
+      if (objOpt.iPromptWidth &amp;&amp; !isNaN(objOpt.iPromptWidth)){
+        elInput.setAttribute ("style","width:" + objOpt.iPromptWidth + "px;");
+      }else {
+        elInput.setAttribute ("style","width:" + 
+            (bNumber ? POPUP_DEF_PROMPT_NUMBER_W : POPUP_DEF_PROMPT_STRING_W )+ 
+            "px;");
+      }  
+      if (objOpt.iPromptMax &amp;&amp; !isNaN(objOpt.iPromptMax)){
+        bMax = true;
+        iPromptMax=objOpt.iPromptMax; 
+        elInput.setAttribute ("max",iPromptMax);
+        if (!bNumber){
+          elInput.setAttribute ("maxlength",iPromptMax);
+        }
+      }  else {
+        elInput.removeAttribute ("max");
+        elInput.removeAttribute ("maxlength");
+      }
+      if (objOpt.iPromptMin &amp;&amp; !isNaN(objOpt.iPromptMin)){
+        bMin = true;
+        iPromptMin=objOpt.iPromptMin; 
+        elInput.setAttribute ("min",iPromptMin);
+      }else{
+        elInput.removeAttribute ("min");
+      }
+      elInput.focus();
+      // ------------ Tip 
+      var szTitle = (bNumber) ? POPUP_PROMPT_TIP.NUMBER : POPUP_PROMPT_TIP.STRING;
+      if (bMin || bMax) {
+        szTitle = (bNumber) ? POPUP_PROMPT_TIP.NUMBER_RANGE : POPUP_PROMPT_TIP.STRING_RANGE;
+        if (bMin &amp;&amp; bMax){
+          szTitle += "[" + iPromptMin + ".." + iPromptMax + "]";
+        }else if (bMax){
+          szTitle += "[" + 0 + ".." + iPromptMax + "]";
+        }else if (bMin){
+          szTitle += "[" + iPromptMin + "..]";
+        }
+      }
+      elInput.setAttribute ("title",szTitle);
+    }
+  }  
+  jsu_log(fn + JSU_LOG_FUN_END);
+}  
 
-    
 
-    
 
-     
 
-    
 
-    
+/*
+ * Uses canvas.measureText to compute and return the width of the given text of given font in pixels.
+ * 
+ * @param {String} text The text to be rendered.
+ * @param {String} font The css font descriptor that text is to be rendered with (e.g. "bold 14px verdana").
+ * 
+ * @see http://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393 
+ */
+function getTextWidth(text, font) {
+    // re-use canvas object for better performance
+    var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+    if (canvas == undefined || canvas.getContext == undefined){
+      return 0;
+    }
+    var context = canvas.getContext("2d");
+    context.font = font;
+    var metrics = context.measureText(text);
+    return metrics.width;
+};
 
-    
 
-    
 
-    
-</article>
 
-</section>
+
+
+/*====================================================================
+====================================================================*/
+
+
+
+
+
+
+/*
+ * @param objOpt {Object} 
+ * @return szTitle to Use
+*/
+function pp_getTitle(szPopupType,objOpt){
+  var szTitle = (objOpt) ? objOpt.szTitle: null;
+  if (typeof(szTitle) == undefined || szTitle == null || szTitle == ""){ 
+    if (szPopupType == POPUP_TYPE.INFO){
+      return POPUP_DEF_TITLE.INFO;    
+    }else  if (szPopupType == POPUP_TYPE.WARN){
+      return POPUP_DEF_TITLE.WARN;    
+    }else  if (szPopupType == POPUP_TYPE.ERR){
+      return POPUP_DEF_TITLE.ERR;    
+    }else  if (szPopupType == POPUP_TYPE.ALARM){
+      return POPUP_DEF_TITLE.ALARM;    
+    }else  if (szPopupType == POPUP_TYPE.CONFIRM){
+      return POPUP_DEF_TITLE.CONFIRM;    
+    }else  if (szPopupType == POPUP_TYPE.PROMPT){
+      return POPUP_DEF_TITLE.PROMPT;    
+    }else  if (szPopupType == POPUP_TYPE.CHOICE){
+      return POPUP_DEF_TITLE.CHOICE;    
+    }else  if (szPopupType == POPUP_TYPE.QUESTION || szPopupType == POPUP_TYPE.QUESTION_3){
+      return POPUP_DEF_TITLE.QUESTION;    
+    }
+  }else {
+    return szTitle; 
+  }
+}  
+
+
+
+
+/*
+ * @param elInput
+ * @return 0 if OK    1 if ERR
+ */
+function pp_ValidateInput(elInput){
+  var fn = "[Popup.js pp_ValidateInput] ";
+  jsu_log(fn + JSU_LOG_FUN_START);
+  var promptValue = elInput.value;
+  jsu_log(fn + "Prompt=" + promptValue);
+  // Is required Validation?
+  var szType =  elInput.getAttribute ("type");
+  var bNumber = (szType == PROMPT_TYPE.NUMBER);
+  var iLen= (promptValue) ? promptValue.length :0;
+  var iMin =  parseInt(elInput.getAttribute ("min"));
+  var iMax =  parseInt(elInput.getAttribute ("max"));
+  if (isNaN(iMin)){ iMin = null;}
+  if (isNaN(iMax)){ iMax = null;}
+  if (bNumber){
+    promptValue = parseInt (promptValue);
+  }
+  var bErr = false;
+  if (bNumber){
+    jsu_log(fn + "VALIDATION is required for PROMPT NUMBER - We check that promptValue=" + promptValue + "  is a NUMBER");
+    bErr = (isNaN(promptValue)); 
+  }
+  if (!bErr &amp;&amp; iMin){
+    jsu_log(fn + "VALIDATION required for iMin=" + iMin + " - PROMPT szType=" + szType);
+    if (bNumber &amp;&amp; iMin > promptValue){ bErr = true;}
+    if (!bNumber &amp;&amp; iMin > iLen){ bErr = true;}
+  }
+  if (!bErr &amp;&amp; iMax){
+    jsu_log(fn + "VALIDATION required for iMax=" + iMax + " - PROMPT szType=" + szType);
+    if (bNumber &amp;&amp; iMax &lt; promptValue){ bErr = true;}
+    if (!bNumber &amp;&amp; iMax &lt; iLen){ bErr = true;}
+  }
+  if (bErr){
+    // Show the Error Element
+    var szTitle = elInput.getAttribute ("title");
+    jsu_log(fn + "VALIDATION ERROR for promptValue=" + promptValue + " Show Err: " + szTitle);
+    var elErr = jsu_getElementById2("PopupPromptError");
+    elErr.innerHTML = szTitle;
+    elementShow(elErr,true,"inline");
+    // 
+    elInput.setAttribute ("class","PopupPromptError");  // Change class to show alarm gif
+    return 1;
+  }
+  return jsu_log(fn + JSU_LOG_FUN_END);
+}
+
+/*
+ * Intercept Close to manage ESC or x
+ * 
+ * @param event
+ */
+function pp_OnClose(event){
+  var fn = "[Popup.js pp_OnClose] ";
+  jsu_log(fn + JSU_LOG_FUN_START);
+  if(event.originalEvent ){
+    jsu_log(fn + "Clicking on dialog box X or ESC");
+    // triggered by clicking on dialog box X or pressing ESC
+    pp_Close ({retBtn  : POPUP_BTN.CLOSE});
+  }        
+  jsu_log(fn + JSU_LOG_FUN_END);
+
+}
+
+
+/*
+ * - validate (if POPUP_TYPE.PROMPT)
+ * - Close Dlg and return retObj
+ * @param retObj  {
+ *                  retBtn   {Number or Object} in  Example: {Number} JTPOPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL or whetever Custom NUmber
+ *                                       Example: {Object} Custom Object
+ *                  .......
+ *                 }                      
+ * 
+ */
+function pp_Close(retObj){
+  var fn = "[Popup.js pp_Close] ";
+
+  jsu_log(fn + JSU_LOG_FUN_START);
+  // true if clicked on OK Button
+  var bConfirm = (retObj &amp;&amp; retObj.retBtn   == POPUP_BTN.CONFIRM);
+  jsu_log(fn + "bConfirm=" + bConfirm );
+  if (bConfirm){
+    // -------------- Check if Prompt is Visible
+    var bPrompt = pp_idIsVisible("PopupPromptSect");
+    if (bPrompt){
+      var elInput = jsu_getElementById2("PopupPromptInput");
+      if (pp_ValidateInput (elInput)){
+        return;
+      }
+      retObj.promptValue = elInput.value;
+    }  
+    // -------------- Check if Choice is Visible
+    var bChoiceSingle = pp_idIsVisible("PopupChoiceSingleSect");
+    var bChoiceMulti = pp_idIsVisible("PopupChoiceMultiSect");
+    if   (bChoiceSingle || bChoiceMulti){
+      jsu_log(fn + "Get Choice Selection");
+      var szEl = (bChoiceSingle) ? "PopupChoiceSingleSelect" : "PopupChoiceMultiSelect";
+      var selectChoice = jsu_getElementById2(szEl);
+      // Read All and prepare arChoice
+      var arChoice = new Array();
+      var szChoiceValue = "";
+      var szChoiceText= "";
+      var szSep = ""; 
+      for (var iOpt=0; iOpt &lt; selectChoice.options.length; iOpt ++){
+        var Opt = selectChoice.options[iOpt];
+        var arItem = { 
+             value: Opt.value, 
+             szText: Opt.text, 
+             bSel: Opt.selected
+             };
+        if (Opt.selected){
+          szChoiceValue += (szSep + Opt.value);
+          szChoiceText += (szSep + Opt.text);
+          if (szSep == ""){
+            szSep = ", ";
+          }  
+        }
+        arChoice.push(arItem);
+      }
+      retObj.choiceValue = szChoiceValue;
+      retObj.choiceText = szChoiceText;
+      retObj.arChoice = arChoice;
+    }
+  }  
+  jsu_logObj(fn + "retObj", retObj);
+  var jqePopup = jQuery("#PopupDiv" );
+  jsu_log(fn + "close and destroy Dialog");
+  var fnCallback = jqePopup[0].fnCallback;
+  jqePopup.dialog("destroy");
+  if (typeof (UnTip) == "function"){
+    UnTip();  /// if there is any Tip in the Dialog we UnTip it (to avoid the risk of leave it open)
+  }  
+  if (fnCallback != undefined){
+    jsu_log(fn + "call fncallback");
+    fnCallback (retObj);
+  }
+  jsu_log(fn + JSU_LOG_FUN_END);
+  
+}
+
+
+/*====================================================================
+EVENT FROM Popup Dlg
+====================================================================*/
+
+/*
+ * Focus on 'PromptPromptInput' Element
+ * Set standard Class to remove Validation Class Error if present
+ */
+function pp_OnFocusPromptInput(){
+  var elInput = jsu_getElementById2("PopupPromptInput");
+  elInput.setAttribute('class','PopupPromptInput');
+  var elErr = jsu_getElementById2("PopupPromptError");
+  elementShow (elErr,false); 
+}
+
+/*
+* Called at click on Button OK or YES
+* - Close Dlg and return retObj.bOk = true 
+*/
+function pp_OnClickConfirm(){
+  var fn = "[Popup.js pp_OnClickConfirm] ";
+  
+  pp_Close ({retBtn  : POPUP_BTN.CONFIRM});
+  
+}
+
+
+/*
+ * Deselect All Items in PopupChoiceMultiSelect
+ */
+function pp_DeselectAll(){
+  var selectChoice = jsu_getElementById2("PopupChoiceMultiSelect");
+  for (var iOpt=0; iOpt &lt; selectChoice.options.length; iOpt ++){
+    selectChoice.options[iOpt].selected = false;
+  }
+}
+
+
+/*
+ * For JSU FREE Protection
+ * 
+ * @param objId    {id, acr, min, max}
+ */
+function pp_getId(objId){
+	objId[0] = 1000 + objId[1] + (objId[2] + Math.floor(Math.random() * objId[3])); // id random   
+}
+
+
+/*
+ * Select All Items in PopupChoiceMultiSelect
+ */
+function pp_SelectAll(){
+  var selectChoice = jsu_getElementById2("PopupChoiceMultiSelect");
+  for (var iOpt=0; iOpt &lt; selectChoice.options.length; iOpt ++){
+    selectChoice.options[iOpt].selected = true;
+  }
+}
+
+
+
+/*
+* Called at click on Button No or NO
+* - Close Dlg and return retObj.bConfirm = false
+*/
+function pp_OnClickNo(){
+  var fn = "[Popup.js pp_OnClickNo] ";
+  
+  pp_Close ({retBtn  : POPUP_BTN.NO});
+}
+
+
+/*
+* Called at click on Button3 
+* - Close Dlg and return retObj.bConfirm = false
+*/
+function pp_OnClickCancel(){
+  var fn = "[Popup.js pp_OnClickNo] ";
+  
+  pp_Close ({retBtn  :POPUP_BTN.CANCEL});
+}
+
+
+
+
+/*
+ * FUTURE
+ */
+function pp_OnResize(event, ui){
+  var fn = "[Popup.js pp_onResize] ";
+  try{
+    var jqeMsg = jQuery('#PopupMsg');
+    jsu_log (fn );
+    var w1 = jqeMsg.dialog( "option", "width" );    
+    var w = jqeMsg[0].offsetWidth;
+    var h = jqeMsg[0].offsetHeight;
+    if (w != undefined &amp;&amp; h != undefined){
+      jsu_log (fn + "Window size: width=" + w + ", height=" + h);
+    }   
+  }catch (e) {
+    jsu_log (fn + "EXCEPTION " + e.message);
+  	
+  }
+}
+
+
+
+
+/*==================================================================================================
+            GLOBAL API
+==================================================================================================*/
+
+
+/**
+ * Show the Popup
+ * @param szPopupType {String}  POPUP_TYPE.INFO,  POPUP_TYPE.WARN, ..   
+                               &amp;nbsp;see  &lt;a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#POPUP_TYPE" target="_self">POPUP_TYPE&lt;/a>
+ *                                 
+ * @param szMsgHtml {String}  HTML TAG are Accepted - Newline if present is converted to HTML Newline
+ * @param [objOpt] {Object}   
+ &lt;table class="jsDoc" border="2" cellpadding="2" cellspacing="2" width="100%">
+  &lt;tr>&lt;td class="jsDocTitle">OPTIONS&lt;/td>&lt;/tr>
+  &lt;tr>&lt;td class="jsDocParam">
+  &lt;ul>
+    &lt;li> szTitle:    {String}      change default Title &lt;/li> 
+    &lt;li> fnCallback:  {function}  callback function, called when Popup is closed &lt;/li> 
+    &lt;li> position: {Object}    jQuery ui position. Default {my: "center", at: "center"} Example: {at: "top"} &lt;/li> 
+    &lt;li> iWidth:  {Number}      Optional PopupWidth: if it passed it is used &lt;li> Else DEfault is used &lt;/li> 
+    &lt;li> iHeight:  {Number}     Optional PopupHeight: if it passed it is Set&lt;li> Else is automarically calculated &lt;/li> 
+    &lt;li> szConfirmLabel:  {String} Label of Confirm Button  &lt;/li> 
+    &lt;li> iConfirmWidth:   {Number}  Width of Confirm Button  &lt;/li> 
+    &lt;li> szConfirmLabel:  {String}      Label of Confirm Button  &lt;/li> 
+    &lt;li> iConfirmWidth:   {Number}      Width of Confirm Button  &lt;/li> 
+    &lt;li> szCancelLabel:  {String}      Label of Cancel Button  &lt;/li> 
+    &lt;li> iCancelWidth:   {Number}      Width of Cancel Button  &lt;/li> 
+    &lt;li> szNoLabel:  {String}      Label of No Button  &lt;/li> 
+    &lt;li> iNoWidth:   {Number}      Width of No Button  &lt;/li> 
+    &lt;li> bShowImg:    {Boolean}     true to show Image  (Default=true) &lt;/li> 
+    &lt;li> bShowBtnSect:    {Boolean} [true] false to hide all the Button Section (used in embedded HTML pages) &lt;/li> 
+    &lt;li> bResize:    {Boolean}     true to allow Resize Dialog  (Default=true) &lt;/li> 
+    &lt;li> bModal:    {Boolean}     true=modal (default) &lt;/li> 
+    &lt;li> bCloseOnEscape: {Boolean}  Default true    &lt;/li> 
+    &lt;li> &lt;b>ONLY For POPUP_TYPE.CHOICE&lt;/b>:  
+      &lt;ul> 
+		    &lt;li> bChoiceMultiSel: {Boolean}  true if MultiSelect,else single select. Default false &lt;/li> 
+		    &lt;li> iChoiceMultiSize: {Number}  if bChoiceMultiSel=true:  size (Num item) to display without Scrollbar &lt;/li>
+		  &lt;/ul>
+		&lt;/li>       
+    &lt;li> &lt;b>ONLY For POPUP_TYPE.PROMPT&lt;/b>:
+      &lt;ul>  
+		    &lt;li> szPromptType: {String}  [PROMPT_TYPE.STRING] PROMPT_TYPE.NUMBER  PROMPT_TYPE.STRING  
+                                 &amp;nbsp;see  &lt;a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#PROMPT_TYPE" target="_self">PROMPT_TYPE&lt;/a>
+        &lt;/li> 
+		    &lt;li> szPromptLabel: {String}  Label in Front of Prompt   &lt;/li> 
+		    &lt;li> szPromptValue: {String}  Default Value to set        &lt;/li> 
+		    &lt;li> iPromptWidth: {Number}  Width (px) of the Prompt Item        &lt;/li> 
+		    &lt;li> iPromptMin: {Number}   Min (MinValue for PROMPT_TYPE.NUMBER, MinLen for PROMPT_TYPE.STRING)           &lt;/li> 
+		    &lt;li> iPromptMax: {Number}   Max (MaxValue for PROMPT_TYPE.NUMBER, MaxLen for PROMPT_TYPE.STRING)           &lt;/li>   
+		  &lt;/ul>
+		&lt;/li>       
+  &lt;/ul> 
+  &lt;/td>&lt;/tr>
+  &lt;/table>  
+
+ *   
+ * @return {Object}  retObj  &lt;BR/>                           Example: &lt;ul>
+ *                           {  &lt;BR/>
+ *                             &lt;li> retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL 
+                                 &amp;nbsp;see  &lt;a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#POPUP_BTN" target="_self">POPUP_BTN&lt;/a>
+                               &lt;/li>  
+                               &lt;li> &lt;b>ONLY For POPUP_TYPE.CHOICE&lt;/b>:
+                               &lt;ul>
+	 *                             &lt;li> choiceSelValue    Value chosen in selectChoice    (valueSel1, valueSel2, .. for MultiSel)&lt;/li>
+	 *                             &lt;li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) &lt;/li>
+	 *                             &lt;li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) &lt;/li>
+	 *                             &lt;li> arChoice          like input with the bSel=true/false depending on selected state &lt;/li>
+	 *                           &lt;/ul>
+	 *                           &lt;/li>  
+ *                           } &lt;BR/>
+ *                           &lt;/ul>
+ *                           */
+function Popup(szPopupType, szMsgHtml,objOpt){
+  return pp_Show (szPopupType,szMsgHtml,objOpt);
+}  
+
+
+/**
+ * Show a Popup for Choice with Default Btn: POPUP_BTN.CONFIRM, POPUP_BTN.CANCEL
+ * 
+ * @param szMsgHtml {String}  HTML TAG are Accepted - Newline if present is converted to HTML Newline
+ * @param szChoiceLabel {String} Label of the selectChoice
+ * @param arChoice  {Array}    Array to populate the selectChoice: Example &lt;BR/>
+ *                               [{value:1,szText:"1 - Not Good",bSel:false},  &lt;BR/>
+ *                                  {value:2,szText:"2 - Good",bSel:false}, &lt;BR/>
+ *                                {value:3,szText:"3 - Very Good",bSel:true}] &lt;BR/>
+ * @param [objOpt]   {Object}    OPTIONS
+ *                              &amp;nbsp;see  &lt;a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#Popup" target="_self">Popup()&lt;/a>
+ * @return {Object}  retObj  &lt;BR/>                           Example: &lt;ul>
+ *                           {  &lt;BR/>
+ *                             &lt;li> retBtn {String} POPUP_BTN.CLOSE, POPUP_BTN.CONFIRM, POPUP_BTN.NO, POPUP_BTN.CANCEL 
+                                 &amp;nbsp;see  &lt;a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JQPopup.js/global.html#POPUP_BTN" target="_self">POPUP_BTN&lt;/a>
+                               &lt;/li>  
+                               &lt;li> &lt;b>ONLY For POPUP_TYPE.CHOICE&lt;/b>:
+                               &lt;ul>
+	 *                             &lt;li> choiceSelValue    Value chosen in selectChoice    (valueSel1, valueSel2, .. for MultiSel)&lt;/li>
+	 *                             &lt;li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) &lt;/li>
+	 *                             &lt;li> choiceSelText      Text chosen in selectChoice      (textSel1, textSel2,.. for MultiSel) &lt;/li>
+	 *                             &lt;li> arChoice          like input with the bSel=true/false depending on selected state &lt;/li>
+	 *                           &lt;/ul>
+	 *                           &lt;/li>  
+ *                           } &lt;BR/>
+ *                           &lt;/ul>
+ *                           */
+function PopupChoice(szMsgHtml,szChoiceLabel,arChoice,objOpt){
+  if (objOpt == undefined || objOpt == null){
+    objOpt = new Array();
+  }
+  // Create the Option for Choice and push it into objOpt
+  objOpt.szChoiceLabel = szChoiceLabel;
+  objOpt.arChoice = arChoice;
+  return pp_Show (POPUP_TYPE.CHOICE,szMsgHtml,objOpt);
+}  
+
+
+
+/**
+ * Return false to indicate to JSU User that this Popup.js Interface is NOT the IEPopup (that works only in IE) &lt;BR/>
+ * The same function is Present in JQPopup/Popup.js where it return true &lt;BR/>
+ * This API is used if the html does not know what popup.js interface is loaded by require.js configuration file, where it can be changed because &lt;BR/>
+ * both IEPopup/Popup.js and JQPopup/Popup.js share the same interface 
+ * 
+ * @returns {Boolean}   false to indicate that This popup.js interfaca is not the IEPopup/popup.js 
+ */
+function isIEPopup(){
+	return false;
+}
+
+
+</code></pre>
+        </article>
+    </section>
 
 
 
@@ -114,7 +1110,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Sep 11 2016 21:08:54 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sat Sep 17 2016 23:42:53 GMT+0200 (W. Europe Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
