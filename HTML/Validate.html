@@ -8,15 +8,18 @@
   <meta name="description" content="JSU utility (JSU) - Validate Items with many constraints/options | Show Validate Errors in Red Items or Section, Popup, Gif | Add tooltip near items" />
   <meta name="keywords" content="js, utility, JSU, validate, tooltip, popup, alarm, federico, levis" />
     <!-- Validate sample -->
-	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.js" ></script>
-    <!--  ***************************   JSU ****************************** -->
-    <!--  Define JSU_GA_TRACKING_ID to Enable GoogleAnalitycs and send a pageView statistic  -->
-    <script>
-      var JSU_GA_TRACKING_ID = 'UA-83225633-1';
-    </script>
-	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/jsu.css" type="text/css">
-	<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/WORK/master/3/externalPlugin/jquery/jquery-ui.css" type="text/css">
-	<script data-main="https://rawgit.com/FedericoLevis/WORK/master/3/plugin/jsu-jq.js" src="https://rawgit.com/FedericoLevis/WORK/master/3/core/require.js"></script>
+	<script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/Validate/ValidateSample.js" ></script>
+    
+  <!--  ***************************   JSU   ****************************** -->
+  <!-- OPTIONAL Settings ONLY for Development phase ----->
+  <script>
+     var JSU_GA_TRACKING_ID = 'UA-83225633-1'; // Define JSU_GA_TRACKING_ID to Enable GoogleAnalitycs and send a pageView statistic
+  </script>
+  <!--   STANDARD JSU-JQ LOAD -->
+  <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/externalPlugin/master/jquery/jquery-ui.css">
+  <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/jsu.css" type="text/css">
+  <script data-main="https://rawgit.com/FedericoLevis/JSU/master/plugin/jsu-jq.js" src="https://rawgit.com/FedericoLevis/JSU/master/core/require.js"></script>
+    
     <!-- About -->
     <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.css" type="text/css">    
     <script type="text/javascript" src="https://rawgit.com/FedericoLevis/JSU/master/samples/about/about.js" ></script>
@@ -61,7 +64,7 @@
             <td valign="middle"> <input type="button" class="downloadJsu" id="downloadJsu" onclick="downloadJsu(event);" onmouseover="downloadJsuTip(event);" onmouseout="UnTip(event)"  /> </td>
             <td valign="middle"> <input type="button"  class="googleAnal jsuDownloadGA" id="googleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
             <td class="donate" valign="top">
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                 <input type="hidden" name="cmd" value="_s-xclick">
                 <input type="hidden" name="hosted_button_id" value="2HF4Z8X989Q4Y">
                 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
@@ -115,7 +118,7 @@ Very simple but powerful Validate APIs: <a class="tipLink" href="https://rawgit.
       <ul>
          <li>You can choose many options to display Validate Errors in single Red Items, Cumulative Section, Popup,...<BR/>
          No additional code is required: cValidate take care of everything</li>
-         <li>The cValidate() <b>constraints</b> <i>JSON parameter</i>  supports also the optional <b>tip</b> field, used to setup a <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/Tip.html" target="_self">JSU Floating Tooltip</a> on the right of the item to validate
+         <li>The cValidate() <b>constraints</b> <i>JSON parameter</i>  supports also the optional <b>tip</b> field, used to setup a <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/global.html#Tip" target="_self">JSU Floating Tooltip</a> on the right of the item to validate
       </ul>
   </li>
 </ul>
