@@ -38,7 +38,7 @@
                           &lt;/ul>  
 &lt;b>REQUIRE:&lt;/b>            JSU: jslog.js dom-drag.js   &lt;BR/>
 &lt;b>First Version:&lt;/b>     ver 1.0 - Jul 2007  &lt;BR/>
-&lt;b>Current Version:&lt;/b>   JSU v. 1.9 &amp;nbsp;&amp;nbsp;&amp;nbsp;2017-Sep-01  &lt;BR/>
+&lt;b>Current Version:&lt;/b>   JSU v. 1.8 &amp;nbsp;&amp;nbsp;&amp;nbsp;2016-Sep-21  &lt;BR/>
 &lt;BR/>-----------------------------------------------------------------------------------&lt;BR/>
 &lt;b>DISCLAIMER&lt;/b>  &lt;BR/>
 Copyright by Federico Levis - &lt;a href="https://github.com/JSUtility/JSU" target="_self">JSU&lt;/a> &lt;BR/> 
@@ -314,18 +314,7 @@ function isFirefox()
   return (getBrowser() == BROWSER_TYPE.FIREFOX);
 }
 
-/**
- * 
- * @returns {Boolean}  true if the window is inside an Iframe
- */
-function isInIframe(){
-	try {
-		return (window.self !== window.top);
-	}catch(e){
-		return true;
-	}
-	
-}
+
 
 
 
@@ -1564,7 +1553,6 @@ function selectGetSelLabels (Select){
 }
 
 
-
 /*----------------------------------------------------------------------------------------------
 Get the values of the Elements Selected in a Multi Select. 
 e.g. They can be used in a Where condition or to find a Value
@@ -1614,37 +1602,27 @@ Get the values of the Elements in a Multi Select.
 e.g. They can be used in a Where condition or to find a Value
 	PAR
 Select	in
-bValueAsString in   [false] true if the values must be considered as String, adding ''  
 	RETURN
-  e.g  bValueAsString=false   1, 4, 12
-  e.g  bValueAsString=false   MT, BT
-  e.g  bValueAsString=true   'MT', 'BT'
+  e.g     Sig1, Sig4, Sig-12
 ----------------------------------------------------------------------------------------------*/
-function selectGetValues (Select, bValueAsString){
+function selectGetValues (Select){
   var Fn = "[util.js selectGetValues] ";
-  var szValues = "";
+  var szSelValues = "";
   var bFirst  = true;
   
-  if (bValueAsString == undefined){
-  	bValueAsString = false;
-  }
   if (!Select){
     return jslog(JSLOG_JSU,Fn +  "Select =0 NOTHING to DO");
   }
   for (var iOpt=0; iOpt &lt; Select.options.length; iOpt ++){
     var Opt = Select.options[iOpt];
-    var szVal = Opt.value;
-  	if (bValueAsString){
-       szVal = "'" + szVal + "'";
-  	}  
 	  if (bFirst){
-         szValues = szVal;
+         szSelValues = Opt.value;
          bFirst = false;
       } else {
-         szValues = szValues + ", " + szVal;
+         szSelValues = szSelValues + ", " + Opt.value;
       }	    
   }
-  return szValues;
+  return szSelValues;
 }
 
 
@@ -1933,7 +1911,6 @@ function loadingShowByEl(el,bShow){
  * @param bShow {Boolean}  true to set Loading Image		
  */
 function loadingShow(bShow){
-	setCursorWait (bShow);
 	var el = getElementById2(ID_DIV_LOADING_IMG,false);
 	if (el){
 		classAdd (el,'jsuLoading',bShow);
@@ -2597,16 +2574,14 @@ function checkArVal(szVal,arVal,szEr)
 
 
 /*-----------------------------------------------------------
- 
 Get SQL Condition for The select, using the useValues selected in select
 select can be either multiSElect or singleSelect
 IF NO SElection (MUltiSelect) or Selected the First Cognos Item for ALL we return ""
 	PAR
 szDbCol   in      DB Col Name (e.g. COD_CATEG_BLOCCO)	
 select		in 			select DOM object
-bValueAsString in   true if Value get from CB are String (else they are Number)
-[bOnlySel] in     [true]  if true get only iteme selected, else Get all Item    
- RETURN
+bValueAsString in   true if Value get from CB are String (else they are Number) 
+  RETURN
 
 Example for   		bValueAsString=true
 ---------------------------------------------     
@@ -2621,36 +2596,27 @@ e.g (1 Item Selected)     "TENSIONE  = 1"
 e.g (3 Items Selected)    "TENSIONE  IN (1,4)"
 
 ------------------------------------------------------------*/
-function sqlCondSelect(szDbCol,select,bValueAsString, bOnlySel) {
- var Fn = "[util.js sqlCondSelect] ";
- var szSql = "";
- 
- // jslog(JSLOG_DEBUG,Fn + JSLOG_FUN_START);
- if (bOnlySel == undefined){
- 	bOnlySel = true;
- }
- if (bOnlySel){
- 	// Get Only Selected Items
-   if (selectIsMulti (select)){
-   	szSql = selectGetSelValues (select,bValueAsString);
-   }else {
-   	szSql = selectGetSelVal (select,bValueAsString);
-   }
- }else {
- 	// Get All Items
- 	szSql = selectGetValues (select,bValueAsString);
- }  
- if (szSql.length){
- 	var bInCond = szSql.indexOf(',') > 0;
- 	if (bInCond){
- 		szSql = szDbCol + " IN (" + szSql + ")";
- 	}else{
- 		szSql = szDbCol + " = " + szSql;
- 	}
- }
- jslog(JSLOG_JSU,Fn + "OUT szSql: " + szSql);
- // jslog(JSLOG_DEBUG,Fn + JSLOG_FUN_END);
- return szSql;
+function sqlCondSelect(szDbCol,select,bValueAsString) {
+  var Fn = "[util.js sqlCondSelect] ";
+  var szSql = "";
+  
+  // jslog(JSLOG_DEBUG,Fn + JSLOG_FUN_START);
+  if (selectIsMulti (select)){
+  	szSql = selectGetSelValues (select,bValueAsString);
+  }else {
+  	szSql = selectGetSelVal (select,bValueAsString);
+  }
+  if (szSql.length){
+  	var bInCond = szSql.indexOf(',') > 0;
+  	if (bInCond){
+  		szSql = szDbCol + " IN (" + szSql + ")";
+  	}else{
+  		szSql = szDbCol + " = " + szSql;
+  	}
+  }
+  jslog(JSLOG_JSU,Fn + "OUT szSql: " + szSql);
+  // jslog(JSLOG_DEBUG,Fn + JSLOG_FUN_END);
+  return szSql;
 }
 
 
@@ -2957,13 +2923,13 @@ function tipAddEvent (arClass){
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#alarmShowIn1El">alarmShowIn1El</a></li><li><a href="global.html#alarmShowIn1ElId">alarmShowIn1ElId</a></li><li><a href="global.html#arPmtFromSelect">arPmtFromSelect</a></li><li><a href="global.html#checkArVal">checkArVal</a></li><li><a href="global.html#checkObjDefined">checkObjDefined</a></li><li><a href="global.html#classAdd">classAdd</a></li><li><a href="global.html#elementGetWinCoords">elementGetWinCoords</a></li><li><a href="global.html#elementShow">elementShow</a></li><li><a href="global.html#elementShowById">elementShowById</a></li><li><a href="global.html#getBrowser">getBrowser</a></li><li><a href="global.html#getElementsWithSameId">getElementsWithSameId</a></li><li><a href="global.html#getFieldset">getFieldset</a></li><li><a href="global.html#isInIframe">isInIframe</a></li><li><a href="global.html#loadingGetEl">loadingGetEl</a></li><li><a href="global.html#loadingShow">loadingShow</a></li><li><a href="global.html#loadingShowByEl">loadingShowByEl</a></li><li><a href="global.html#loadingShowIn1El">loadingShowIn1El</a></li><li><a href="global.html#loadingShowIn1ElId">loadingShowIn1ElId</a></li><li><a href="global.html#mapVal1ToVal2">mapVal1ToVal2</a></li><li><a href="global.html#msgHtml2Str">msgHtml2Str</a></li><li><a href="global.html#num2StrPad">num2StrPad</a></li><li><a href="global.html#selectPopulate">selectPopulate</a></li><li><a href="global.html#urlGetParVal">urlGetParVal</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#alarmShowIn1El">alarmShowIn1El</a></li><li><a href="global.html#alarmShowIn1ElId">alarmShowIn1ElId</a></li><li><a href="global.html#arPmtFromSelect">arPmtFromSelect</a></li><li><a href="global.html#checkArVal">checkArVal</a></li><li><a href="global.html#checkObjDefined">checkObjDefined</a></li><li><a href="global.html#classAdd">classAdd</a></li><li><a href="global.html#elementGetWinCoords">elementGetWinCoords</a></li><li><a href="global.html#elementShow">elementShow</a></li><li><a href="global.html#elementShowById">elementShowById</a></li><li><a href="global.html#getBrowser">getBrowser</a></li><li><a href="global.html#getElementsWithSameId">getElementsWithSameId</a></li><li><a href="global.html#getFieldset">getFieldset</a></li><li><a href="global.html#loadingGetEl">loadingGetEl</a></li><li><a href="global.html#loadingShow">loadingShow</a></li><li><a href="global.html#loadingShowByEl">loadingShowByEl</a></li><li><a href="global.html#loadingShowIn1El">loadingShowIn1El</a></li><li><a href="global.html#loadingShowIn1ElId">loadingShowIn1ElId</a></li><li><a href="global.html#mapVal1ToVal2">mapVal1ToVal2</a></li><li><a href="global.html#msgHtml2Str">msgHtml2Str</a></li><li><a href="global.html#num2StrPad">num2StrPad</a></li><li><a href="global.html#selectPopulate">selectPopulate</a></li><li><a href="global.html#urlGetParVal">urlGetParVal</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.4</a> on Mon Sep 04 2017 23:51:55 GMT+0200 (W. Europe Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.4</a> on Sun Jan 14 2018 18:46:00 GMT+0100 (W. Europe Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
